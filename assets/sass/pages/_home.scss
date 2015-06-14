@@ -24,6 +24,7 @@
         background: transparent;
 
         li {
+            display: block;
             margin: 0 0 5px;
             background: rgba(0, 0, 0, .6);
         }
@@ -32,5 +33,53 @@
             display: block;
             padding: 16px;
         }
+    }
+
+    /* Locations List -------------------------------- */
+
+    .locations {
+        width: 100%;
+        background: #1a4281;
+
+        ul {
+            @extend %clearfix;
+            margin: 0 auto;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        li {
+            float: left;
+            width: 16.66%;
+            padding: 1em 2em .5em 2em;
+            color: #fff;
+            background: #1a4281;
+
+            &:nth-child(2), &:nth-child(5) {
+                background: #33568f;
+            }
+
+            &:nth-child(3) {
+                background: #4d6c9d;
+            }
+
+            &:nth-child(4) {
+                background: #6680ab;
+            }
+
+            .location-name {
+                margin: 0 0 1em;
+            }
+
+            a {
+                text-decoration: none;
+                color: #2297c5;
+                font-weight: 700;
+            }
+        }
+    }
+
+    footer {
+        margin-top: 0;
     }
 }
