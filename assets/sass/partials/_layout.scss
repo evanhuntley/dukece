@@ -44,3 +44,28 @@ figure {
 
         }
     }
+
+.wrap {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.primary-content, .secondary-content, .section-sidebar {
+    float: left;
+    padding: 1em;
+    margin-right: 25px;
+    background: #eeeeee;
+}
+
+.primary-content {
+    width: 600px;
+}
+
+.secondary-content {
+    width: 275px;
+    margin-right: 0;
+}
+
+.section-sidebar {
+    width: 275px;
+}

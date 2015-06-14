@@ -1,0 +1,39 @@
+/* ===================================================================
+    Header
+====================================================================== */
+
+header {
+    @extend %clearfix;
+    padding: 1em 0;
+
+    .logo {
+        @extend %ir;
+        display: block;
+        float: left;
+        width: 295px;
+        height: 84px;
+        background: url('../img/l_duke-ce-extended.png') no-repeat;
+        background-size: 295px 84px;
+    }
+
+    .searchform {
+        float: right;
+    }
+
+    nav {
+        float: left;
+        width: 100%;
+        margin: 1em 0 0;
+        background: #002c73;
+
+        li {
+            display: inline-block;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+    }
+}

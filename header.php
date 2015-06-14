@@ -31,7 +31,7 @@
 <!-- The little things -->
 
 <!-- Stylesheets -->
-	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+	<link rel="stylesheet" href="<?php bloginfo( 'template_directory' ); ?>/assets/css/style.css" />
 <!-- Stylesheets -->
 
 <!-- Load scripts quick smart -->
@@ -43,18 +43,18 @@
 
 <body <?php body_class(); ?> id="top">
     <header role="banner">
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="logo"><?php bloginfo( 'name' ); ?></a>
-        <p class="desc">
-			<?php bloginfo( 'description' ); ?>
-        </p>
+		<div class="wrap">
+        	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="logo"><?php bloginfo( 'name' ); ?></a>
+			<?php get_search_form(); ?>
+		</div>
         <nav role="navigation">
             <?php
                 $args = array(
+					'menu' => 'Main Navigation',
                     'container' => 'false',
-                    'items_wrap' => '<ul>%3$s</ul>',
-                    );
+                    'items_wrap' => '<ul class="wrap">%3$s</ul>',
+                );
                 wp_nav_menu($args);
             ?>
         </nav>
-        <?php get_search_form(); ?>
     </header>

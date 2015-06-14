@@ -1,0 +1,36 @@
+/* ===================================================================
+    Home page
+====================================================================== */
+
+.home {
+
+    header {
+        height: 600px;
+        background: url('../img/bg_climbers.jpg') no-repeat;
+    }
+
+    .logo {
+        width: 178px;
+        height: 80px;
+        background: url('../img/l_duke-ce.png') no-repeat;
+        background-size: 100% 100%;
+    }
+
+    nav {
+        position: absolute;
+        top: 90px;
+        right: 0;
+        width: 254px;
+        background: transparent;
+
+        li {
+            margin: 0 0 5px;
+            background: rgba(0, 0, 0, .6);
+        }
+
+        a {
+            display: block;
+            padding: 16px;
+        }
+    }
+}

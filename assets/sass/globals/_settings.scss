@@ -114,3 +114,10 @@ $white: #fff;
         display: inline;
         }
     }
+
+	// CSS Image Replacement
+	%ir {
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+	}
