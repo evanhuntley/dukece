@@ -65,19 +65,50 @@ header {
         float: left;
         width: 100%;
         margin: 1em 0 0;
-        padding: 1em 0;
         background: #002c73;
 
         li {
             display: inline-block;
+            position: relative;
+
+            &:hover {
+
+                a {
+                    background: #001C49;
+                }
+
+                ul {
+                    display: block;
+                }
+            }
         }
 
         a {
-            margin-right: 2em;
+            display: block;
+            padding: 1em;
             color: #fff;
             text-decoration: none;
             text-transform: uppercase;
             font-weight: 700;
+            transition: none;
+        }
+
+        .sub-menu {
+            display: none;
+            position: absolute;
+            width: 200px;
+            margin: 0;
+            background: #001C49;
+
+            a {
+                padding: .5em 1em;
+                text-transform: none;
+                font-weight: 400;
+
+                &:hover {
+                    color: #2297c5;
+                }
+            }
         }
     }
 }
