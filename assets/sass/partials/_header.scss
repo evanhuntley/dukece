@@ -16,8 +16,49 @@ header {
         background-size: 295px 84px;
     }
 
-    .searchform {
+    .search-form {
         float: right;
+
+        input[type="search"] {
+            float: right;
+            height: 47px;
+            width: 250px;
+            margin-left: -3px;
+            padding: 0 1em;
+            background: #bababa;
+            border: none;
+            border-radius: 3px;
+            position: relative;
+            z-index: 2;
+
+            &::-webkit-input-placeholder {
+               color: #fff;
+            }
+
+            &:-moz-placeholder { /* Firefox 18- */
+               color: #fff;
+            }
+
+            &::-moz-placeholder {  /* Firefox 19+ */
+               color: #fff;
+            }
+
+            &:-ms-input-placeholder {
+               color: #fff;
+            }
+        }
+
+        input[type="submit"] {
+            @extend %ir;
+            float: right;
+            width: 65px;
+            height: 47px;
+            padding: 0;
+            border: none;
+            border-radius: 3px;
+            background: #f5f5f5 url('../img/i_search.jpg') no-repeat;
+            background-position: 50% 50%;
+        }
     }
 
     nav {
