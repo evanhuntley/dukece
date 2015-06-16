@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 
-<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
     <div class="wrap">
 
         <div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
@@ -11,19 +10,9 @@
         </div>
 
         <article role="main" class="primary-content type-page" id="post-<?php the_ID(); ?>">
-            <?php if ( is_front_page() ) { ?>
-                <h1><?php the_title(); ?></h1>
-            <?php } else { ?>
-                <h1><?php the_title(); ?></h1>
-            <?php } ?>
-
-            <?php the_content(); ?>
-
-            <?php edit_post_link( __( 'Edit' ), '<span class="edit-link">', '</span>' ); ?>
-
-            <?php endwhile; ?>
+            <h1>Oops! Something went wrong...</h1>
+            <p>We weren't able to locate the page you're looking for.  Try navigating to our home page for more info.</p>
         </article>
-
         <?php get_sidebar(); ?>
     </div>
 

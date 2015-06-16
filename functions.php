@@ -4,8 +4,8 @@ add_theme_support( 'menus' );
 
 if ( function_exists('register_sidebar') )
 	register_sidebar(array(
-		'before_widget' => '<aside>',
-		'after_widget' => '</aside>',
+		'before_widget' => '<div class="widget">',
+		'after_widget' => '</div>',
 		'before_title' => '<h3>',
 		'after_title' => '</h3>',
 ));
@@ -89,5 +89,79 @@ function current_to_active($text){
                 return $text;
         }
 add_filter ('wp_nav_menu','current_to_active');
+
+
+add_action( 'after_setup_theme', 'duke_theme_setup' );
+function duke_theme_setup() {
+  add_image_size( 'sidebar-feature', 300, 300, true ); // (cropped)
+}
+
+// Menu Meta Box
+function custom_meta_box_markup($object)
+{
+    wp_nonce_field(basename(__FILE__), "meta-box-nonce");
+
+    ?>
+        <div>
+			<p><strong>Menu</strong></p>
+            <label class="screen-reader-text" for="meta-box-dropdown">Menu</label>
+            <select name="meta-box-dropdown">
+				<option>-- Inherit --</option>
+				<?php
+					$menus = get_terms( 'nav_menu', array( 'hide_empty' => true ) );
+
+					foreach ( $menus as $menu ) {
+
+						if ( $menu->name == get_post_meta($object->ID, "meta-box-dropdown", true))
+						{
+						    ?>
+						        <option selected><?php echo $menu->name; ?></option>
+						    <?php
+						}
+						else {
+							?>
+						        <option><?php echo $menu->name; ?></option>
+						    <?php
+						}
+					}
+				?>
+				<option>-- None --</option>
+            </select>
+        </div>
+    <?php
+}
+
+function add_custom_meta_box()
+{
+    add_meta_box("demo-meta-box", "Subnavigation", "custom_meta_box_markup", "page", "side", "low", null);
+}
+
+add_action("add_meta_boxes", "add_custom_meta_box");
+
+function save_custom_meta_box($post_id, $post, $update)
+{
+    if (!isset($_POST["meta-box-nonce"]) || !wp_verify_nonce($_POST["meta-box-nonce"], basename(__FILE__)))
+        return $post_id;
+
+    if(!current_user_can("edit_post", $post_id))
+        return $post_id;
+
+    if(defined("DOING_AUTOSAVE") && DOING_AUTOSAVE)
+        return $post_id;
+
+    $slug = "page";
+    if($slug != $post->post_type)
+        return $post_id;
+
+    $meta_box_dropdown_value = "";
+
+    if(isset($_POST["meta-box-dropdown"]))
+    {
+        $meta_box_dropdown_value = $_POST["meta-box-dropdown"];
+    }
+    update_post_meta($post_id, "meta-box-dropdown", $meta_box_dropdown_value);
+}
+
+add_action("save_post", "save_custom_meta_box", 10, 3);
 
 ?>

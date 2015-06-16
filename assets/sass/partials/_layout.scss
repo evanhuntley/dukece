@@ -50,23 +50,19 @@ figure {
     margin: 0 auto;
 }
 
-.primary-content, .secondary-content, .section-sidebar {
-    float: left;
+.primary-content, .secondary-content {
     padding: 1em;
-    margin-right: 25px;
     background: #eeeeee;
     border-radius: 5px;
 }
 
 .primary-content {
-    width: 600px;
+    float: right;
+    width: 900px;
 }
 
 .secondary-content {
+    float: left;
     width: 275px;
-    margin-right: 0;
-}
-
-.section-sidebar {
-    width: 275px;
+    margin-right: 25px;
 }
