@@ -21,7 +21,7 @@ header {
 
         input[type="search"] {
             float: right;
-            height: 47px;
+            height: 45px;
             width: 250px;
             margin-left: -3px;
             padding: 0 1em;
@@ -51,8 +51,8 @@ header {
         input[type="submit"] {
             @extend %ir;
             float: right;
-            width: 65px;
-            height: 47px;
+            width: 62px;
+            height: 45px;
             padding: 0;
             border: none;
             border-radius: 3px;
@@ -91,6 +91,21 @@ header {
             text-transform: uppercase;
             font-weight: 700;
             transition: none;
+
+            &::before {
+                content: url('../img/i_square.png');
+                margin: 0 1em 0 0;
+            }
+        }
+
+        .menu-item-has-children {
+
+            a {
+
+                &::before {
+                    content: url('../img/i_plus.png');
+                }
+            }
         }
 
         .sub-menu {
@@ -104,6 +119,10 @@ header {
                 padding: .5em 1em;
                 text-transform: none;
                 font-weight: 400;
+
+                &::before {
+                    content: none;
+                }
 
                 &:hover {
                     color: #2297c5;
