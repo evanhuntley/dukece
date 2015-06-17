@@ -5,7 +5,11 @@
 ?>
 
 <?php get_header(); ?>
+<div class="features">
+    <div class="wrap">
 
+    </div>
+</div>
 <div class="locations">
     <ul class="wrap">
         <li>

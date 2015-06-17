@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 <?php if ( have_posts() ) : ?>
-    <article role="main" class="primary-content type-page search">
-        <h1><?php printf( __( 'Search Results for: %s' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+    <div class="wrap">
         <?php get_template_part( 'loop', 'search' ); ?>
 		<?php else : ?>
             <h1 class="entry-title"><?php _e( 'Nothing Found' ); ?></h1>
@@ -10,5 +9,5 @@
                 <?php /*?><?php get_search_form(); ?><?php */?>
             </article><!-- .entry-content -->
         <?php endif; ?>
-    </article>
+    </div>
 <?php get_footer('no-sidebar'); // will include footer-no-sidebar.php; ?>

@@ -18,17 +18,26 @@ html {
 body {
     font-family: 'Source Sans Pro', Arial, sans-serif;
     @include font-size(1,1.5);
+    color: rgb(76, 76, 76);
 }
 
 h1, h2, h3, h4, h5, h6 {
 	@include font-size(1.5, 1.75);
+    margin: 0 0 .5em;
+    color: #036;
+
+    p + & {
+        margin-top: 1em;
+    }
 }
     h1 {
-        margin: 0 0 .5em;
-        @include font-size(2, 1.75);
+        @include font-size(2.75, 2.5);
         font-weight: 400;
     }
-    h2 {}
+    h2 {
+        @include font-size(1.75, 1.5);
+        font-weight: 400;
+    }
     h3 {}
     h4 {}
     h5 {}
@@ -69,3 +78,16 @@ blockquote {
 
         }
     }
+
+.btn {
+    display: inline-block;
+    margin: 0 0 .5em;
+    padding: .5em 1em;
+    text-decoration: none;
+    background: #002c73;
+    color: #fff;
+
+    &.btn-action {
+        background: #117419;
+    }
+}

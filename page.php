@@ -17,6 +17,14 @@
                 <h1><?php the_title(); ?></h1>
             <?php } ?>
 
+            <div class="feature-img">
+            <?php
+                if ( has_post_thumbnail() ) {
+                	the_post_thumbnail( 'content-feature' );
+                }
+            ?>
+            </div>
+
             <?php the_content(); ?>
 
             <?php edit_post_link( __( 'Edit' ), '<span class="edit-link">', '</span>' ); ?>

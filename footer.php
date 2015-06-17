@@ -1,5 +1,9 @@
 <footer role="contentinfo">
-	<p>&copy;<?php echo date("Y"); ?> <a href="#top" title="Jump back to top">&#8593;</a></p>
+	<div class="wrap">
+		<div class="footer-logo">
+			<img src="<?php bloginfo( 'template_directory' ); ?>/assets/img/l_duke-white.png" />
+		</div>
+	</div>
 </footer>
 
 <?php wp_footer(); ?>

@@ -4,7 +4,7 @@
 
 header {
     @extend %clearfix;
-    padding: 1em 0;
+    padding: 1em 0 0;
 
     .logo {
         @extend %ir;
@@ -128,6 +128,31 @@ header {
                     color: #2297c5;
                 }
             }
+        }
+    }
+
+    .utility-nav {
+        float: right;
+        clear: right;
+        margin: 1.25em 8em 0 0;
+        padding: 0;
+
+        li {
+            display: inline-block;
+            padding: 0 5px;
+            line-height: 12px;
+            border-left: 1px solid #002c73;
+
+            &:first-child {
+                border: none;
+            }
+        }
+
+        a {
+            font-size: 13px;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #002c73;
         }
     }
 }
