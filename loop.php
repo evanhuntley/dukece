@@ -17,7 +17,7 @@
         <?php elseif ( is_year() ) : ?><?php printf( __( '<span>Yearly Archive</span> %s' ), get_the_date('Y') ); ?>
         <?php elseif ( is_category() ) : ?><?php echo single_cat_title(); ?>
         <?php elseif ( is_search() ) : ?><?php printf( __( 'Search Results for: %s' ), '<span>' . get_search_query() . '</span>' ); ?>
-        <?php elseif ( is_home() ) : ?>Latest Posts<?php else : ?>
+        <?php elseif ( is_home() ) : ?>Leadership for What's Next<?php else : ?>
         <?php endif; ?>
     </h1>
 

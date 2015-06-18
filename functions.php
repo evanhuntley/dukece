@@ -94,7 +94,7 @@ add_filter ('wp_nav_menu','current_to_active');
 
 add_action( 'after_setup_theme', 'duke_theme_setup' );
 function duke_theme_setup() {
-  add_image_size( 'content-feature', 900, 300, true ); // (cropped)
+  add_image_size( 'content-feature', 749, 250, true ); // (cropped)
 }
 
 // Menu Meta Box

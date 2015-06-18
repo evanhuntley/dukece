@@ -31,6 +31,7 @@
 <!-- The little things -->
 
 <!-- Stylesheets -->
+<link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="<?php bloginfo( 'template_directory' ); ?>/assets/css/style.css" />
 <!-- Stylesheets -->
@@ -54,13 +55,15 @@
 			</ul>
 		</div>
         <nav role="navigation">
+			<div class="wrap">
             <?php
                 $args = array(
 					'menu' => 'Main Navigation',
                     'container' => 'false',
-                    'items_wrap' => '<ul class="wrap">%3$s</ul>',
+                    'items_wrap' => '<ul class="main-menu">%3$s</ul>',
                 );
                 wp_nav_menu($args);
             ?>
+			</div>
         </nav>
     </header>

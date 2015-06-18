@@ -25,23 +25,34 @@ h1, h2, h3, h4, h5, h6 {
 	@include font-size(1.5, 1.75);
     margin: 0 0 .5em;
     color: #036;
+    font-family: 'EB Garamond', serif;
 
     p + & {
         margin-top: 1em;
     }
 }
-    h1 {
-        @include font-size(2.75, 2.5);
-        font-weight: 400;
+
+h1 {
+    @include font-size(2.75, 2.5);
+    font-weight: 400;
+    color: #003366;
+    font-family: 'EB Garamond', serif;
+}
+h2 {
+    @include font-size(1.75, 1.5);
+    font-weight: 400;
+}
+h3 {}
+h4 {}
+h5 {}
+h6 {}
+
+.secondary-content {
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Source Sans Pro', Arial, sans-serif;
     }
-    h2 {
-        @include font-size(1.75, 1.5);
-        font-weight: 400;
-    }
-    h3 {}
-    h4 {}
-    h5 {}
-    h6 {}
+}
 
 p {
     margin-bottom: 1em;
@@ -84,10 +95,19 @@ blockquote {
     margin: 0 0 .5em;
     padding: .5em 1em;
     text-decoration: none;
-    background: #002c73;
+    background: #1e376c;
     color: #fff;
 
+    &:hover {
+        color: #fff;
+        background: #001C49;
+    }
+
     &.btn-action {
-        background: #117419;
+        background: #0075c9;
+
+        &:hover {
+            background: #055FA0;
+        }
     }
 }
