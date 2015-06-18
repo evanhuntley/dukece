@@ -90,11 +90,12 @@ blockquote {
         }
     }
 
-.btn {
+.btn, input[type="submit"] {
     display: inline-block;
     margin: 0 0 .5em;
     padding: .5em 1em;
     text-decoration: none;
+    border: none;
     background: #1e376c;
     color: #fff;
 

@@ -19,10 +19,7 @@
 ?>
 
 <?php if ( have_comments() ) : ?>
-            <h2><?php
-			printf( _n( 'One Response to %2$s', '%1$s Responses to %2$s', get_comments_number() ),
-			number_format_i18n( get_comments_number() ), get_the_title() );
-			?></h2>
+    <h2><?php echo 'Comments'; ?></h2>
 
 <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
     <ul class="navigation">
@@ -35,9 +32,9 @@
     </ul>
 <?php endif; // check for comment navigation ?>
 
-<ol class="commentlist">
-    <?php wp_list_comments( array( 'callback' => 'post_comments' ) ); ?>
-</ol>
+<ul class="commentlist">
+    <?php wp_list_comments( array( 'callback' => 'post_comments', '' ) ); ?>
+</ul>
 
 <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
     <ul class="navigation">
@@ -62,4 +59,11 @@
 
 <?php endif; // end have_comments() ?>
 
-<?php comment_form(); ?>
+<?php
+$comments_args = array(
+	'id_form'           => 'commentform',
+	'id_submit'         => 'btn',
+    'class_submit' => 'btn',
+);
+comment_form($comment_args, $post->ID);
+?>

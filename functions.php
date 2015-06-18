@@ -20,7 +20,6 @@ function post_comments( $comment, $args, $depth ) {
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 		<div id="comment-<?php comment_ID(); ?>">
 		<div class="comment-author vcard">
-			<?php echo get_avatar( $comment, 40 ); ?>
 
 			<p class="comment-meta">
 				<?php printf( __( '%s' ), sprintf( '%s', get_comment_author_link() ) ); ?>
