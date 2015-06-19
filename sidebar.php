@@ -1,8 +1,8 @@
 <aside role="complementary" class="secondary-content">
-    <?php if ( get_post_type() == 'page' ) {
+    <?php if ( get_post_type() == 'page') {
 
         $menu = get_post_meta( get_the_ID(), 'meta-box-dropdown', true );
-        if ( $menu && ($menu != '-- None --') ) {
+        if ( $menu && ($menu != '-- None --') && !is_search() ) {
             echo '<nav class="subnav">';
             if ( $menu == '-- Inherit --') {
                 $parent_id = wp_get_post_parent_id( $post_ID );

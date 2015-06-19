@@ -13,7 +13,7 @@
     a {
         color: #1e376c;
         text-decoration: none;
-        font-weight: 700;
+        font-weight: 400;
     }
 
     .separator {
@@ -41,4 +41,12 @@
             color: #fff;
         }
     }
+}
+
+/* Page Specific --------------------------------------------------- */
+
+.people-column {
+    float: left;
+    width: 23%;
+    margin-right: 2%;
 }

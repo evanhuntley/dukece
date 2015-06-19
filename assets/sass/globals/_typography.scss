@@ -39,10 +39,12 @@ h1 {
     font-family: 'EB Garamond', serif;
 }
 h2 {
-    @include font-size(1.75, 1.5);
+    @include font-size(1.75, 2.5);
     font-weight: 400;
 }
-h3 {}
+h3 {
+    font-weight: 400;
+}
 h4 {}
 h5 {}
 h6 {}
