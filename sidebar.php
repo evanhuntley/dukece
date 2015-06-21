@@ -15,13 +15,16 @@
         }
     ?>
 
-    <div class="cta widget">
-        <h3>Get More Information</h3>
-        <a class="btn" href="#">Download Duke CE Brochure</a>
-        <a class="btn btn-action" href="#">Get in Touch</a>
-    </div>
-
-<?php } else { ?>
+<?php } elseif ( get_post_type() == 'people') {
+    echo '<nav class="subnav">';
+    wp_nav_menu( array('menu' => 'About Section', 'container' => ''));
+    echo '</nav>';
+} else { ?>
     <?php dynamic_sidebar('sidebar-1'); ?>
 <?php } ?>
+<div class="cta widget">
+    <h3>Get More Information</h3>
+    <a class="btn" href="#">Download Duke CE Brochure</a>
+    <a class="btn btn-action" href="#">Get in Touch</a>
+</div>
 </aside>
