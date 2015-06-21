@@ -36,16 +36,12 @@
 	<link rel="stylesheet" href="<?php bloginfo( 'template_directory' ); ?>/assets/css/style.css" />
 <!-- Stylesheets -->
 
-<!-- Load scripts quick smart -->
-
-<!-- Load scripts quick smart -->
-
 	<?php wp_deregister_script('jquery');wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?> id="top">
     <header role="banner">
-		<div class="wrap">
+		<div class="header-top <?php if ( !is_front_page() ) { echo 'wrap'; } ?>">
         	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="logo"><?php bloginfo( 'name' ); ?></a>
 			<?php get_search_form(); ?>
 			<ul class="utility-nav">
@@ -55,7 +51,9 @@
 			</ul>
 		</div>
         <nav role="navigation">
+			<?php if ( !is_front_page() ) : ?>
 			<div class="wrap">
+			<?php endif; ?>
             <?php
                 $args = array(
 					'menu' => 'Main Navigation',
@@ -64,6 +62,21 @@
                 );
                 wp_nav_menu($args);
             ?>
+			<?php if ( !is_front_page() ) : ?>
 			</div>
+			<?php endif; ?>
         </nav>
+
+		<?php if ( is_front_page() ) : ?>
+			<div class="flexslider">
+				<ul class="slides">
+					<li>
+						<div style="background-image: url('<?php echo bloginfo('template_directory'); ?>/assets/img/bg_climbers.jpg');" ></div>
+					</li>
+					<li>
+						<div style="background-image: url('<?php echo bloginfo('template_directory'); ?>/assets/img/bg_pencil.jpg');"></div>
+					</li>
+				</ul>
+			</div>
+		<?php endif; ?>
     </header>

@@ -6,7 +6,12 @@
 
     header {
         height: 600px;
-        background: url('../img/bg_climbers.jpg') no-repeat;
+    }
+
+    .header-top {
+        position: relative;
+        margin: 0 2em;
+        z-index: 6;
     }
 
     .logo {
@@ -17,6 +22,8 @@
     }
 
     nav {
+        position: relative;
+        z-index: 6;
 
         .wrap {
             position: relative;
@@ -61,10 +68,127 @@
         display: none;
     }
 
+    /* Slider ---------------------------------------- */
+
+    .flexslider {
+        position: absolute;
+        border: none;
+        width: 100%;
+        height: 600px;
+        top: 0;
+        z-index: 3;
+
+        div {
+            width: 100%;
+            height: 600px;
+            background-size: cover;
+        }
+    }
+
+    /* Featured Stories ------------------------------ */
+    .features {
+        @extend %clearfix;
+        min-width: 1200px;
+        margin: 1em 0;
+        padding: 0 0 0 2em;
+
+        .stories {
+            @extend %clearfix;
+            float: left;
+            width: 60%;
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+
+            li {
+                float: left;
+                width: 30%;
+                margin-right: 3%;
+                padding: 1em;
+                background: #eee;
+
+                a {
+                    display: block;
+                    margin: 0 0 1em;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .dialogue {
+            float: left;
+            width: 40%;
+
+            .header {
+                margin: 0 0 1em;
+                padding: .5em 1em;
+                background: $brand-blue;
+
+                h2 {
+                    margin: 0;
+                    color: #fff;
+                }
+            }
+
+            .dialogue-content {
+                padding: 0 1em;
+            }
+        }
+
+        a {
+            color: $brand-blue;
+            text-decoration: none;
+        }
+
+        .ft-block {
+            float: left;
+            width: 60%;
+            margin: 1em 0 0;
+            padding: 0 1.75em 0 0;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-right: 7px solid #fff;
+            }
+
+            p {
+                position: relative;
+                float: left;
+                width: 100%;
+                padding: 1.125em 1em 1.125em 6.5em;
+                font-size: 14px;
+                background: #e5e9f1;
+            }
+        }
+
+        .social {
+            float: left;
+            width: 40%;
+            padding-right: 2em;
+
+            h3 {
+                border-bottom: 3px solid #273452;
+            }
+
+            ul {
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+            }
+
+            li {
+                display: inline-block;
+                margin-right: 8px;
+            }
+        }
+    }
+
     /* Locations List -------------------------------- */
 
     .locations {
-        width: 100%;
+        min-width: 1200px;
         background: #1a4281;
 
         ul {
@@ -107,5 +231,10 @@
 
     footer {
         margin-top: 0;
+        padding: 1.5em 2em;
+
+        .wrap {
+            width: auto;
+        }
     }
 }
