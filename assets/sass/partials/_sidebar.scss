@@ -29,7 +29,18 @@
     }
 
     .sub-menu {
-        margin: 0 0 0 1em;
+        margin: 10px 0 10px 16px;
+
+        a {
+            font-size: 16px;
+        }
+
+        .sub-menu {
+
+            a {
+                font-size: 14px;
+            }
+        }
     }
 }
 

@@ -23,6 +23,7 @@
     <div class="dialogue">
         <div class="header">
             <h2>Dialogue</h2>
+            <a class="btn" href="#">Subscribe</a>
         </div>
         <div class="dialogue-content">
             <p>"Adapting to Four Generations at Work"</p>
@@ -36,10 +37,11 @@
         <h3>Connect with Duke CE</h3>
         <ul>
             <li><a href="#"><img src="<?php echo bloginfo('template_directory'); ?>/assets/img/i_linkedin.jpg" alt="LinkedIn" /></a></li>
-            <li><a href="#"><img src="<?php echo bloginfo('template_directory'); ?>/assets/img/i_linkedin.jpg" alt="Facebook" /></a></li>
-            <li><a href="#"><img src="<?php echo bloginfo('template_directory'); ?>/assets/img/i_linkedin.jpg" alt="Twitter" /></a></li>
-            <li><a href="#"><img src="<?php echo bloginfo('template_directory'); ?>/assets/img/i_linkedin.jpg" alt="Youtube" /></a></li>
-            <li><a href="#"><img src="<?php echo bloginfo('template_directory'); ?>/assets/img/i_linkedin.jpg" alt="Email" /></a></li>
+            <li><a href="#"><img src="<?php echo bloginfo('template_directory'); ?>/assets/img/i_facebook.jpg" alt="Facebook" /></a></li>
+            <li><a href="#"><img src="<?php echo bloginfo('template_directory'); ?>/assets/img/i_twitter.jpg" alt="Twitter" /></a></li>
+            <li><a href="#"><img src="<?php echo bloginfo('template_directory'); ?>/assets/img/i_instagram.jpg" alt="Instagram" /></a></li>
+            <li><a href="#"><img src="<?php echo bloginfo('template_directory'); ?>/assets/img/i_youtube.jpg" alt="Youtube" /></a></li>
+            <li><a href="#"><img src="<?php echo bloginfo('template_directory'); ?>/assets/img/i_email.jpg" alt="Email" /></a></li>
         </ul>
     </div>
 </div>
@@ -66,13 +68,13 @@
             <a href="#">Contact</a>
         </li>
         <li>
-            <div class="location-name">Ahmedabad, IN</div>
-            <div class="phone">+91 79 6621 3100</div>
+            <div class="location-name">London, UK</div>
+            <div class="phone">+44 (0)20 7936 6100</div>
             <a href="#">Contact</a>
         </li>
         <li>
-            <div class="location-name">Ahmedabad, IN</div>
-            <div class="phone">+91 79 6621 3100</div>
+            <div class="location-name">Singapore, SG</div>
+            <div class="phone">+65 6701 5300</div>
             <a href="#">Contact</a>
         </li>
     </ul>

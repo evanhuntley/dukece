@@ -78,5 +78,8 @@
 					</li>
 				</ul>
 			</div>
+			<div class="headline">
+				Leadership for What's Next
+			</div>
 		<?php endif; ?>
     </header>

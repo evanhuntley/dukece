@@ -6,6 +6,7 @@
 
     header {
         height: 600px;
+        position: relative;
     }
 
     .header-top {
@@ -21,8 +22,20 @@
         background-size: 100% 100%;
     }
 
+    .search-form {
+        position: absolute;
+        top: 1em;
+        right: -2em;
+
+        input[type="search"] {
+            width: 190px;
+            background: rgba(255, 255, 255, .8);
+        }
+    }
+
     nav {
         position: relative;
+        margin: 0;
         z-index: 6;
 
         .wrap {
@@ -85,6 +98,16 @@
         }
     }
 
+    .headline {
+        position: absolute;
+        bottom: 50px;
+        right: 1.5em;
+        z-index: 4;
+        font-size: 36px;
+        text-transform: uppercase;
+        color: $brand-blue;
+    }
+
     /* Featured Stories ------------------------------ */
     .features {
         @extend %clearfix;
@@ -120,13 +143,21 @@
             width: 40%;
 
             .header {
+                @extend %clearfix;
                 margin: 0 0 1em;
                 padding: .5em 1em;
                 background: $brand-blue;
 
                 h2 {
-                    margin: 0;
+                    float: left;
+                    margin: .25em 0;
                     color: #fff;
+                }
+
+                .btn {
+                    float: right;
+                    margin-top: 8px;
+                    background: #fff;
                 }
             }
 
@@ -169,6 +200,8 @@
             padding-right: 2em;
 
             h3 {
+                font-size: 20px;
+                font-family: "Source Sans Pro", Arial, sans-serif;
                 border-bottom: 3px solid #273452;
             }
 
