@@ -7,7 +7,16 @@
             if ( $menu == '-- Inherit --') {
                 $parent_id = wp_get_post_parent_id( $post_ID );
                 $new_menu = get_post_meta( $parent_id, 'meta-box-dropdown', true );
-                wp_nav_menu( array('menu' => $new_menu, 'container' => ''));
+
+                while ( $new_menu == '-- Inherit --') {
+                    $parent_id = wp_get_post_parent_id( $parent_id );
+                    $new_menu = get_post_meta( $parent_id, 'meta-box-dropdown', true );
+                }
+
+                if ( $new_menu != '-- None --') {
+                    wp_nav_menu( array('menu' => $new_menu, 'container' => ''));
+                }
+
             } else {
                 wp_nav_menu( array('menu' => $menu, 'container' => ''));
             }
