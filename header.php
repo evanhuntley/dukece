@@ -74,6 +74,9 @@
 						<div style="background-image: url('<?php echo bloginfo('template_directory'); ?>/assets/img/bg_climbers.jpg');" ></div>
 					</li>
 					<li>
+						<div style="background-image: url('<?php echo bloginfo('template_directory'); ?>/assets/img/bg_americas-cup-2.jpg');"></div>
+					</li>
+					<li>
 						<div style="background-image: url('<?php echo bloginfo('template_directory'); ?>/assets/img/bg_pencil.jpg');"></div>
 					</li>
 				</ul>
