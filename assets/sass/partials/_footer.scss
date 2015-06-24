@@ -5,12 +5,51 @@
 footer {
     width: 100%;
     float: left;
-    margin: 1em 0 0;
     padding: 1.5em 0;
     background: #1e376c;
 
     .footer-logo {
         width: 178px;
+        float: right;
+    }
+}
+
+
+.sub-footer {
+    width: 100%;
+    float: left;
+    margin: 3em 0 0;
+    font-size: 11px;
+    color: $brand-blue;
+
+    ul {
+        width: 225px;
+        float: left;
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: inline-block;
+
+            &:first-child {
+
+                a {
+                    padding-left: 0;
+                    border-left: none;
+                }
+            }
+
+            a {
+                padding: 0 4px;
+                color: $brand-blue;
+                text-transform: uppercase;
+                border-left: 1px solid $brand-blue;
+            }
+        }
+    }
+
+    p {
+        width: 749px;
         float: right;
     }
 }

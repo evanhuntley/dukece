@@ -45,9 +45,9 @@
         	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="logo"><?php bloginfo( 'name' ); ?></a>
 			<?php get_search_form(); ?>
 			<ul class="utility-nav">
-				<li><a href="/">Home</a></li>
-				<li><a href="/contact">Contact</a></li>
-				<li><a href="/news-and-media">News and Media</a></li>
+				<li><a href="<?php echo get_site_url(); ?>">Home</a></li>
+				<li><a href="<?php echo get_site_url(); ?>/index.php/contact">Contact</a></li>
+				<li><a href="<?php echo get_site_url(); ?>/index.php/news-and-media">News and Media</a></li>
 			</ul>
 		</div>
         <nav role="navigation">
@@ -74,10 +74,10 @@
 						<div style="background-image: url('<?php echo bloginfo('template_directory'); ?>/assets/img/bg_climbers.jpg');" ></div>
 					</li>
 					<li>
-						<div style="background-image: url('<?php echo bloginfo('template_directory'); ?>/assets/img/bg_americas-cup-2.jpg');"></div>
+						<div style="background-image: url('<?php echo bloginfo('template_directory'); ?>/assets/img/bg_pencil.jpg');"></div>
 					</li>
 					<li>
-						<div style="background-image: url('<?php echo bloginfo('template_directory'); ?>/assets/img/bg_pencil.jpg');"></div>
+						<div style="background-image: url('<?php echo bloginfo('template_directory'); ?>/assets/img/bg_americas-cup-2.jpg');"></div>
 					</li>
 				</ul>
 			</div>

@@ -34,6 +34,6 @@
 <div class="cta widget">
     <h3>Get More Information</h3>
     <a class="btn" href="#">Download Duke CE Brochure</a>
-    <a class="btn btn-action" href="#">Get in Touch</a>
+    <a class="btn btn-action" href="<?php echo get_site_url(); ?>/index.php/contact">Get in Touch</a>
 </div>
 </aside>
