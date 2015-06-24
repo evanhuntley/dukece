@@ -52,7 +52,7 @@
             <li><a href="https://www.linkedin.com/companies/20660"><img src="<?php echo bloginfo('template_directory'); ?>/assets/img/i_linkedin.jpg" alt="LinkedIn" /></a></li>
             <li><a href="http://www.facebook.com/pages/Duke-Corporate-Education/135647923775"><img src="<?php echo bloginfo('template_directory'); ?>/assets/img/i_facebook.jpg" alt="Facebook" /></a></li>
             <li><a href="https://twitter.com/DukeCorpEd"><img src="<?php echo bloginfo('template_directory'); ?>/assets/img/i_twitter.jpg" alt="Twitter" /></a></li>
-            <li><a href=""><img src="<?php echo bloginfo('template_directory'); ?>/assets/img/i_instagram.jpg" alt="Instagram" /></a></li>
+            <li><a href="https://instagram.com/dukecorporateeducation/"><img src="<?php echo bloginfo('template_directory'); ?>/assets/img/i_instagram.jpg" alt="Instagram" /></a></li>
             <li><a href="https://www.youtube.com/user/DukeCorpEd"><img src="<?php echo bloginfo('template_directory'); ?>/assets/img/i_youtube.jpg" alt="Youtube" /></a></li>
             <li><a href="<?php echo get_site_url(); ?>/index.php/contact"><img src="<?php echo bloginfo('template_directory'); ?>/assets/img/i_email.jpg" alt="Email" /></a></li>
         </ul>
