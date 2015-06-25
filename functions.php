@@ -1,5 +1,25 @@
 <?php
 
+function load_jquery() {
+
+    // only use this method is we're not in wp-admin
+    if ( ! is_admin() ) {
+
+        // deregister the original version of jQuery
+        wp_deregister_script('jquery');
+
+        // register it again, this time with no file path
+        wp_register_script('jquery', '', FALSE, '1.11.3');
+
+        // add it back into the queue
+        wp_enqueue_script('jquery');
+
+    }
+
+}
+
+add_action('template_redirect', 'load_jquery');
+
 add_theme_support( 'menus' );
 
 if ( function_exists('register_sidebar') )
@@ -164,5 +184,12 @@ function save_custom_meta_box($post_id, $post, $update)
 }
 
 add_action("save_post", "save_custom_meta_box", 10, 3);
+
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+remove_action( 'admin_print_styles', 'print_emoji_styles' );
+
+add_filter( 'gform_init_scripts_footer', '__return_true' );
 
 ?>

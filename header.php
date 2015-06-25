@@ -36,7 +36,8 @@
 	<link rel="stylesheet" href="<?php bloginfo( 'template_directory' ); ?>/assets/css/style.css" />
 <!-- Stylesheets -->
 
-	<?php wp_deregister_script('jquery');wp_head(); ?>
+	<?php wp_head(); ?>
+
 </head>
 
 <body <?php body_class(); ?> id="top">

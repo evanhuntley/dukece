@@ -77,8 +77,8 @@ a {
 	}
 
 a:focus {
-    outline: thin dotted;
-    }
+    outline: none;
+}
 
 strong, b {
 	font-weight: $bold;

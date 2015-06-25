@@ -18,12 +18,12 @@
 	</div>
 </footer>
 
-<?php wp_footer(); ?>
-
 <!-- Scripts -->
+<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/libs/jquery-1.11.3.min.js"><\/script>')</script>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>!window.jQuery && document.write(unescape('%3Cscript src="<?php echo bloginfo('template_directory'); ?>/assets/scripts/jquery-2.0.3.min.js"%3E%3C/script%3E'))</script>
+	<?php wp_footer(); ?>	
 
     <script src="<?php echo bloginfo('template_directory'); ?>/assets/scripts/scripts.min.js"></script>
 
