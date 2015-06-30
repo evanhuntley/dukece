@@ -31,9 +31,16 @@
 } else { ?>
     <?php dynamic_sidebar('sidebar-1'); ?>
 <?php } ?>
-<div class="cta widget">
-    <h3>Get More Information</h3>
-    <a class="btn" href="#">Download Duke CE Brochure</a>
-    <a class="btn btn-action" href="<?php echo get_site_url(); ?>/index.php/contact">Get in Touch</a>
-</div>
+    <div class="cta widget">
+        <h3>Get More Information</h3>
+        <a class="btn" href="#">Download Duke CE Brochure</a>
+        <a class="btn btn-action" href="<?php echo get_site_url(); ?>/index.php/contact">Get in Touch</a>
+    </div>
+    <div class="dialogue widget">
+        <?php
+            $dialogue_image = ot_get_option("sidebar_image");
+        ?>
+        <a href="http://dialoguereview.com/download-dialogue-journal-archive"><img src="<?php echo $dialogue_image; ?>" /></a>
+        <a href="http://dialoguereview.com/download-dialogue-journal-archive">Access <em>Dialogue</em></a>
+    </div>
 </aside>

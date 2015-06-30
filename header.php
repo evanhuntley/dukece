@@ -30,20 +30,30 @@
 	<link rel="apple-touch-icon" href="<?php echo bloginfo('template_directory'); ?>/apple-touch-icon-precomposed.png"/>
 <!-- The little things -->
 
+<!--[if lt IE 9]>
+    <script src="<?php bloginfo( 'template_directory' ); ?>/assets/scripts/html5shiv.js"></script>
+<![endif]-->
+
 <!-- Stylesheets -->
-<link href='//fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+	<link href='//fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
 	<link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="<?php bloginfo( 'template_directory' ); ?>/assets/css/style.css" />
 <!-- Stylesheets -->
 
-	<?php wp_head(); ?>
+<?php wp_head(); ?>
 
 </head>
 
 <body <?php body_class(); ?> id="top">
     <header role="banner">
 		<div class="header-top <?php if ( !is_front_page() ) { echo 'wrap'; } ?>">
-        	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="logo"><?php bloginfo( 'name' ); ?></a>
+        	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="logo">
+			<?php if ( !is_front_page() ) : ?>
+				<img src="<?php bloginfo( 'template_directory' ); ?>/assets/img/l_duke-ce-extended.png" alt="<?php bloginfo( 'name' ); ?>" />
+			<?php else : ?>
+				<img src="<?php bloginfo( 'template_directory' ); ?>/assets/img/l_duke-ce.png" alt="<?php bloginfo( 'name' ); ?>" />
+			<?php endif; ?>
+			</a>
 			<?php get_search_form(); ?>
 			<ul class="utility-nav">
 				<li><a href="<?php echo get_site_url(); ?>">Home</a></li>

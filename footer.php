@@ -1,3 +1,6 @@
+<?php
+	$footer_sentence = ot_get_option("footer_text");
+?>
 <?php if ( !is_front_page() ) : ?>
 	<div class="sub-footer">
 		<div class="wrap">
@@ -6,7 +9,7 @@
 			<li><a href="<?php echo get_site_url(); ?>/index.php/terms-of-use">Terms of Use</a></li>
 			<li><a href="<?php echo get_site_url(); ?>/index.php/feedback">Feedback</a></li>
 		</ul>
-		<p>Duke Corporate Education provides learning and development services around the globe to help large organizations address real-world business challenges.</p>
+		<p><?php echo $footer_sentence; ?></p>
 		</div>
 	</div>
 <?php endif; ?>
@@ -23,7 +26,7 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/libs/jquery-1.11.3.min.js"><\/script>')</script>
 
-	<?php wp_footer(); ?>	
+	<?php wp_footer(); ?>
 
     <script src="<?php echo bloginfo('template_directory'); ?>/assets/scripts/scripts.min.js"></script>
 

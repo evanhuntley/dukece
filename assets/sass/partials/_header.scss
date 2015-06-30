@@ -7,13 +7,10 @@ header {
     padding: 1em 0 0;
 
     .logo {
-        @extend %ir;
         display: block;
         float: left;
         width: 250px;
         height: 73px;
-        background: url('../img/l_duke-ce-extended.png') no-repeat;
-        background-size: 250px 73px;
     }
 
     .search-form {

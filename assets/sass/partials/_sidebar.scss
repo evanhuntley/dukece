@@ -58,4 +58,17 @@
         width: 100%;
         color: #fff;
     }
+
+    &.dialogue {
+        margin: 2em 0 0;
+
+        a {
+            display: block;
+            margin: .5em 0 0;
+        }
+
+        img {
+            border: 1px solid #ececec;
+        }
+    }
 }

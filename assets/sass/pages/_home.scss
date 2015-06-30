@@ -18,8 +18,6 @@
     .logo {
         width: 178px;
         height: 80px;
-        background: url('../img/l_duke-ce.png') no-repeat;
-        background-size: 100% 100%;
     }
 
     .search-form {
@@ -29,6 +27,7 @@
 
         input[type="search"] {
             width: 190px;
+            background: #fff;
             background: rgba(255, 255, 255, .8);
         }
     }
@@ -53,6 +52,7 @@
             display: block;
             width: 260px;
             margin: 0 0 5px;
+            background: #626262;
             background: rgba(0, 0, 0, .7);
             transition: all .2s;
 

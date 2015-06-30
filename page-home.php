@@ -23,21 +23,21 @@
     <ul class="stories">
         <li>
             <a class="title" href="<?php echo $block_1_url; ?>"><?php echo $block_1_title; ?></a>
-            <img src="<?php echo $block_1_image; ?>" />
+            <a class="title" href="<?php echo $block_1_url; ?>"><img src="<?php echo $block_1_image; ?>" /></a>
         </li>
         <li>
             <a class="title" href="<?php echo $block_2_url; ?>"><?php echo $block_2_title; ?></a>
-            <img src="<?php echo $block_2_image; ?>" />
+            <a class="title" href="<?php echo $block_2_url; ?>"><img src="<?php echo $block_2_image; ?>" /></a>
         </li>
         <li>
             <a class="title" href="<?php echo $block_3_url; ?>"><?php echo $block_3_title; ?></a>
-            <img src="<?php echo $block_3_image; ?>" />
+            <a class="title" href="<?php echo $block_3_url; ?>"><img src="<?php echo $block_3_image; ?>" /></a>
         </li>
     </ul>
     <div class="dialogue">
         <div class="header">
             <h2>Duke CE Leadership Insights</h2>
-            <a class="btn" href="#">Subscribe</a>
+            <a class="btn" href="<?php echo get_site_url(); ?>/index.php/subscribe">Subscribe</a>
         </div>
         <div class="dialogue-content">
             <?php echo $dialogue_content; ?>
