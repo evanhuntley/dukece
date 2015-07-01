@@ -22,7 +22,7 @@
 
 			<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:' ), 'after' => '</div>' ) ); ?>
 
-			<?php comments_template( '', true ); ?>
+			<?php //comments_template( '', true ); ?>
 
             <?php endwhile; // end of the loop. ?>
         </article>

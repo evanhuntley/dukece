@@ -40,7 +40,7 @@
 						echo '</div>';
 				} ?>
 				<div class="excerpt <?php if (get_post_type() == 'post') { echo 'post';} ?>">
-                	<?php the_excerpt(); ?>
+                	<?php the_excerpt('Read More'); ?>
 				</div>
 			</div>
 		</article>

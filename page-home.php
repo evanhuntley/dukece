@@ -77,12 +77,12 @@
         </li>
         <li>
             <div class="location-name">Johannesburg, ZA</div>
-            <div class="phone">+27 (0)11 575 6241</div>
+            <div class="phone">+27 11 575 6241</div>
             <a href="<?php echo get_site_url(); ?>/index.php/contact?location=africa">Contact</a>
         </li>
         <li>
             <div class="location-name">London, UK</div>
-            <div class="phone">+44 (0)20 7936 6100</div>
+            <div class="phone">+44 20 7936 6100</div>
             <a href="<?php echo get_site_url(); ?>/index.php/contact?location=europe">Contact</a>
         </li>
         <li>

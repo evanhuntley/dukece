@@ -11,7 +11,7 @@
 
         <article role="main" class="primary-content type-page" id="post-<?php the_ID(); ?>">
             <h1>Oops! Something went wrong...</h1>
-            <p>We weren't able to locate the page you're looking for.  Try navigating to our home page for more info.</p>
+            <p>We weren't able to locate the page you're looking for.  Try navigating to our <a href="<?php echo get_site_url(); ?>">home page</a> for more info.</p>
         </article>
         <?php get_sidebar(); ?>
     </div>

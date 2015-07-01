@@ -33,7 +33,10 @@
 <?php } ?>
     <div class="cta widget">
         <h3>Get More Information</h3>
-        <a class="btn" href="#">Download Duke CE Brochure</a>
+        <?php
+            $sidebar_brochure = ot_get_option("sidebar_brochure");
+        ?>
+        <a class="btn" href="<?php echo $sidebar_brochure; ?>">Download Duke CE Brochure</a>
         <a class="btn btn-action" href="<?php echo get_site_url(); ?>/index.php/contact">Get in Touch</a>
     </div>
     <div class="dialogue widget">

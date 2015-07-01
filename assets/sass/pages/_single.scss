@@ -1,3 +1,16 @@
 // This is where you can put any styles specific to an individual post
 // .single is the class WordPress outputs to the body tag
-.single {}
+.single {
+
+}
+
+.primary-content a.loop-item {
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.moretag {
+    margin-left: 5px;
+}
