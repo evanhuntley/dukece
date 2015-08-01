@@ -22,11 +22,12 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=1024">
 <meta http-equiv="ClearType" content="true" />
+<meta http-equiv="X-UA-Compatible" content="edge" />
 
 <!-- The little things -->
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-    <link rel="shortcut icon" href="<?php echo bloginfo('template_directory'); ?>/favicon.ico">
+    <link rel="shortcut icon" href="<?php echo bloginfo('template_directory'); ?>/favicon.ico?v=2">
 	<link rel="apple-touch-icon" href="<?php echo bloginfo('template_directory'); ?>/apple-touch-icon-precomposed.png"/>
 <!-- The little things -->
 
