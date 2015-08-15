@@ -20,26 +20,28 @@
 	}
 ?>" />
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta name="viewport" content="width=1024">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="ClearType" content="true" />
 <meta http-equiv="X-UA-Compatible" content="edge" />
 
 <!-- The little things -->
+	<link rel="dns-prefetch" href="//www.dukece.com">
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
     <link rel="shortcut icon" href="<?php echo bloginfo('template_directory'); ?>/favicon.ico?v=2">
 	<link rel="apple-touch-icon" href="<?php echo bloginfo('template_directory'); ?>/apple-touch-icon-precomposed.png"/>
 <!-- The little things -->
 
-<!--[if lt IE 9]>
-    <script src="<?php bloginfo( 'template_directory' ); ?>/assets/scripts/html5shiv.js"></script>
-<![endif]-->
-
 <!-- Stylesheets -->
 	<link href='//fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
 	<link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="<?php bloginfo( 'template_directory' ); ?>/assets/css/style.css" />
 <!-- Stylesheets -->
+
+<!--[if lt IE 9]>
+    <script src="<?php bloginfo( 'template_directory' ); ?>/assets/scripts/html5shiv.js"></script>
+	<script src="<?php bloginfo( 'template_directory' ); ?>/assets/scripts/respond.min.js"></script>
+<![endif]-->
 
 <?php wp_head(); ?>
 
@@ -73,6 +75,7 @@
 				<li><a href="<?php echo get_site_url(); ?>/index.php/contact">Contact</a></li>
 				<li><a href="<?php echo get_site_url(); ?>/index.php/news-and-media">News and Media</a></li>
 			</ul>
+			<button class="nav-toggle">Menu</button>
 		</div>
         <nav role="navigation">
 			<?php if ( !is_front_page() ) : ?>

@@ -1,6 +1,6 @@
 <aside role="complementary" class="secondary-content">
     <?php if ( get_post_type() == 'page') {
-
+        $post_ID = $post->ID;
         $menu = get_post_meta( get_the_ID(), 'meta-box-dropdown', true );
         if ( $menu && ($menu != '-- None --') && !is_search() ) {
             echo '<nav class="subnav">';

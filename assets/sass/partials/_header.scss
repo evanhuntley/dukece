@@ -57,11 +57,29 @@ header {
         }
     }
 
+    .nav-toggle {
+
+        @include bp-l {
+            display: none;
+        }
+    }
+
     nav {
-        float: left;
-        width: 100%;
-        margin: 1em 0 0;
-        background: #1e376c;
+        display: none;
+        position: absolute;
+
+        @include bp-l {
+            display: block;
+            position: static;
+            float: left;
+            width: 100%;
+            margin: 1em 0 0;
+            background: #1e376c;
+        }
+
+        &.open {
+            display: block;
+        }
 
         .main-menu {
             margin: 0;

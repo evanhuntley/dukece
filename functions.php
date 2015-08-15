@@ -24,6 +24,7 @@ add_theme_support( 'menus' );
 
 if ( function_exists('register_sidebar') )
 	register_sidebar(array(
+        'id'            => 'sidebar-1',
 		'before_widget' => '<div class="widget">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3>',

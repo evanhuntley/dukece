@@ -46,17 +46,28 @@ figure {
     }
 
 .wrap {
-    width: 1024px;
     margin: 0 auto;
+    padding: 0 1em;
+
+    @include bp-xl {
+        padding: 0;
+        max-width: 1024px;
+    }
 }
 
 .primary-content {
-    float: right;
-    width: 749px;
+
+    @include bp-l {
+        float: right;
+        width: 73%;
+    }
 }
 
 .secondary-content {
-    float: left;
-    width: 225px;
-    margin-right: 50px;
+
+    @include bp-l {
+        float: left;
+        width: 22%;
+        margin-right: 5%;
+    }
 }

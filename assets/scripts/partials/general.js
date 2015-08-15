@@ -17,11 +17,18 @@ function getUrlVars()
 
 jQuery(function($) {
 
+    // Toggle Nav Menu
+    $('.nav-toggle').on('click', function() {
+        $('header nav').toggleClass('open');
+    });
+
+    // Init Flexslider
     $('.flexslider').flexslider({
         controlNav: false,
         directionNav: false
     });
 
+    // Set Form Region based on URL Hash
     var location = getUrlVars()["location"];
     if ( location ) {
         $('.region-select select').val(location);
