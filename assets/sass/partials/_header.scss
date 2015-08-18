@@ -29,7 +29,7 @@ header {
         position: absolute;
         top: 105px;
         width: 100%;
-        padding: 1em 0 2em;
+        padding: 1em 0 3.5em;
         background: $brand-blue;
         z-index: 1000;
 
@@ -250,13 +250,19 @@ header {
         position: absolute;
         bottom: 1em;
         left: 1em;
-        padding: 0;
+        width: 90%;
+        margin: 0;
+        padding: .5em 0;
+        border-top: 1px solid rgba(0, 0, 0, .25);
 
         @include bp-l {
             float: right;
             clear: right;
             position: static;
+            width: auto;
             margin: .5em 0 0;
+            padding: 0;
+            border: none;
         }
 
         li {
@@ -274,7 +280,11 @@ header {
             font-size: 13px;
             text-decoration: none;
             text-transform: uppercase;
-            color: #1e376c;
+            color: #fff;
+
+            @include bp-l {
+                color: $brand-blue;
+            }
         }
     }
 }
