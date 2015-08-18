@@ -19,7 +19,8 @@ jQuery(function($) {
 
     // Toggle Nav Menu
     $('.nav-toggle').on('click', function() {
-        $('header nav').toggleClass('open');
+        $('.header-wrap').toggleClass('open');
+        $(this).toggleClass('active');
     });
 
     // Init Flexslider

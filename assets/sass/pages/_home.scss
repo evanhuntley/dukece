@@ -7,6 +7,7 @@
     header {
         position: relative;
         height: 380px;
+        padding: 1em 0 0;
 
         @include bp-l {
             height: 600px;
@@ -14,9 +15,14 @@
     }
 
     .header-top {
-        position: relative;
-        margin: 0 2em;
-        z-index: 6;
+        padding: 0 1em;
+
+        @include bp-l {
+            position: relative;
+            margin: 0 2em;
+            padding: 0;
+            z-index: 6;
+        }
     }
 
     .logo {
@@ -25,14 +31,17 @@
     }
 
     .search-form {
-        position: absolute;
-        top: 1em;
-        right: -2em;
 
-        input[type="search"] {
-            width: 190px;
-            background: #fff;
-            background: rgba(255, 255, 255, .8);
+        @include bp-l {
+            position: absolute;
+            top: 1em;
+            right: -2em;
+
+            input[type="search"] {
+                width: 190px;
+                background: #fff;
+                background: rgba(255, 255, 255, .8);
+            }
         }
     }
 
@@ -46,23 +55,29 @@
         }
 
         .main-menu {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 260px;
+
+            @include bp-l {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 260px;
+            }
         }
 
         li {
-            display: block;
-            width: 260px;
-            margin: 0 0 5px;
-            background: #626262;
-            background: rgba(0, 0, 0, .7);
-            transition: all .2s;
 
-            &:hover {
-                width: 267px;
-                margin-left: -7px;
+            @include bp-l {
+                display: block;
+                width: 260px;
+                margin: 0 0 5px;
+                background: #626262;
+                background: rgba(0, 0, 0, .7);
+                transition: all .2s;
+
+                &:hover {
+                    width: 267px;
+                    margin-left: -7px;
+                }
             }
         }
 
@@ -82,7 +97,10 @@
     }
 
     .utility-nav {
-        display: none;
+
+        @include bp-l {
+            display: none;
+        }
     }
 
     /* Slider ---------------------------------------- */
@@ -114,7 +132,7 @@
 
     .headline {
         position: absolute;
-        bottom: 0;
+        bottom: -10px;
         width: 100%;
         padding: 10px 1em;
         background: rgba(30, 55, 108, 0.9);
@@ -159,11 +177,13 @@
             li {
                 float: left;
                 padding: 1em;
+                margin: 0 0 1em;
                 background: #eee;
 
                 @include bp-l {
                     width: 30%;
                     margin-right: 3%;
+                    margin-bottom: 0;
                 }
 
                 a {

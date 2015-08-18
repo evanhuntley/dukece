@@ -61,38 +61,42 @@
 
 <body <?php body_class(); ?> id="top">
     <header role="banner">
-		<div class="header-top <?php if ( !is_front_page() ) { echo 'wrap'; } ?>">
-        	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="logo">
+		<div class="logo-wrap wrap">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="logo">
 			<?php if ( !is_front_page() ) : ?>
 				<img src="<?php bloginfo( 'template_directory' ); ?>/assets/img/l_duke-ce-extended.png" alt="<?php bloginfo( 'name' ); ?>" />
 			<?php else : ?>
 				<img src="<?php bloginfo( 'template_directory' ); ?>/assets/img/l_duke-ce.png" alt="<?php bloginfo( 'name' ); ?>" />
 			<?php endif; ?>
 			</a>
-			<?php get_search_form(); ?>
-			<ul class="utility-nav">
-				<li><a href="<?php echo get_site_url(); ?>">Home</a></li>
-				<li><a href="<?php echo get_site_url(); ?>/index.php/contact">Contact</a></li>
-				<li><a href="<?php echo get_site_url(); ?>/index.php/news-and-media">News and Media</a></li>
-			</ul>
-			<button class="nav-toggle">Menu</button>
 		</div>
-        <nav role="navigation">
-			<?php if ( !is_front_page() ) : ?>
-			<div class="wrap">
-			<?php endif; ?>
-            <?php
-                $args = array(
-					'menu' => 'Main Navigation',
-                    'container' => 'false',
-                    'items_wrap' => '<ul class="main-menu">%3$s</ul>',
-                );
-                wp_nav_menu($args);
-            ?>
-			<?php if ( !is_front_page() ) : ?>
+		<button class="nav-toggle"><span></span></button>
+		<div class="header-wrap">
+			<div class="header-top <?php if ( !is_front_page() ) { echo 'wrap'; } ?>">
+				<?php get_search_form(); ?>
+				<ul class="utility-nav">
+					<li><a href="<?php echo get_site_url(); ?>">Home</a></li>
+					<li><a href="<?php echo get_site_url(); ?>/index.php/contact">Contact</a></li>
+					<li><a href="<?php echo get_site_url(); ?>/index.php/news-and-media">News and Media</a></li>
+				</ul>
 			</div>
-			<?php endif; ?>
-        </nav>
+	        <nav role="navigation">
+				<?php if ( !is_front_page() ) : ?>
+				<div class="wrap">
+				<?php endif; ?>
+	            <?php
+	                $args = array(
+						'menu' => 'Main Navigation',
+	                    'container' => 'false',
+	                    'items_wrap' => '<ul class="main-menu">%3$s</ul>',
+	                );
+	                wp_nav_menu($args);
+	            ?>
+				<?php if ( !is_front_page() ) : ?>
+				</div>
+				<?php endif; ?>
+	        </nav>
+		</div>
 
 		<?php if ( is_front_page() ) : ?>
 			<div class="flexslider">
