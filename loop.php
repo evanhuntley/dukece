@@ -10,16 +10,16 @@
         </article>
     <?php endif; ?>
 <?php ?>
-
+<?php if ( !is_home() ) : ?>
     <h1>
         <?php if ( is_day() ) : ?><?php printf( __( '<span>Daily Archive</span> %s' ), get_the_date() ); ?>
         <?php elseif ( is_month() ) : ?><?php printf( __( '<span>Monthly Archive</span> %s' ), get_the_date('F Y') ); ?>
         <?php elseif ( is_year() ) : ?><?php printf( __( '<span>Yearly Archive</span> %s' ), get_the_date('Y') ); ?>
         <?php elseif ( is_category() ) : ?><?php echo single_cat_title(); ?>
         <?php elseif ( is_search() ) : ?><?php printf( __( 'Search Results for: %s' ), '<span>' . get_search_query() . '</span>' ); ?>
-        <?php elseif ( is_home() ) : ?>Leadership for What's Next<?php else : ?>
         <?php endif; ?>
     </h1>
+<?php endif; ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
 	<?php /* How to display standard posts and search results */ ?>

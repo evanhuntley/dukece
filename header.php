@@ -39,8 +39,8 @@
 <!-- Stylesheets -->
 
 <!--[if lt IE 9]>
-    <script src="<?php bloginfo( 'template_directory' ); ?>/assets/scripts/html5shiv.js"></script>
-	<script src="<?php bloginfo( 'template_directory' ); ?>/assets/scripts/respond.min.js"></script>
+    <script src="<?php bloginfo( 'template_directory' ); ?>/assets/js/vendor/html5shiv.js"></script>
+	<script src="<?php bloginfo( 'template_directory' ); ?>/assets/js/vendor/respond.min.js"></script>
 <![endif]-->
 
 <?php wp_head(); ?>

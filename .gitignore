@@ -24,5 +24,10 @@ CVS
 node_modules
 
 # Compiled items
-assets/scripts/scripts.min.js
-assets/css/style.css
+assets/scripts/
+assets/css/
+src/components/
+
+# Deployment
+deploy
+rsync_exclude.txt

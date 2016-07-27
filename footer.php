@@ -21,16 +21,9 @@
 	</div>
 </footer>
 
-<!-- Scripts -->
-<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="js/libs/jquery-1.11.3.min.js"><\/script>')</script>
+<?php wp_footer(); ?>
 
-	<?php wp_footer(); ?>
-
-    <script src="<?php echo bloginfo('template_directory'); ?>/assets/scripts/scripts.min.js"></script>
-
-<!-- Scripts -->
+<script src="<?php echo bloginfo('template_directory'); ?>/assets/js/scripts.min.js"></script>
 
 <?php if ( is_singular() ) wp_print_scripts( 'comment-reply' ); ?>
 </body>

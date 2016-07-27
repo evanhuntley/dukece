@@ -50,7 +50,7 @@ jQuery(function($) {
     });
 
     // Set Form Region based on URL Hash
-    var location = getUrlVars()["location"];
+    var location = getUrlVars().location;
     if ( location ) {
         $('.region-select select').val(location);
     }
