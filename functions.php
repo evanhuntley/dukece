@@ -212,4 +212,20 @@ function wpdocs_custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 
+
+/**
+ * Toolset Types and ACF Pro output a legacy version of select2 on
+ * SearchWP's settings screen which in turn breaks it. This fixes that.
+ */
+function my_handle_unwanted_legacy_select2() {
+	if ( ! did_action( 'searchwp_settings_init' ) ) {
+		return;
+	}
+	wp_dequeue_style( 'select2' );
+	wp_deregister_style( 'select2' );
+	wp_dequeue_script( 'select2');
+	wp_deregister_script('select2');
+}
+add_action( 'init', 'my_handle_unwanted_legacy_select2', 999 );
+
 ?>

@@ -14,8 +14,18 @@
 		}?>
 	</div>
 
-	<div role="main" class="primary-content type-archive">
+	<div role="main" class="primary-content type-archive article-archive">
 		<h1><?= __('Article Library') ?></h1>
+		<div class="search-box">
+			<form role="search" method="get" class="search-form" action="<?php echo get_permalink(2214); ?>">
+				<label>
+					<span class="sr-only">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search …" value="" name="swpquery" title="Search for:">
+				</label>
+				<input type="submit" class="search-submit" value="Search">
+			</form>
+		</div>
+		<p class="article-intro">Access original and practical business insight from Duke CE thought leaders in Dialogue, with focus on <a href="/article-categories/leadership">Leadership</a>, <a href="/article-categories/innovation">Innovation</a>, <a href="/article-categories/strategy">Strategy</a>, <a href="/article-categories/finance">Finance</a> and <a href="/article-categories/leadership">Marketing</a>.</p>
 		<div class="article-list">
 			<?php
 				// Rewind Query and Get Items
@@ -31,6 +41,9 @@
 					</article>
 
 			<?php endwhile; ?>
+		</div>
+		<div class="pagination">
+			<?php echo paginate_links(); ?>
 		</div>
 	</div>
 

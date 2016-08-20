@@ -1,5 +1,5 @@
 <aside role="complementary" class="secondary-content">
-    <?php if ( get_post_type() == 'page') {
+    <?php if ( get_post_type() == 'page' && is_page('2214') === false) {
         $post_ID = $post->ID;
         $menu = get_post_meta( get_the_ID(), 'meta-box-dropdown', true );
         if ( $menu && ($menu != '-- None --') && !is_search() ) {
@@ -28,15 +28,16 @@
         echo '</nav>';
     } elseif (get_post_type() == 'post'){
         dynamic_sidebar('sidebar-1');
-    } elseif (is_post_type_archive('article-library')) {
-        $terms = get_terms( array(
-            'taxonomy' => 'article-categories'
-        ) );
-
-        foreach($terms as $term) {
-            echo '<a href="/article-categories/' . $term->slug . '">' . $term->name . '</a>';
-        }
     } ?>
+    <?php if (is_post_type_archive('article-library') || is_tax('article-categories') || is_page('2214')) : ?>
+        <ul class="article-category-list">
+            <li><a href="/article-categories/leadership">Leadership</a></li>
+            <li><a href="/article-categories/innovation">Innovation</a></li>
+            <li><a href="/article-categories/strategy">Strategy</a></li>
+            <li><a href="/article-categories/finance">Finance</a></li>
+            <li><a href="/article-categories/leadership">Marketing</a></li>
+        </ul>
+    <?php endif; ?>
     <div class="cta widget">
         <h3>Get More Information</h3>
         <?php

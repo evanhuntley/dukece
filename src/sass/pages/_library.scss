@@ -6,7 +6,7 @@
     margin: 0 0 1.5em;
 
     @include bp-l {
-        width: 45%;
+        width: 47.5%;
         float: left;
 
         &:nth-child(odd) {
@@ -15,9 +15,28 @@
         }
     }
 
+    @include bp-xl {
+        width: 31%;
+        margin-right: 3.5%;
+
+        &:nth-child(odd) {
+            margin-right: 3.5%;
+            clear: none;
+        }
+
+        &:nth-child(3n){
+            margin-right: 0;
+        }
+
+        &:nth-child(3n+1) {
+            clear: left;
+        }
+    }
+
     h2 {
         margin: .5em 0 .25em;
         font-family: "Source Sans Pro", Arial, sans-serif;
+        @include font-size(1.375, 1.8);
 
         a {
             text-decoration: none;
@@ -29,5 +48,65 @@
 
     .entry-meta {
         margin-bottom: 1em;
+    }
+}
+
+.article-category-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 1em;
+
+    li {
+        margin: 0 0 1em;
+        text-transform: uppercase;
+        @include font-size(1.2, 1);
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.article-archive {
+
+    @include bp-l {
+
+        h1 {
+            width: 50%;
+            float: left;
+        }
+
+        .search-box {
+            width: 50%;
+            float: right;
+            margin-top: 10px;
+        }
+    }
+
+    .article-intro {
+        width: 100%;
+        float: left;
+    }
+}
+
+.article-list {
+    @extend %clearfix;
+}
+
+.searchwp-results {
+
+    h1 {
+        @include bp-l {
+            width: 50%;
+            float: left;
+            @include font-size(1.875, 2);
+        }
+    }
+}
+
+.pagination {
+
+    span, a {
+        margin-right: 10px;
     }
 }

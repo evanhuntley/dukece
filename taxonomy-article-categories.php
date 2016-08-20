@@ -16,10 +16,11 @@
 
 	<div role="main" class="primary-content type-archive">
 		<h1><?php echo __('Article Library') . ': ' . $wp_query->queried_object->name; ?></h1>
+		<?php rewind_posts();
+		if ( have_posts() ) : ?>
 		<div class="article-list">
 			<?php
 				// Rewind Query and Get Items
-				rewind_posts();
 				while ( have_posts() ) : the_post(); ?>
 
 					<article class="library-item">
@@ -31,6 +32,12 @@
 					</article>
 
 			<?php endwhile; ?>
+		</div>
+		<?php else : ?>
+			<p>Sorry, there are no articles available in this category.</p>
+		<?php endif; ?>
+		<div class="pagination">
+			<?php echo paginate_links(); ?>
 		</div>
 	</div>
 
