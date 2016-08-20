@@ -22,15 +22,21 @@
             }
             echo '</nav>';
         }
-    ?>
+    } elseif ( get_post_type() == 'people') {
+        echo '<nav class="subnav">';
+        wp_nav_menu( array('menu' => 'About Section', 'container' => ''));
+        echo '</nav>';
+    } elseif (get_post_type() == 'post'){
+        dynamic_sidebar('sidebar-1');
+    } elseif (is_post_type_archive('article-library')) {
+        $terms = get_terms( array(
+            'taxonomy' => 'article-categories'
+        ) );
 
-<?php } elseif ( get_post_type() == 'people') {
-    echo '<nav class="subnav">';
-    wp_nav_menu( array('menu' => 'About Section', 'container' => ''));
-    echo '</nav>';
-} else { ?>
-    <?php dynamic_sidebar('sidebar-1'); ?>
-<?php } ?>
+        foreach($terms as $term) {
+            echo '<a href="/article-categories/' . $term->slug . '">' . $term->name . '</a>';
+        }
+    } ?>
     <div class="cta widget">
         <h3>Get More Information</h3>
         <?php

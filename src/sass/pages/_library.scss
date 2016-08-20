@@ -1,0 +1,33 @@
+/* ===================================================================
+    Article Library
+====================================================================== */
+
+.library-item {
+    margin: 0 0 1.5em;
+
+    @include bp-l {
+        width: 45%;
+        float: left;
+
+        &:nth-child(odd) {
+            margin-right: 5%;
+            clear: left;
+        }
+    }
+
+    h2 {
+        margin: .5em 0 .25em;
+        font-family: "Source Sans Pro", Arial, sans-serif;
+
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+.single-article-library {
+
+    .entry-meta {
+        margin-bottom: 1em;
+    }
+}
