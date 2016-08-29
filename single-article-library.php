@@ -10,9 +10,13 @@
 		</div>
         <article role="main" class="primary-content type-post" id="post-<?php the_ID(); ?>">
             <header>
+				<?php
+					$month = types_render_field("article-display-date", array("raw"=>false, "format"=>"F"));
+					$year = types_render_field("article-display-date", array("raw"=>false, "format"=>"Y"));
+				?>
                 <h1><?php the_title(); ?></h1>
 				<div class="entry-meta">
-	            	<?php echo types_render_field('article-date') . ' - '; ?>
+	            	<?php echo $month . ' ' . $year . ' - '; ?>
 					<?php echo types_render_field('article-author'); ?>
 	            </div>
             </header>

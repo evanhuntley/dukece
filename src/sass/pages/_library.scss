@@ -93,13 +93,27 @@
     @extend %clearfix;
 }
 
-.searchwp-results {
+.searchwp-results, .taxonomy-archive {
 
     h1 {
         @include bp-l {
             width: 50%;
             float: left;
             @include font-size(1.875, 2);
+        }
+    }
+
+    .article-list, .pagination {
+        float: left;
+        width: 100%;
+    }
+
+    .search-box {
+        margin-bottom: 1em;
+
+        @include bp-l {
+            position: relative;
+            top: -8px;            
         }
     }
 }

@@ -35,7 +35,7 @@
             <li><a href="/article-categories/innovation">Innovation</a></li>
             <li><a href="/article-categories/strategy">Strategy</a></li>
             <li><a href="/article-categories/finance">Finance</a></li>
-            <li><a href="/article-categories/leadership">Marketing</a></li>
+            <li><a href="/article-categories/marketing">Marketing</a></li>
         </ul>
     <?php endif; ?>
     <div class="cta widget">

@@ -115,5 +115,23 @@
 			<div class="headline">
 				Leadership for What's Next
 			</div>
+
+			<?php
+				$feature_visible = types_render_field('home-feature-visible', array("raw" => true));
+				$feature_title = types_render_field('home-feature-title', array("raw" => true));
+				$feature_excerpt = types_render_field('home-feature-excerpt', array("raw" => true));
+				$feature_url = types_render_field('home-feature-url', array("raw" => true));
+
+				if ( $feature_visible) :
+			?>
+				<div class="home-feature">
+					<h3 class="subhead">Feature:</h3>
+					<h2><a href="<?php echo $feature_url; ?>"><?php echo $feature_title; ?></a></h2>
+					<div class="excerpt">
+						<?php echo $feature_excerpt; ?>
+						<a class="read-more" href="<?php echo $feature_url; ?>">Read More</a>
+					</div>
+				</div>
+			<?php endif; ?>
 		<?php endif; ?>
     </header>

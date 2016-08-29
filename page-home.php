@@ -44,7 +44,7 @@
         </div>
     </div>
     <div class="ft-block">
-        <p><img src="<?php echo bloginfo('template_directory'); ?>/assets/img/l_financial-times.jpg" alt="Financial Times Logo" /> Ranked among the top 3 in custom executive education globally for 15 consecutive years</p>
+        <p><img src="<?php echo bloginfo('template_directory'); ?>/assets/img/l_financial-times.jpg" alt="Financial Times Logo" /> Ranked among the top 3 in custom executive education globally for 16 consecutive years</p>
     </div>
     <div class="social">
         <h3>Connect with Duke CE</h3>

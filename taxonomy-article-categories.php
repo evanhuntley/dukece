@@ -14,8 +14,17 @@
 		}?>
 	</div>
 
-	<div role="main" class="primary-content type-archive">
+	<div role="main" class="primary-content type-archive article-archive taxonomy-archive">
 		<h1><?php echo __('Article Library') . ': ' . $wp_query->queried_object->name; ?></h1>
+		<div class="search-box">
+			<form role="search" method="get" class="search-form" action="<?php echo get_permalink(2214); ?>">
+				<label>
+					<span class="sr-only">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search …" value="" name="swpquery" title="Search for:">
+				</label>
+				<input type="submit" class="search-submit" value="Search">
+			</form>
+		</div>
 		<?php rewind_posts();
 		if ( have_posts() ) : ?>
 		<div class="article-list">

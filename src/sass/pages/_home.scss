@@ -6,7 +6,7 @@
 
     header {
         position: relative;
-        height: 380px;
+        height: 450px;
         padding: 1em 0 0;
 
         @include bp-l {
@@ -118,7 +118,7 @@
         position: absolute;
         border: none;
         width: 100%;
-        height: 380px;
+        height: 450px;
         top: 0;
         z-index: 3;
 
@@ -128,7 +128,7 @@
 
         div {
             width: 100%;
-            height: 380px;
+            height: 450px;
             background-size: cover;
             background-position: 25% 0;
 
@@ -155,9 +155,57 @@
             width: auto;
             padding: 0;
             z-index: 4;
-            font-size: 36px;
+            font-size: 28px;
             color: $brand-blue;
             background: transparent;
+        }
+
+        @include bp-xl {
+            font-size: 36px;
+        }
+    }
+
+    /* Blue Feature ---------------------------------- */
+    .home-feature {
+        position: absolute;
+        bottom: 35px;
+        left: 0;
+        padding: 1em;
+        @include font-size(.8125, 1.4);
+        background: rgba($brand-blue, .9);
+        z-index: 5;
+        color: #fff;
+
+        @include bp-l {
+            bottom: 0;
+            width: 45%;
+        }
+
+        h2, h3 {
+            color: #fff;
+            font-family: "Source Sans Pro", Arial, sans-serif;
+        }
+
+        h2 {
+            margin-bottom: 4px;
+
+            a {
+                text-transform: none;
+                font-weight: 400;
+            }
+        }
+
+        h3 {
+            margin-bottom: 0;
+            line-height: 1em;
+        }
+
+        a {
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: 700;
+            cursor: pointer;
         }
     }
 
