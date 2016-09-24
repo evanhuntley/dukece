@@ -5,6 +5,11 @@
 		the_post();
 ?>
 
+<?php
+// Custom Order
+$posts = query_posts($query_string . '&orderby=meta_value&meta_key=wpcf-article-display-date&order=desc&posts_per_page=12');
+?>
+
 <div class="wrap">
 
 	<div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">

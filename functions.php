@@ -228,16 +228,4 @@ function my_handle_unwanted_legacy_select2() {
 }
 add_action( 'init', 'my_handle_unwanted_legacy_select2', 999 );
 
-add_action( 'pre_get_posts', 'my_change_sort_order');
-    function my_change_sort_order($query){
-        if(is_post_type_archive('article-library') || is_tax('article-categories')):
-           //Set the order ASC or DESC
-           $query->set( 'order', 'DESC' );
-           //Set the orderby
-           $query->set( 'orderby', 'meta-value' );
-           //Set the meta key
-           $query->set( 'meta-key', 'wpcf-article-display-date');
-        endif;
-    };
-
 ?>
