@@ -31,11 +31,11 @@
     } ?>
     <?php if (is_post_type_archive('article-library') || is_tax('article-categories') || is_page('2214')) : ?>
         <ul class="article-category-list">
-            <li><a href="/article-categories/leadership">Leadership</a></li>
-            <li><a href="/article-categories/innovation">Innovation</a></li>
-            <li><a href="/article-categories/strategy">Strategy</a></li>
-            <li><a href="/article-categories/finance">Finance</a></li>
-            <li><a href="/article-categories/marketing">Marketing</a></li>
+            <li class="<?php echo $wp_query->queried_object->name == 'Leadership' ? 'active' : '';?>"><a href="/article-categories/leadership">Leadership</a></li>
+            <li class="<?php echo $wp_query->queried_object->name == 'Innovation' ? 'active' : '';?>"><a href="/article-categories/innovation">Innovation</a></li>
+            <li class="<?php echo $wp_query->queried_object->name == 'Strategy' ? 'active' : '';?>"><a href="/article-categories/strategy">Strategy</a></li>
+            <li class="<?php echo $wp_query->queried_object->name == 'Finance' ? 'active' : '';?>"><a href="/article-categories/finance">Finance</a></li>
+            <li class="<?php echo $wp_query->queried_object->name == 'Marketing' ? 'active' : '';?>"><a href="/article-categories/marketing">Marketing</a></li>
         </ul>
     <?php endif; ?>
     <div class="cta widget">
