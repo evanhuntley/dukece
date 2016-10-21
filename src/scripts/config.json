@@ -2,7 +2,8 @@
     "outputFileName" : "scripts.js",
     "dependencies" : [
         "src/components/jquery/dist/jquery.js",
-        "src/components/flexslider/jquery.flexslider.js"
+        "src/components/flexslider/jquery.flexslider.js",
+        "src/components/lity/dist/lity.js"
     ],
     "public" : [
         "src/components/css3-mediaqueries-js/css3-mediaqueries.js",

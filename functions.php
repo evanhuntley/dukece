@@ -208,7 +208,7 @@ add_filter('excerpt_more', 'new_excerpt_more');
  * @return int (Maybe) modified excerpt length.
  */
 function wpdocs_custom_excerpt_length( $length ) {
-    return 20;
+    return 18;
 }
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 
@@ -227,5 +227,28 @@ function my_handle_unwanted_legacy_select2() {
 	wp_deregister_script('select2');
 }
 add_action( 'init', 'my_handle_unwanted_legacy_select2', 999 );
+
+
+// Custom Query Vars
+function custom_query_vars_filter($vars) {
+  $vars[] = 'sortby';
+  return $vars;
+}
+add_filter( 'query_vars', 'custom_query_vars_filter' );
+
+
+add_action('pre_get_posts','eh_alter_query');
+function eh_alter_query($query){
+
+      if( $query->is_archive() ){
+        $sortby = get_query_var('sortby');
+
+        if ( $sortby ) {
+            $query->set('order', 'ASC');
+            $query->set('orderby', $sortby);
+        }
+      }
+}
+
 
 ?>

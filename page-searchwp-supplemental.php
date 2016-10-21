@@ -77,7 +77,6 @@ get_header(); ?>
 			// pagination
 			if ( $swp_query->max_num_pages > 1 ) { ?>
 				<div class="navigation pagination" role="navigation">
-					<h2 class="screen-reader-text">Posts navigation</h2>
 					<div class="nav-links">
 						<?php echo wp_kses_post( $pagination ); ?>
 					</div>
