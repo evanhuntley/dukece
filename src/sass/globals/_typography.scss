@@ -117,6 +117,12 @@ blockquote {
         }
     }
 
+sup {
+    position: relative;
+    top: -.15em;
+    vertical-align: top;
+}
+
 .btn, input[type="submit"] {
     display: inline-block;
     margin: 0 0 .5em;

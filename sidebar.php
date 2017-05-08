@@ -52,6 +52,6 @@
             $dialogue_link = ot_get_option("dialogue_link");
         ?>
         <a href="<?php echo $dialogue_link; ?>"><img src="<?php echo $dialogue_image; ?>" /></a>
-        <a href="<?php echo $dialogue_link; ?>">Access <em>Dialogue</em></a>
+        <a href="<?php echo $dialogue_link; ?>">Subscribe</a>
     </div>
 </aside>
