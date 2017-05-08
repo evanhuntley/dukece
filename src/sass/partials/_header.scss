@@ -20,8 +20,8 @@ header {
     .logo {
         display: block;
         float: left;
-        width: 250px;
-        height: 73px;
+        width: 178px;
+        height: 80px;
     }
 
     .header-wrap {
@@ -125,7 +125,6 @@ header {
             display: block;
             position: static;
             margin: 1em 0 0;
-            background: #1e376c;
         }
 
         .main-menu {
@@ -149,7 +148,8 @@ header {
                     }
 
                     a {
-                        background: #001C49;
+                        color: $alt-blue;
+                        text-decoration: underline;
                     }
                 }
             }
@@ -157,7 +157,8 @@ header {
             &:focus {
 
                 a {
-                    background: #001C49;
+                    color: $alt-blue;
+                    text-decoration: underline;
                 }
             }
         }
@@ -165,7 +166,7 @@ header {
         a {
             display: block;
             padding: 1em;
-            color: #fff;
+            color: $dark-gray;
             text-decoration: none;
             text-transform: uppercase;
             transition: none;

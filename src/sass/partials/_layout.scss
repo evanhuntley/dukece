@@ -51,23 +51,10 @@ figure {
 
     @include bp-xl {
         padding: 0;
-        max-width: 1024px;
+        max-width: 1200px;
     }
 }
 
 .primary-content {
 
-    @include bp-l {
-        float: right;
-        width: 73%;
-    }
-}
-
-.secondary-content {
-
-    @include bp-l {
-        float: left;
-        width: 22%;
-        margin-right: 5%;
-    }
 }

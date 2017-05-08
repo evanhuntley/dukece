@@ -9,11 +9,12 @@
 
 */
 
-
-
 /* Colour Palette */
 $white: #fff;
 $brand-blue: #1e376c;
+$alt-blue: #0075c9;
+$dark-gray: #141414;
+$pale-gray: #c8c8c8;
 
 /* REM Font sizing - http://blog.divshot.com/post/29552945105/useful-sass-mixins-for-responsive-design-font-sizing */
 // Use: @include font-size(1,1.5);
@@ -133,4 +134,25 @@ $brand-blue: #1e376c;
     overflow: hidden;
     clip: rect(0,0,0,0);
     border: 0;
+}
+
+// Row Machine (via Chris Coyier)
+@mixin rowMachine($numPerRow, $margin, $bottom: $margin) {
+	width: ((100% - (($numPerRow - 1) * $margin)) / $numPerRow);
+	float: left;
+	
+	&:nth-child(n) {
+		margin-bottom: $bottom;
+		margin-right: $margin;
+		clear: none;
+	}
+	
+	&:nth-child(#{$numPerRow}n) {
+		margin-right: 0;
+		margin-bottom: 0;
+	}
+	
+	&:nth-child(#{$numPerRow}n + 1) {
+		clear: left;
+	}
 }

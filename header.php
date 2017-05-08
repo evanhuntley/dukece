@@ -59,77 +59,55 @@
 
 </head>
 
-<body <?php body_class(); ?> id="top">
+<body <?php body_class(); ?>>
     <header role="banner">
-		<div class="logo-wrap wrap">
+		<div class="wrap">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="logo">
-			<?php if ( !is_front_page() ) : ?>
-				<img src="<?php bloginfo( 'template_directory' ); ?>/assets/img/l_duke-ce-extended.png" alt="<?php bloginfo( 'name' ); ?>" />
-			<?php else : ?>
 				<img src="<?php bloginfo( 'template_directory' ); ?>/assets/img/l_duke-ce.png" alt="<?php bloginfo( 'name' ); ?>" />
-			<?php endif; ?>
 			</a>
-		</div>
-		<button class="nav-toggle"><span></span></button>
-		<div class="header-wrap">
-			<div class="header-top <?php if ( !is_front_page() ) { echo 'wrap'; } ?>">
-				<?php get_search_form(); ?>
-				<ul class="utility-nav">
-					<li><a href="<?php echo get_site_url(); ?>">Home</a></li>
-					<li><a href="<?php echo get_site_url(); ?>/index.php/contact">Contact</a></li>
-					<li><a href="<?php echo get_site_url(); ?>/index.php/news-and-media">News and Media</a></li>
-				</ul>
-			</div>
-	        <nav role="navigation">
-				<?php if ( !is_front_page() ) : ?>
-				<div class="wrap">
-				<?php endif; ?>
-	            <?php
-	                $args = array(
+			<button class="nav-toggle"><span></span></button>
+			<?php get_search_form(); ?>
+			<nav role="navigation">
+				<?php
+					$args = array(
 						'menu' => 'Main Navigation',
-	                    'container' => 'false',
-	                    'items_wrap' => '<ul class="main-menu">%3$s</ul>',
-	                );
-	                wp_nav_menu($args);
-	            ?>
-				<?php if ( !is_front_page() ) : ?>
-				</div>
-				<?php endif; ?>
-	        </nav>
+						'container' => false,
+						'items_wrap' => '<ul class="main-menu">%3$s</ul>',
+					);
+					wp_nav_menu($args);
+				?>
+			</nav>
+		</div>
+	</header>
+
+	<?php if ( is_front_page() ) : ?>
+		<div class="flexslider">
+			<ul class="slides">
+				<li>
+					<div style="background-image: url('<?php echo bloginfo('template_directory'); ?>/assets/img/bg_climbers.jpg');" ></div>
+				</li>
+				<li>
+					<div style="background-image: url('<?php echo bloginfo('template_directory'); ?>/assets/img/bg_pencil.jpg');"></div>
+				</li>
+				<li>
+					<div style="background-image: url('<?php echo bloginfo('template_directory'); ?>/assets/img/bg_americas-cup-2.jpg');"></div>
+				</li>
+			</ul>
 		</div>
 
-		<?php if ( is_front_page() ) : ?>
-			<div class="flexslider">
-				<ul class="slides">
-					<li>
-						<div style="background-image: url('<?php echo bloginfo('template_directory'); ?>/assets/img/bg_climbers.jpg');" ></div>
-					</li>
-					<li>
-						<div style="background-image: url('<?php echo bloginfo('template_directory'); ?>/assets/img/bg_pencil.jpg');"></div>
-					</li>
-					<li>
-						<div style="background-image: url('<?php echo bloginfo('template_directory'); ?>/assets/img/bg_americas-cup-2.jpg');"></div>
-					</li>
-				</ul>
-			</div>
-			<div class="headline">
-				Leadership for What's Next
-			</div>
+		<?php
+			$feature_visible = types_render_field('home-feature-visible', array("raw" => true));
+			$feature_title = types_render_field('home-feature-title', array("raw" => true));
+			$feature_excerpt = types_render_field('home-feature-main-excerpt', array("raw" => true));
+			$feature_url = types_render_field('home-feature-url', array("raw" => true));
 
-			<?php
-				$feature_visible = types_render_field('home-feature-visible', array("raw" => true));
-				$feature_title = types_render_field('home-feature-title', array("raw" => true));
-				$feature_excerpt = types_render_field('home-feature-main-excerpt', array("raw" => true));
-				$feature_url = types_render_field('home-feature-url', array("raw" => true));
-
-				if ( $feature_visible) :
-			?>
-				<div class="home-feature two ">
-					<h2><a data-lity href="<?php echo $feature_url; ?>"><?php echo $feature_title; ?></a></h2>
-					<div class="excerpt">
-						<?php echo $feature_excerpt; ?>
-					</div>
+			if ( $feature_visible) :
+		?>
+			<div class="home-feature two ">
+				<h2><a data-lity href="<?php echo $feature_url; ?>"><?php echo $feature_title; ?></a></h2>
+				<div class="excerpt">
+					<?php echo $feature_excerpt; ?>
 				</div>
-			<?php endif; ?>
+			</div>
 		<?php endif; ?>
-    </header>
+	<?php endif; ?>

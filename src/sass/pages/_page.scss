@@ -2,61 +2,24 @@
     Typical Page
 ====================================================================== */
 
-.breadcrumbs {
-    margin: 0 0 1.5em;
-    padding: 1em 0;
-    text-transform: uppercase;
-    font-size: 13px;
-    font-weight: 400;
-    border-bottom: 1px solid #eee;
-
-    a {
-        color: #1e376c;
-        text-decoration: none;
-        font-weight: 400;
-    }
-
-    .separator {
-        margin: 0 3px;
-        color: #989898;
-    }
-}
-
 /* Main Content ----------------------------------------------------- */
 
-.primary-content, .secondary-content {
-
-    a {
-        color: #003366;
-
-        &:hover {
-            color: #000;
-            text-decoration: none;
-        }
-    }
-
-    .btn {
-
-        &:hover {
-            color: #fff;
-        }
-    }
+.featured-img {
+    min-height: 368px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
 }
 
 .primary-content {
-
-    li {
-        margin-bottom: 1em;
+    padding: 1em 0;
+    font-size: 18px;
+    
+    .wrap {
+        max-width: 1000px;
     }
 }
 
-table {
-
-    td {
-          border: 1px solid #ececec;
-          padding: .5em;
-    }
-}
 
 /* Page Specific --------------------------------------------------- */
 
