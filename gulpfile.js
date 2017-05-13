@@ -75,8 +75,10 @@ var gulp = require('gulp'),
 // BrowserSync proxy
 gulp.task('browsersync', function () {
     browsersync({
-        proxy: 'dev_URL',
-        open: false
+        open: 'external',
+        host: 'duke.loc',
+        proxy: 'duke.loc',
+        port: 8080 // for work mamp
     });
 });
 

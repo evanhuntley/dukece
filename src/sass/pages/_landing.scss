@@ -3,6 +3,8 @@
 ====================================================================== */
 
 .highlights {
+    @extend %clearfix;
+    padding: 1em 0;
     
     .highlight {
         
@@ -10,4 +12,8 @@
             @include rowMachine(3, 2%, 5%);
         }
     }
+}
+
+.bottom-content {
+    padding: 2em 0;
 }

@@ -2,20 +2,6 @@
 /*
     Template Name: Home Page
 */
-
-    $block_1_title = types_render_field('block-1-title', array('raw' => true));
-    $block_1_url = types_render_field('block-1-url', array('raw' => true));
-    $block_1_image = types_render_field('block-1-image', array('raw' => true));
-
-    $block_2_title = types_render_field('block-2-title', array('raw' => true));
-    $block_2_url = types_render_field('block-2-url', array('raw' => true));
-    $block_2_image = types_render_field('block-2-image', array('raw' => true));
-
-    $block_3_title = types_render_field('block-3-title', array('raw' => true));
-    $block_3_url = types_render_field('block-3-url', array('raw' => true));
-    $block_3_image = types_render_field('block-3-image', array('raw' => true));
-
-    $dialogue_content = types_render_field('dialogue-content', array('raw' => false));
 ?>
 
 <?php get_header(); ?>
@@ -24,7 +10,7 @@
     <div class="wrap">
         <div class="value-prop">
             <h1>Leadership for What's Next</h1>
-            <p>Duke CE is the premier leadership development institution in the world. We work with our clients to co-create solutions in the context of business challenges to prepare leaders for what’s next...</p>
+            <p>Duke Corporate Education is the premier leadership development institution in the world. We work with our clients to co-create solutions in the context of business challenges to prepare leaders for what’s next...</p>
             <a href="/our-work" class="btn btn-action">Learn More About Our Work</a>
         </div>
     </div>
@@ -46,7 +32,7 @@
             <li>
                 <div style="background-image: url('<?php echo get_the_post_thumbnail_url($post->ID, 'hero'); ?>" ></div>
             </li>
-            <?php endwhile; ?>
+            <?php endwhile; wp_reset_query(); ?>
         </ul>
         <?php endif; ?>
     </div>
@@ -55,31 +41,74 @@
 
 <section class="main-content">
     <div class="wrap">
-        <div class="features">
-            <ul class="stories">
-                <li>
-                    <a class="title" href="<?php echo $block_1_url; ?>"><?php echo $block_1_title; ?></a>
-                    <a class="title-image" href="<?php echo $block_1_url; ?>"><img src="<?php echo $block_1_image; ?>" /></a>
-                </li>
-                <li>
-                    <a class="title" href="<?php echo $block_2_url; ?>"><?php echo $block_2_title; ?></a>
-                    <a class="title-image" href="<?php echo $block_2_url; ?>"><img src="<?php echo $block_2_image; ?>" /></a>
-                </li>
-                <li>
-                    <a class="title" href="<?php echo $block_3_url; ?>"><?php echo $block_3_title; ?></a>
-                    <a class="title-image" href="<?php echo $block_3_url; ?>"><img src="<?php echo $block_3_image; ?>" /></a>
-                </li>
-            </ul>
-            <div class="dialogue">
-                <div class="header">
-                    <h2>Duke CE Leadership Insights</h2>
-                    <a class="btn" href="<?php echo get_site_url(); ?>/index.php/subscribe">Subscribe</a>
-                </div>
-                <div class="dialogue-content">
-                    <?php echo $dialogue_content; ?>
-                </div>
+        
+        <?php 
+            $story_title = types_render_field("home-story-title", array("raw" => true));
+            $story_img = types_render_field("home-story-image", array('size' => 'highlight'));
+            $story_abstract = types_render_field("home-story-abstract", array("raw" => true));
+            $story_url = types_render_field("home-story-url", array("raw" => true));
+            
+            $more_stories = types_render_field("home-stories-url", array("raw" => true));
+            
+            $video_title = types_render_field("home-video-title", array("raw" => true));
+            $video_desc = types_render_field("home-video-description", array("raw" => true));
+            $video_url = types_render_field("home-video-url", array("raw" => true));
+            
+            $more_videos = types_render_field("home-videos-url", array("raw" => true));
+        ?>
+        
+        <div class="stories">
+            <h2>Experiences Around the World</h2>
+            <article>
+                <?= $story_img; ?>
+                <h1><?= $story_title; ?></h1>
+                <p><?= $story_abstract; ?></p>
+                <?= $story_url; ?>
+            </article>
+            <?= $more_videos; ?>
+        </div>
+        
+        <div class="insights">
+            <div class="header">
+                <h2>Duke CE Leadership Insights</h2>
+                <a class="btn" href="<?php echo get_site_url(); ?>/index.php/subscribe">Subscribe</a>
+            </div>
+            <div class="insights-content">
+                <?php 
+                    $args = array(
+                        'post_type'      => 'insights',
+                        'posts_per_page' => 5,
+                        'order'          => 'DESC',
+                        'orderby'        => 'menu_order'
+                     );
+
+                     $insights = new WP_Query( $args );
+                     
+                     while ( $insights->have_posts() ) : $insights->the_post(); 
+                ?>
+                    <article class="insights-item">
+                        <?php the_post_thumbnail('big-thumb'); ?>
+                        <h1><?php the_title(); ?></h1>
+                        <div class="abstract">
+                            <?= types_render_field("insights-abstract", array("raw" => true)); ?>
+                        </div>
+                    </article>
+                <?php endwhile; wp_reset_query(); ?>
             </div>
         </div>
+        
+        <div class="video">
+            <?php echo $video_url; ?>
+            <?php echo do_shortcode('[embed]' . $video_url . '[/embed]'); ?>
+        </div>
+        
+    </div>
+</section>
+
+<section class="global">
+    <div class="wrap">
+        <h1>Global Insight and Impact</h1>
+        <p>Ranked among the top 3 in custom executive education globally for 16 consecutive years by Financial Times</p>
     </div>
 </section>
 

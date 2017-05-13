@@ -57,6 +57,12 @@
 
                 <?php endif; wp_reset_query(); ?>     
             </div>
-        </section>    
+        </section>
+        
+        <section class="bottom-content">
+            <div class="wrap">
+                <?= types_render_field("bottom-content"); ?>
+            </div>
+        </section>
 <?php endwhile; ?>
 <?php get_footer( 'no-sidebar' ); // will include footer-no-sidebar.php; ?>
