@@ -3,26 +3,96 @@
 ====================================================================== */
 
 footer {
+    position: relative;
     width: 100%;
     float: left;
     padding: 1.5em 0;
     background: $dark-gray;
 
     .footer-logo {
-        width: 178px;
-        float: right;
+        width: 130px;
+        height: 35px;
+        float: left;
+        clear: left;
+        
+        @include bp-m {
+            position: absolute;
+            top: 1em;
+            right: 1em;
+        }
+        
+        @include bp-xl {
+            position: static;
+            float: right;
+            clear: none;
+        }
     }
     
     .social {
+        float: left;
+        margin: 0 0 1em;
+        
+        @include bp-xl {
+            margin: .5em 0 0;
+        }
+        
+        ul {
+            margin: 0;
+        }
         
         li {
             display: inline-block;
+            margin: 0 1em 0 0;
         }
         
         .icon {
-            width: 24px;
-            height: 24px;
-            fill: red;
+            width: 20px;
+            height: 20px;
+            color: $white;
+            fill: $white;
+            transition: all .2s;
+            
+            &:hover {
+                color: $alt-blue;
+                fill: $alt-blue;
+            }
+        }
+    }
+    
+    nav {
+        float: left;
+        clear: left;
+        margin: 0 0 1em;
+        
+        @include bp-m {
+            margin: 0;
+        }
+        
+        @include bp-xl {
+            clear: none;
+            margin: 6px 0 0 3em;
+        }
+        
+        ul {
+            margin: 0;
+        }
+        
+        li {
+            display: inline-block;
+            margin: 0 1em .5em 0;
+            
+            @include bp-l {
+                margin: 0 2em 0 0;
+            }
+        }
+        
+        a {
+            color: $white;
+            text-transform: uppercase;
+            
+            &:hover {
+                color: $alt-blue;
+            }
         }
     }
 }

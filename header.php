@@ -70,7 +70,7 @@
 				<nav role="navigation">
 					<?php
 						$args = array(
-							'menu' => 'Main Navigation',
+							'menu' => 'Main',
 							'container' => false,
 							'items_wrap' => '<ul class="main-menu">%3$s</ul>',
 						);

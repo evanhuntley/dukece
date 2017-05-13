@@ -1,8 +1,5 @@
 <footer role="contentinfo">
 	<div class="wrap">
-		<div class="footer-logo">
-			<img src="<?php bloginfo( 'template_directory' ); ?>/assets/img/l_duke-white.png" />
-		</div>
 		<div class="social">
 			<ul>
 				<li>
@@ -49,11 +46,19 @@
 				</li>
 			</ul>
 		</div>
-		<ul class="utility-nav">
-			<li><a href="<?php echo get_site_url(); ?>">Home</a></li>
-			<li><a href="<?php echo get_site_url(); ?>/index.php/contact">Contact</a></li>
-			<li><a href="<?php echo get_site_url(); ?>/index.php/news-and-media">News and Media</a></li>
-		</ul>
+		<nav role="navigation">
+			<?php
+				$args = array(
+					'menu' => 'Footer',
+					'container' => false,
+					'items_wrap' => '<ul class="footer-menu">%3$s</ul>',
+				);
+				wp_nav_menu($args);
+			?>
+		</nav>
+		<div class="footer-logo">
+			<img src="<?php bloginfo( 'template_directory' ); ?>/assets/img/l_duke-ce-long.svg" />
+		</div>
 	</div>
 </footer>
 
