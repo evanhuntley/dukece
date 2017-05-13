@@ -76,9 +76,15 @@
     .main-content {
         @extend %clearfix;
         margin: 2em 0;
+        
+        .more {
+            text-align: right;
+            font-weight: 700;
+        }
     }
     
     .stories {
+        margin: 0 0 2em;
         
         @include bp-l {
             float: left;
@@ -104,6 +110,15 @@
     }
     
     .video {
+        margin: 0 0 1em;
+        
+        h2 {
+            text-transform: uppercase;
+        }
+        
+        img {
+            margin: 0 0 1em;
+        }
         
         @include bp-l {
             float: left;

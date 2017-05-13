@@ -52,6 +52,7 @@
             
             $video_title = types_render_field("home-video-title", array("raw" => true));
             $video_desc = types_render_field("home-video-description", array("raw" => true));
+            $video_img = types_render_field("home-video-image", array("size" => 'highlight'));
             $video_url = types_render_field("home-video-url", array("raw" => true));
             
             $more_videos = types_render_field("home-videos-url", array("raw" => true));
@@ -60,18 +61,19 @@
         <div class="stories">
             <h2>Experiences Around the World</h2>
             <article>
-                <?= $story_img; ?>
-                <h1><?= $story_title; ?></h1>
+                <a href="<?= $story_url; ?>">
+                    <?= $story_img; ?>
+                </a>
+                <h1><a href="<?= $story_url; ?>"><?= $story_title; ?></a></h1>
                 <p><?= $story_abstract; ?></p>
-                <?= $story_url; ?>
             </article>
-            <?= $more_videos; ?>
+            <a class="more" href="<?= $more_stories; ?>">More Client Stories</a>
         </div>
         
         <div class="insights">
             <div class="header">
                 <h2>Duke CE Leadership Insights</h2>
-                <a class="btn" href="<?php echo get_site_url(); ?>/index.php/subscribe">Subscribe</a>
+                <a class="btn btn-action" href="<?php echo get_site_url(); ?>/index.php/subscribe">Subscribe</a>
             </div>
             <div class="insights-content">
                 <?php 
@@ -98,8 +100,10 @@
         </div>
         
         <div class="video">
-            <?php echo $video_url; ?>
-            <?php echo do_shortcode('[embed]' . $video_url . '[/embed]'); ?>
+            <h2><?= $video_title; ?></h2>
+            <a data-lity href="<?php echo $video_url; ?>"><?= $video_img; ?></a>
+            <p><?= $video_desc; ?></p>
+            <a class="more" href="<?= $more_videos; ?>">More Videos</a>
         </div>
         
     </div>
