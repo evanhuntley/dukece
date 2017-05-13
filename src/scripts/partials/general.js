@@ -17,9 +17,14 @@ function getUrlVars()
 
 jQuery(function($) {
 
+    // Toggle Search Form
+    $('.search-toggle').on('click', function() {
+        $(this).parent().toggleClass('active');
+    });
+
     // Toggle Nav Menu
     $('.nav-toggle').on('click', function() {
-        $('.header-wrap').toggleClass('open');
+        $('.menu').toggleClass('open');
         $(this).toggleClass('active');
     });
 

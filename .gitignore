@@ -28,6 +28,10 @@ assets/scripts/
 assets/css/
 src/components/
 
+# Generated
+src/sass/svg
+assets/svg
+
 # Deployment
 deploy
 rsync_exclude.txt

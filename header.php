@@ -5,7 +5,7 @@
 <title><?php
 	global $page, $paged;
 	wp_title( '|', true, 'right' );
-		//bloginfo( 'name' );
+		bloginfo( 'name' );
 		$site_description = get_bloginfo( 'description', 'display' );
 		if ( $site_description && ( is_home() || is_front_page() ) )
 			echo " | $site_description";
@@ -34,7 +34,7 @@
 
 <!-- Stylesheets -->
 	<link href='//fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
-	<link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic' rel='stylesheet' type='text/css'>
+	<link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,400italic' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="<?php bloginfo( 'template_directory' ); ?>/assets/css/style.css" />
 <!-- Stylesheets -->
 
@@ -63,51 +63,29 @@
     <header role="banner">
 		<div class="wrap">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="logo">
-				<img src="<?php bloginfo( 'template_directory' ); ?>/assets/img/l_duke-ce.png" alt="<?php bloginfo( 'name' ); ?>" />
+				<img src="<?php bloginfo( 'template_directory' ); ?>/assets/img/l_duke-ce.svg" alt="<?php bloginfo( 'name' ); ?>" />
 			</a>
 			<button class="nav-toggle"><span></span></button>
-			<?php get_search_form(); ?>
-			<nav role="navigation">
-				<?php
-					$args = array(
-						'menu' => 'Main Navigation',
-						'container' => false,
-						'items_wrap' => '<ul class="main-menu">%3$s</ul>',
-					);
-					wp_nav_menu($args);
-				?>
-			</nav>
+			<div class="menu">
+				<nav role="navigation">
+					<?php
+						$args = array(
+							'menu' => 'Main Navigation',
+							'container' => false,
+							'items_wrap' => '<ul class="main-menu">%3$s</ul>',
+						);
+						wp_nav_menu($args);
+					?>
+				</nav>
+				<div class="search">
+					<button class="search-toggle">
+						<svg class="icon">
+							<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/svg/sprite.svg#search"></use>
+						</svg>           
+					</button>
+					<?php get_search_form(); ?>
+				</div>
+				<a href="/contact/" class="btn btn-action contact">Contact</a>
+			</div>
 		</div>
 	</header>
-
-	<?php if ( is_front_page() ) : ?>
-		<div class="flexslider">
-			<ul class="slides">
-				<li>
-					<div style="background-image: url('<?php echo bloginfo('template_directory'); ?>/assets/img/bg_climbers.jpg');" ></div>
-				</li>
-				<li>
-					<div style="background-image: url('<?php echo bloginfo('template_directory'); ?>/assets/img/bg_pencil.jpg');"></div>
-				</li>
-				<li>
-					<div style="background-image: url('<?php echo bloginfo('template_directory'); ?>/assets/img/bg_americas-cup-2.jpg');"></div>
-				</li>
-			</ul>
-		</div>
-
-		<?php
-			$feature_visible = types_render_field('home-feature-visible', array("raw" => true));
-			$feature_title = types_render_field('home-feature-title', array("raw" => true));
-			$feature_excerpt = types_render_field('home-feature-main-excerpt', array("raw" => true));
-			$feature_url = types_render_field('home-feature-url', array("raw" => true));
-
-			if ( $feature_visible) :
-		?>
-			<div class="home-feature two ">
-				<h2><a data-lity href="<?php echo $feature_url; ?>"><?php echo $feature_title; ?></a></h2>
-				<div class="excerpt">
-					<?php echo $feature_excerpt; ?>
-				</div>
-			</div>
-		<?php endif; ?>
-	<?php endif; ?>

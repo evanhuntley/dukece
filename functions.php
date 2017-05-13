@@ -115,6 +115,7 @@ add_filter ('wp_nav_menu','current_to_active');
 add_action( 'after_setup_theme', 'duke_theme_setup' );
 function duke_theme_setup() {
   add_image_size( 'full-banner', 1440, 788, true ); // (cropped)    
+  add_image_size( 'hero', 1300, 616, true ); // (cropped)    
   add_image_size( 'highlight', 650, 357, true ); // (cropped)    
   add_image_size( 'article', 400, 250, true ); // (cropped)
 }

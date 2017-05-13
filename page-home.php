@@ -20,6 +20,39 @@
 
 <?php get_header(); ?>
 
+<section class="hero">
+    <div class="wrap">
+        <div class="value-prop">
+            <h1>Leadership for What's Next</h1>
+            <p>Duke CE is the premier leadership development institution in the world. We work with our clients to co-create solutions in the context of business challenges to prepare leaders for what’s next...</p>
+            <a href="/our-work" class="btn btn-action">Learn More About Our Work</a>
+        </div>
+    </div>
+    <div class="flexslider" aria-role="presentation">
+        <?php 
+            $args = array(
+                'post_type'      => 'hero-slides',
+                'posts_per_page' => -1,
+                'order'          => 'DESC',
+                'orderby'        => 'menu_order'
+             );
+
+             $slides = new WP_Query( $args );
+             
+             if ( $slides->have_posts() ) : 
+        ?>
+        <ul class="slides">
+            <?php while ( $slides->have_posts() ) : $slides->the_post(); ?>
+            <li>
+                <div style="background-image: url('<?php echo get_the_post_thumbnail_url($post->ID, 'hero'); ?>" ></div>
+            </li>
+            <?php endwhile; ?>
+        </ul>
+        <?php endif; ?>
+    </div>
+    <div class="overlay"></div>
+</section>
+
 <section class="main-content">
     <div class="wrap">
         <div class="features">

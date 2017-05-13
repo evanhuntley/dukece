@@ -12,4 +12,17 @@ footer {
         width: 178px;
         float: right;
     }
+    
+    .social {
+        
+        li {
+            display: inline-block;
+        }
+        
+        .icon {
+            width: 24px;
+            height: 24px;
+            fill: red;
+        }
+    }
 }

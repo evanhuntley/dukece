@@ -85,7 +85,9 @@ p {
 }
 
 a {
+    color: $brand-blue;
 	@include hover-fade;
+    text-decoration: none;
 
 	&:hover,
     &:active {
@@ -125,10 +127,11 @@ sup {
 .btn, input[type="submit"] {
     display: inline-block;
     margin: 0 0 .5em;
-    padding: .5em 1em;
+    padding: .75em 2.5em;
     text-decoration: none;
+    text-transform: uppercase;
     border: none;
-    background: #1e376c;
+    background: $brand-blue;
     color: #fff;
 
     &:hover {
@@ -137,7 +140,7 @@ sup {
     }
 
     &.btn-action {
-        background: #0075c9;
+        background: $alt-blue;
 
         &:hover {
             background: #055FA0;
