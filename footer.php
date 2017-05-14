@@ -1,3 +1,6 @@
+
+<?php get_sidebar(); ?>
+
 <footer role="contentinfo">
 	<div class="wrap">
 		<div class="social">

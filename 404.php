@@ -1,19 +1,12 @@
 <?php get_header(); ?>
 
-    <div class="wrap">
-
-        <div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
-            <?php if(function_exists('bcn_display'))
-            {
-                bcn_display();
-            }?>
-        </div>
+        <div class="featured-img" style="background-image: url('/wp-content/uploads/2017/05/martin-reisch-113170-1300x616.jpg?bba78');"></div>       
 
         <article role="main" class="primary-content type-page" id="post-<?php the_ID(); ?>">
-            <h1>Oops! Something went wrong...</h1>
-            <p>We weren't able to locate the page you're looking for.  Try navigating to our <a href="<?php echo get_site_url(); ?>">home page</a> for more info.</p>
+            <div class="wrap">
+                <h1>Are you lost?</h1>
+                <p>We weren't able to locate the page you're looking for.  Try navigating to our <a href="<?php echo get_site_url(); ?>">home page</a> for more info.</p>
+            </div>
         </article>
-        <?php get_sidebar(); ?>
-    </div>
 
-<?php get_footer( 'no-sidebar' ); // will include footer-no-sidebar.php; ?>
+<?php get_footer(); ?>

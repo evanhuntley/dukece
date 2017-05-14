@@ -134,7 +134,7 @@ sup {
     background: $brand-blue;
     color: #fff;
 
-    &:hover {
+    &:hover, &:focus {
         color: #fff;
         background: #001C49;
     }
@@ -142,8 +142,19 @@ sup {
     &.btn-action {
         background: $alt-blue;
 
-        &:hover {
+        &:hover, &:focus {
             background: #055FA0;
+        }
+    }
+    
+    &.btn-alt {
+        background: $white;
+        border: 1px solid $brand-blue;
+        color: $brand-blue;
+        
+        &:hover, &:focus {
+            color: $white;
+            background: $brand-blue;
         }
     }
 }
