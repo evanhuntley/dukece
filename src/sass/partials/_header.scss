@@ -5,6 +5,15 @@
 header {
     @extend %clearfix;
     position: relative;
+    background: $white;
+    z-index: 100;
+    
+    &.fixed {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
 
     .logo-wrap {
         position: relative;

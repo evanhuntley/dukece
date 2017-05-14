@@ -17,6 +17,18 @@ function getUrlVars()
 
 jQuery(function($) {
 
+    // Sticky Header
+    var headerOffset = $('header').offset().top;
+
+    $(window).scroll(function(){
+      var header = $('header'),
+          scroll = $(window).scrollTop();
+
+      if (scroll >= headerOffset) header.addClass('fixed');
+      else header.removeClass('fixed');
+    });
+    
+
     // Toggle Search Form
     $('.search-toggle').on('click', function() {
         $(this).parent().toggleClass('active');

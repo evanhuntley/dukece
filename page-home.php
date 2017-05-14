@@ -10,7 +10,7 @@ Template Name: Home Page
     <div class="wrap">
         <div class="value-prop">
             <h1>Leadership for What's Next</h1>
-            <p>Duke Corporate Education is the premier leadership development institution in the world. We work with our clients to co-create solutions in the context of business challenges to prepare leaders for what’s next...</p>
+            <p>Duke Corporate Education is the premier leadership development institution in the world. We work with our clients to co-create solutions in the context of business challenges to prepare leaders for what’s next.</p>
             <a href="/our-experience" class="btn btn-action">Learn More About What We Do</a>
         </div>
     </div>
@@ -67,7 +67,7 @@ Template Name: Home Page
                 <h1><a href="<?= $story_url; ?>"><?= $story_title; ?></a></h1>
                 <p><?= $story_abstract; ?></p>
             </article>
-            <a class="more" href="<?= $more_stories; ?>">More Client Stories</a>
+            <a class="more" href="<?= $more_stories; ?>">More Leadership Solutions</a>
         </div>
         
         <div class="insights">
@@ -118,7 +118,7 @@ Template Name: Home Page
             <span class="operator">+</span>
             <div class="number">225,000 +<span>Leaders Engaged</span></div>
         </div>
-        <p>Ranked among the top 3 in custom executive education globally for 17 consecutive years by Financial Times</p>
+        <p>Ranked among the top 3 in custom executive education globally for 17 consecutive years by the Financial Times</p>
         <img src="<?php bloginfo( 'template_directory' ); ?>/assets/img/g_map.png" alt="Duke CE Global Impact Map" />
         <div class="locations">
             <div class="region">North America</div>
