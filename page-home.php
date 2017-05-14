@@ -179,4 +179,4 @@ Template Name: Home Page
     </div>
 </section>
 
-<?php get_footer(); // will include footer-no-sidebar.php; ?>
+<?php get_footer(); ?>
