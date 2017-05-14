@@ -59,4 +59,19 @@ jQuery(function($) {
     if ( location ) {
         $('.region-select select').val(location);
     }
+    
+    // Expand/Collapse locations
+    $('.region').on('click', function() {
+        var $this = $(this);
+      
+        if ($this.next().hasClass('show')) {
+            $this.next().removeClass('show');
+            $this.next().slideUp(350);
+        } else {
+            $this.parent().parent().find('.office').removeClass('show');
+            $this.parent().parent().find('.office').slideUp(350);
+            $this.next().toggleClass('show');
+            $this.next().slideToggle(350);
+        }
+    });
 });

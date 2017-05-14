@@ -47,7 +47,7 @@
             left: 0;
             bottom: 0;
             right: 0;
-            background: linear-gradient(to right, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%);
+            background: linear-gradient(to right, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%);
             z-index: 11;            
         }
     }
@@ -182,6 +182,67 @@
     /* Global --------------------------------------------------------- */
     
     .global {
+        @extend %clearfix;
+        padding: 0 0 2em;
         text-align: center;
+        
+        p {
+            margin: 2em 0;
+            color: $brand-blue;
+            @include font-size(1.25, 1.6);
+        }
+        
+        .number {
+            color: $alt-blue;
+            @include font-size(3.5, 3.5);
+            
+            span {
+                display: block;
+                @include font-size(1.25, 1.6);
+                text-transform: uppercase;
+            }
+            
+            @include bp-l {
+                display: inline-block;   
+            }
+        }
+        
+        .operator {
+            margin: 1em 0;
+            @include font-size(3, 3);
+            color: $dark-gray;
+            
+            @include bp-l {
+                display: inline-block;
+                margin: 0 1.5em;
+            }
+        }
+        
+        img {
+            
+            @include bp-l {
+                float: left;
+                width: 65%;
+            }
+        }
+        
+        .locations {
+            text-align: left;
+            
+            @include bp-l {
+                float: right;
+                width: 30%;
+            }
+            
+            .region {
+                padding: .25em 0;
+                color: $alt-blue;
+                border-bottom: 1px solid $alt-blue;
+            }
+            
+            .office {
+                display: none;
+            }
+        }
     }
 }
