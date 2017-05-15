@@ -85,7 +85,7 @@
 					</button>
 					<?php get_search_form(); ?>
 				</div>
-				<a href="/contact/" class="btn btn-action contact">Contact</a>
+				<a href="/contact-duke-corporate-education/" class="btn btn-action contact">Contact</a>
 			</div>
 		</div>
 	</header>

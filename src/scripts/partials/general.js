@@ -15,19 +15,7 @@ function getUrlVars()
     return vars;
 }
 
-jQuery(function($) {
-
-    // Sticky Header
-    var headerOffset = $('header').offset().top;
-
-    $(window).scroll(function(){
-      var header = $('header'),
-          scroll = $(window).scrollTop();
-
-      if (scroll >= headerOffset) header.addClass('fixed');
-      else header.removeClass('fixed');
-    });
-    
+jQuery(function($) {    
 
     // Toggle Search Form
     $('.search-toggle').on('click', function() {
@@ -55,8 +43,6 @@ jQuery(function($) {
             $('.sub-menu').slideUp();
             submenu.slideToggle();
         }
-
-
         e.preventDefault();
     });
 

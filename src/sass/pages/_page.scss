@@ -13,7 +13,23 @@
 
 .primary-content {
     padding: 1.5em 0;
-    @include font-size(1.125, 1.625)
+    @include font-size(1.125, 1.625);
+    
+    a {
+        color: $alt-blue;
+        
+        &:hover {
+            color: darken($alt-blue, 10%);
+        }
+    }
+}
+
+.primary-content.type-page {
+    
+    .wrap {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
 }
  
 /* Page Specific --------------------------------------------------- */
