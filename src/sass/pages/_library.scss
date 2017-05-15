@@ -7,6 +7,9 @@
     > h2 {
         float: left;
         width: 100%;
+        margin: 0 0 1em;
+        padding: 0 0 .25em;
+        border-bottom: 1px solid #ececec;
     }
 }
 
@@ -30,11 +33,17 @@
     @extend %clearfix;
     float: left;
     margin: 0 0 1.5em;
+    
+    @include bp-l {
+        @include rowMachine(2, 5%, 5%);
+    }
+    
+    @include bp-xl {
+        @include rowMachine(3, 2%, 5%);
+    }
 
     h2 {
-        margin: 0 0 .25em;
-        font-family: "Source Sans Pro", Arial, sans-serif;
-        @include font-size(1.375, 1.8);
+        margin: .25em 0;
 
         a {
             text-decoration: none;
@@ -44,17 +53,6 @@
     .date {
         color: #999;
         font-size: 15px;
-    }
-
-    img {
-        margin-bottom: 1em;
-
-        @include bp-m {
-            float: left;
-            margin-right: 1.5em;
-            margin-bottom: 2em;
-            max-width: 120px;
-        }
     }
 }
 
@@ -140,5 +138,30 @@
 
     span, a {
         margin-right: 10px;
+    }
+}
+
+.single-insights {
+    
+    h1 {
+        margin-bottom: .25em;
+    }
+    
+    .entry-meta {
+        margin-bottom: 1em;    
+    }
+    
+    .attachment-content-feature {
+        
+        @include bp-l {
+            float: right;
+            max-width: 300px;
+            margin-left: 1em;
+            margin-bottom: 1em;
+        }
+        
+        @include bp-xl {
+            max-width: 500px;
+        }
     }
 }

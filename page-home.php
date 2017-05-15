@@ -78,7 +78,7 @@ Template Name: Home Page
             <div class="insights-content">
                 <?php 
                 $args = array(
-                    'post_type'      => 'insights',
+                    'post_type'      => 'home-features',
                     'posts_per_page' => 5,
                     'order'          => 'DESC',
                     'orderby'        => 'menu_order'
@@ -113,12 +113,11 @@ Template Name: Home Page
         <h1>Global Insight and Impact</h1>
         <div class="figures">
             <div class="number">75 +<span>Countries Delivered</span></div>
-            <span class="operator">+</span>
             <div class="number">1500 +<span>Global Educators</span></div>
-            <span class="operator">+</span>
+            <div class="number">7500 +<span>Programs Completed</span></div>
             <div class="number">225,000 +<span>Leaders Engaged</span></div>
         </div>
-        <p>Ranked among the top 3 in custom executive education globally for 17 consecutive years by the Financial Times</p>
+        <p>Ranked among the top 3 in custom executive education globally for 17 consecutive years by the <em>Financial Times</em></p>
         <img src="<?php bloginfo( 'template_directory' ); ?>/assets/img/g_map.png" alt="Duke CE Global Impact Map" />
         <div class="locations">
             <div class="region">North America</div>
@@ -128,12 +127,12 @@ Template Name: Home Page
                     5650 El Camino Real<br>
                     Carlsbad, CA 92008 USA<br>
                 </address>
-                <a class="btn" href="https://www.google.com/maps/place/5650+El+Camino+Real+%23250,+Carlsbad,+CA+92008/">Directions</a>
+                <a target="_blank" class="btn" href="https://www.google.com/maps/place/5650+El+Camino+Real+%23250,+Carlsbad,+CA+92008/">Directions</a>
                 <h3>Durham, NC</h3>
                 <address>310 Blackwell Street<br>
                     Durham, NC 27701 USA<br>
                 </address>
-                <a class="btn" href="https://www.google.com/maps/place/310+Blackwell+St,+Durham,+NC+27701/">Directions</a>
+                <a target="_blank" class="btn" href="https://www.google.com/maps/place/310+Blackwell+St,+Durham,+NC+27701/">Directions</a>
             </div>
             <div class="region">Europe</div>
             <div class="office">
@@ -143,7 +142,7 @@ Template Name: Home Page
                     165 Fleet Street<br>
                     London EC4A 2DY, UK<br>
                 </address>
-                <a class="btn" href="https://www.google.com/maps/place/165+Fleet+St,+London+EC4A+2AE,+UK/">Directions</a>
+                <a target="_blank" class="btn" href="https://www.google.com/maps/place/165+Fleet+St,+London+EC4A+2AE,+UK/">Directions</a>
             </div>
             <div class="region">Asia</div>
             <div class="office">
@@ -154,14 +153,14 @@ Template Name: Home Page
                     Vastrapur<br />
                     Ahmedabad 380 015
                 </address>
-                <a class="btn" href="https://www.google.com/maps/place/132+Feet+Ring+Rd,+Ahmedabad,+Gujarat,+India/">Directions</a>
+                <a target="_blank" class="btn" href="https://www.google.com/maps/place/132+Feet+Ring+Rd,+Ahmedabad,+Gujarat,+India/">Directions</a>
                 <h3>Singapore</h3>
                 <address>
                     72 Anson Road<br />
                     Unit #05-01 Anson House<br />
                     Singapore 079911
                 </address>
-                <a class="btn" href="https://www.google.com/maps/place/72+Anson+Rd,+Singapore+079911/">Directions</a>
+                <a target="_blank" class="btn" href="https://www.google.com/maps/place/72+Anson+Rd,+Singapore+079911/">Directions</a>
             </div>
             <div class="region">Africa</div>
             <div class="office">
@@ -173,7 +172,7 @@ Template Name: Home Page
                     Bryanston<br />
                     Gauteng 2191
                 </address>
-                <a class="btn" href="https://www.google.com/maps/place/Gabba+Building,+The+Campus/@-26.0410491,28.0238458,21z/data=!4m13!1m7!3m6!1s0x1e9573f74ebcbfbd:0xc1f755b6ea59697d!2sThe+Gabba+Building,+57+Sloane+St,+Bryanston,+Sandton,+2191,+South+Africa!3b1!8m2!3d-26.041175!4d28.024047!3m4!1s0x0:0xc02d1061b54186a8!8m2!3d-26.0408755!4d28.0240437">Directions</a>
+                <a target="_blank" class="btn" href="https://www.google.com/maps/place/Gabba+Building,+The+Campus/@-26.0410491,28.0238458,21z/data=!4m13!1m7!3m6!1s0x1e9573f74ebcbfbd:0xc1f755b6ea59697d!2sThe+Gabba+Building,+57+Sloane+St,+Bryanston,+Sandton,+2191,+South+Africa!3b1!8m2!3d-26.041175!4d28.024047!3m4!1s0x0:0xc02d1061b54186a8!8m2!3d-26.0408755!4d28.0240437">Directions</a>
             </div>
         </div>
     </div>

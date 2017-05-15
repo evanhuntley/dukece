@@ -2,7 +2,7 @@
     Header
 ====================================================================== */
 
-header {
+header[role="banner"] {
     @extend %clearfix;
     position: relative;
     background: $white;
@@ -40,6 +40,7 @@ header {
         top: 100%;
         left: 0;
         right: 0;
+        padding: 0 0 1em;
         background: #fff;
         transition: all .2s;
         z-index: 10;
@@ -52,6 +53,7 @@ header {
         @include bp-l {
             position: static;
             float: right;
+            padding: 0;
             opacity: 1;   
         }
     }
@@ -256,22 +258,34 @@ header {
     
     .search {
         float: left;
-        padding: 2em;
+        position: relative;
+        width: 100%;
+        padding: 0 1em;
         line-height: 0;
         
+        @include bp-l {
+            width: auto;
+            padding: 2em;
+        }
+        
         button {
-            padding: 0;
-            border: none;
-            line-height: 0;
-            background: none;
+            display: none;
             
-            &:hover {
-                color: $alt-blue;
-                fill: $alt-blue;
-            }
-            
-            &:focus {
-                outline: none;
+            @include bp-l {
+                display: block;
+                padding: 0;
+                border: none;
+                line-height: 0;
+                background: none;
+                
+                &:hover {
+                    color: $alt-blue;
+                    fill: $alt-blue;
+                }
+                
+                &:focus {
+                    outline: none;
+                }
             }
         }
         
@@ -282,13 +296,38 @@ header {
         }
         
         .search-form {
-            display: none;
+            
+            @include bp-l {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                width: 260px;
+                margin-left: -130px;
+                padding: 0 1em;
+                background: $white;
+            }
+            
+            input[type="search"] {
+                width: calc(100% - 68px);
+            }
+        }
+        
+        &.active {
+            
+            .search-form {
+                display: block;
+            }
         }
     }
     
     /* Contact -------------------------------------------------- */
     
     .contact {
-        margin: 1.25em 0 0;
+        margin: 1em 1em 0;
+        
+        @include bp-l {
+            margin: 1.25em 0 0;    
+        }
     }
 }

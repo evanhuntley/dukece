@@ -141,18 +141,18 @@ $pale-gray: #c8c8c8;
 	width: ((100% - (($numPerRow - 1) * $margin)) / $numPerRow);
 	float: left;
 	
-	&:nth-child(n) {
+	&:nth-of-type(n) {
 		margin-bottom: $bottom;
 		margin-right: $margin;
 		clear: none;
 	}
 	
-	&:nth-child(#{$numPerRow}n) {
+	&:nth-of-type(#{$numPerRow}n) {
 		margin-right: 0;
 		margin-bottom: 0;
 	}
 	
-	&:nth-child(#{$numPerRow}n + 1) {
+	&:nth-of-type(#{$numPerRow}n + 1) {
 		clear: left;
 	}
 }

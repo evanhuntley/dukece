@@ -187,5 +187,44 @@ function eh_alter_query($query){
       }
 }
 
+/**  
+ *
+ * Background Image from Post Image
+ * @since  1.0.0
+ * Credits: TwentyFifteen WordPress theme adjacent pagination
+ *
+ */
+function dukece_responsive_mobile_first_background_images() {
+
+    global $post;
+
+    if ( ! has_post_thumbnail( $post->ID ) ) return; //exit if there is no featured image
+
+    $theme_handle = 'custom-style';     //the theme handle used for the main style.css file
+    $property     = '.featured-img'; //the property
+    $css          = '';
+
+    //small image
+    $small_img   = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'highlight' );
+    $small_style = '
+            ' . $property . ' { background-image: url(' . esc_url( $small_img[0] ) . '); }
+            ';
+    $css .= $small_style;
+
+    //large image
+    $large_img   = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full-banner' );
+    $large_style = '
+            ' . $property . ' {  background-image: url(' . esc_url( $large_img[0] ) . '); }
+            ';
+    $css .= '@media (min-width: 1000px) { '. $large_style . ' }';
+
+    //minify            
+    $css = str_replace( array("\r\n", "\r", "\n", "\t", '  ', '    ', '    '), '', $css );
+
+    //add it
+    echo '<style>' . $css . '</style>';
+
+}
+add_action( 'wp_head', 'dukece_responsive_mobile_first_background_images', 99 );
 
 ?>

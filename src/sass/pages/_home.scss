@@ -187,14 +187,25 @@
         text-align: center;
         
         p {
+            float: left;
+            width: 100%;
             margin: 2em 0;
             color: $brand-blue;
             @include font-size(1.25, 1.6);
         }
         
         .number {
+            margin: 0 0 .5em;
             color: $alt-blue;
             @include font-size(3.5, 3.5);
+            
+            @include bp-l {
+                @include rowMachine(2, 5%, 2%);
+            }
+            
+            @include bp-xl {
+                @include rowMachine(4, 2%, 0);
+            }
             
             span {
                 display: block;
@@ -204,17 +215,6 @@
             
             @include bp-l {
                 display: inline-block;   
-            }
-        }
-        
-        .operator {
-            margin: 1em 0;
-            @include font-size(3, 3);
-            color: $dark-gray;
-            
-            @include bp-l {
-                display: inline-block;
-                margin: 0 1.5em;
             }
         }
         

@@ -5,7 +5,9 @@
 /* Sidebar Widgets ------------------------------------------------- */
 
 .widget {
-
+    width: 100%;
+    float: left;
+    
     &.dialogue {
         padding: 2em 0;
         border-top: 1px solid #ccc;

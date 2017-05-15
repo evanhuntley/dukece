@@ -4,12 +4,16 @@
 
 .highlights {
     @extend %clearfix;
-    padding: 1em 0;
     
     .highlight {
+        margin: 0 0 1em;
         
         @include bp-xl {
             @include rowMachine(3, 2%, 5%);
+        }
+        
+        h2 {
+            margin: .25em 0;
         }
     }
 }

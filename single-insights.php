@@ -2,7 +2,7 @@
 
 	<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 		
-		<div class="featured-img" style="background-image: url('/wp-content/uploads/2017/05/jake-books-1300x616.jpg?1583b');"></div>       
+		<div class="featured-img" style="background-image: url('/wp-content/uploads/2017/05/jake-books-1300x616.jpg?4a58a');"></div>       
 		
         <article role="main" class="primary-content type-post" id="post-<?php the_ID(); ?>">
 			<div class="wrap">
@@ -19,8 +19,10 @@
             </header>
 
 			<?php the_post_thumbnail('content-feature');?>
-
-			<?php the_content(); ?>
+			
+			<div class="content">
+				<?php the_content(); ?>
+			</div>
 
 			<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:' ), 'after' => '</div>' ) ); ?>
 

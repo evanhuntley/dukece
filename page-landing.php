@@ -10,7 +10,7 @@
         <?php if ( has_post_thumbnail() ) { 
             $url = get_the_post_thumbnail_url($post->ID, 'full-banner');
         } ?>
-        <div class="featured-img" style="background-image: url('<?= $url; ?>');"></div>        
+        <div class="featured-img"></div>        
 
         <article role="main" class="primary-content type-page" id="post-<?php the_ID(); ?>">
             <div class="wrap">
@@ -21,6 +21,7 @@
                 <?php } ?>
 
                 <?php the_content(); ?>
+                
             </div>
         </article>
         
@@ -32,7 +33,7 @@
                     'post_type'      => 'page',
                     'posts_per_page' => -1,
                     'post_parent'    => $post->ID,
-                    'order'          => 'DESC',
+                    'order'          => 'ASC',
                     'orderby'        => 'menu_order'
                  );
 

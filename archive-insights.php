@@ -15,20 +15,20 @@ $posts = query_posts($query_string . '&orderby=meta_value&meta_key=wpcf-article-
 	<div role="main" class="primary-content type-archive article-archive">
 		<div class="wrap">
 			<div class="article-filters">
-				<a href="<?php echo add_query_arg(array('sortby' => 'title'), '/article-library/'); ?>">A-Z</a>
-				<a href="/article-library/">Date</a>
+				<a href="<?php echo add_query_arg(array('sortby' => 'title'), '/insights/'); ?>">A-Z</a>
+				<a href="/insights/">Date</a>
 			</div>
-			<h1><?= __('Article Library') ?></h1>
+			<h1><?= __('Our Insights') ?></h1>
 			<div class="search-box">
 				<form role="search" method="get" class="search-form" action="<?php echo get_permalink(2214); ?>">
 					<label>
 						<span class="sr-only">Search for:</span>
 						<input type="search" class="search-field" placeholder="Search …" value="" name="swpquery" title="Search for:">
 					</label>
-					<input type="submit" class="search-submit" value="Search">
+					<input type="submit" class="search-submit" value="Go">
 				</form>
 			</div>
-			<p class="article-intro">Duke CE’s article library brings you the latest thinking from our thought leaders in <em>Dialogue</em>.  Access the whole library below, or explore specific topics of <a href="/article-categories/leadership">Leadership</a>, <a href="/article-categories/innovation">Innovation</a>, <a href="/article-categories/strategy">Strategy</a>, <a href="/article-categories/finance">Finance</a> and <a href="/article-categories/leadership">Marketing</a>.</p>
+			<p class="article-intro">Duke CE’s article library brings you the latest thinking from our thought leaders in <em>Dialogue</em>, the only truly global journal for managers and leaders.  Access the whole library below, or explore specific topics of <a href="/article-categories/leadership">Leadership</a>, <a href="/article-categories/innovation">Innovation</a>, <a href="/article-categories/strategy">Strategy</a>, <a href="/article-categories/finance">Finance</a> and <a href="/article-categories/leadership">Marketing</a>.</p>
 			<div class="article-list">
 				<?php
 
