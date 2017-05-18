@@ -9,7 +9,7 @@
         width: 100%;
         margin: 0 0 1em;
         padding: 0 0 .25em;
-        border-bottom: 1px solid #ececec;
+        border-bottom: 1px solid #ccc;
     }
 }
 
@@ -152,17 +152,20 @@
         margin-bottom: 1em;    
     }
     
+    .content {
+        
+        @include bp-xl {
+            width: 60%;
+        }
+    }
+    
     .attachment-content-feature {
         
         @include bp-l {
             float: right;
-            max-width: 300px;
+            max-width: 40%;
             margin-left: 1em;
             margin-bottom: 1em;
-        }
-        
-        @include bp-xl {
-            max-width: 500px;
         }
     }
 }

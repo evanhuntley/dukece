@@ -19,6 +19,8 @@ body {
     font-family: 'Source Sans Pro', Arial, sans-serif;
     @include font-size(1,1.5);
     color: $dark-gray;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -44,7 +46,7 @@ h2 {
 }
 
 h3 {
-    @include font-size(1, 1.5);
+    @include font-size(1.25, 1.5);
     font-weight: 400;
 }
 
@@ -65,7 +67,7 @@ h6 {}
     }
 
     h3 {
-        @include font-size(1.25, 2);
+        @include font-size(1.5, 2);
     }
 
     h4 {
@@ -165,4 +167,10 @@ table {
           border: 1px solid #ececec;
           padding: .5em;
     }
+}
+
+.section-header {
+    padding-bottom: .25em;
+    @include font-size(2,2);
+    border-bottom: 1px solid #ccc;
 }

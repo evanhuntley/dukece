@@ -153,6 +153,8 @@
             @include bp-xl {
                 float: right;
                 clear: none;
+                position: relative;
+                top: -5px;
             }
         }
         

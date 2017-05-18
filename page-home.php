@@ -73,7 +73,7 @@ Template Name: Home Page
         <div class="insights">
             <div class="header">
                 <h2>Duke CE Leadership Insights</h2>
-                <a class="btn btn-action" href="<?php echo get_site_url(); ?>/index.php/subscribe">Subscribe</a>
+                <a class="btn btn-alt" href="<?php echo get_site_url(); ?>/index.php/subscribe">Subscribe</a>
             </div>
             <div class="insights-content">
                 <?php 
@@ -89,8 +89,10 @@ Template Name: Home Page
                 while ( $insights->have_posts() ) : $insights->the_post(); 
                 ?>
                 <article class="insights-item">
-                    <?php the_post_thumbnail('big-thumb'); ?>
-                    <h1><?php the_title(); ?></h1>
+                    <a href="<?= types_render_field('insights-url', array('raw' => true)); ?>">
+                        <?php the_post_thumbnail('big-thumb'); ?>
+                    </a>
+                    <h1><a href="<?= types_render_field('insights-url', array('raw' => true)); ?>"><?php the_title(); ?></a></h1>
                     <div class="abstract">
                         <?= types_render_field("insights-abstract", array("raw" => true)); ?>
                     </div>
