@@ -12,6 +12,10 @@ header[role="banner"] {
     background: $white;
     z-index: 100;
     
+    .logged-in & {
+        top: 32px;
+    }
+    
     .logo-wrap {
         position: relative;
         z-index: 999;
@@ -33,6 +37,7 @@ header[role="banner"] {
     .menu {
         position: absolute;
         opacity: 0;
+        visibility: hidden;
         top: 100%;
         left: 0;
         right: 0;
@@ -43,6 +48,7 @@ header[role="banner"] {
         
         &.open {
             opacity: 1;
+            visibility: visible;
             z-index: 50;
         }
         
@@ -50,15 +56,16 @@ header[role="banner"] {
             position: static;
             float: right;
             padding: 0;
-            opacity: 1;   
+            opacity: 1;
+            visibility: visible;
         }
     }
 
     .nav-toggle {
         display: block;
         position: absolute;
-        top: 1em;
-        right: 1em;
+        top: 18px;
+        right: 8px;
         width: 40px;
         height: 40px;
         border: none;
@@ -192,23 +199,23 @@ header[role="banner"] {
             right: 0;
             width: 56px;
             height: 56px;
-            background: darken($brand-blue, 5%);
 
             &:before {
                 content: "";
-                background: url('../img/chevrons.png');
-                background-position: -32px -16px;
-                height: 16px;
-                width: 16px;
                 position: absolute;
-                top: 20px;
-                right: 20px;
+                top: 22px;
+                right: 16px;
+                display: block;
+                @extend .svg-down;
+                @extend .svg-down-dims;
+                opacity: .35;
             }
 
             &.active {
 
                 &:before {
-                    background-position: 0 0;
+                    @extend .svg-up;
+                    @extend .svg-up-dims;
                 }
             }
 

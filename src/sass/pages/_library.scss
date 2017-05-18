@@ -15,6 +15,10 @@
 
 .article-filters {
     float: right;
+    
+    @include bp-l {
+        margin: .7em 0 0 1em;
+    }
 
     a {
         float: left;
@@ -94,7 +98,6 @@
         }
 
         .search-box {
-            width: 50%;
             float: right;
             margin-top: 10px;
         }
