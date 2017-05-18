@@ -237,13 +237,43 @@
             }
             
             .region {
-                padding: .25em 0;
+                position: relative;
+                padding: .5em 0;
                 color: $alt-blue;
                 border-bottom: 1px solid $alt-blue;
+                
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 14px;
+                    right: 0;
+                    display: block;
+                    @extend .svg-down;
+                    @extend .svg-down-dims;
+                    opacity: .35;
+                }
+                
+                &.show {
+                    
+                    &::after {
+                        @extend .svg-up;
+                        @extend .svg-up-dims;
+                    }
+                }
             }
             
             .office {
                 display: none;
+                padding: 1em 0;
+                
+                h3 {
+                    @include font-size(1, 1.4);
+                }
+                
+                .btn {
+                    margin: 1em 0;
+                    @include font-size(.875, 1);
+                }
             }
         }
     }

@@ -62,13 +62,13 @@ jQuery(function($) {
     $('.region').on('click', function() {
         var $this = $(this);
       
-        if ($this.next().hasClass('show')) {
-            $this.next().removeClass('show');
+        if ($this.hasClass('show')) {
+            $this.removeClass('show');
             $this.next().slideUp(350);
         } else {
-            $this.parent().parent().find('.office').removeClass('show');
-            $this.parent().parent().find('.office').slideUp(350);
-            $this.next().toggleClass('show');
+            $this.parent().find('.region').removeClass('show');
+            $this.parent().find('.office').slideUp(350);
+            $this.toggleClass('show');
             $this.next().slideToggle(350);
         }
     });
