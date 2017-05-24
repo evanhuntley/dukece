@@ -10,7 +10,7 @@ Template Name: Home Page
     <div class="wrap">
         <div class="value-prop">
             <h1>Leadership for What's Next</h1>
-            <p>Duke Corporate Education is the premier leadership development institution in the world. We work with our clients to co-create solutions in the context of business challenges to prepare leaders for what’s next.</p>
+            <p>Context matters more to leadership today than ever.  As the premier leadership development institution in the world, we work with you to create experiences that shift mindsets and behaviors so your leaders&mdash;and your business&mdash;can be ready.  </p>
             <a href="/our-experience" class="btn btn-action">Learn More About What We Do</a>
         </div>
     </div>

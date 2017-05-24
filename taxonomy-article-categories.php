@@ -12,6 +12,15 @@ $posts = query_posts($query_string . '&orderby=meta_value&meta_key=wpcf-article-
 
 	<div class="featured-img" style="background-image: url('/wp-content/uploads/2017/05/jake-books-1300x616.jpg?1583b');"></div>       
 
+	<div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
+		<div class="wrap">
+			<?php if(function_exists('bcn_display'))
+			{
+				bcn_display();
+			}?>
+		</div>
+	</div>
+
 	<div role="main" class="primary-content type-archive article-archive taxonomy-archive">
 		<div class="wrap">
 			<?php $slug = '/article-categories/' . $wp_query->queried_object->slug . '/'; ?>

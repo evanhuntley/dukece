@@ -4,6 +4,15 @@
 		
 		<div class="featured-img" style="background-image: url('/wp-content/uploads/2017/05/jake-books-1300x616.jpg?4a58a');"></div>       
 		
+		<div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
+			<div class="wrap">
+				<?php if(function_exists('bcn_display'))
+				{
+					bcn_display();
+				}?>
+			</div>
+		</div>
+		
         <article role="main" class="primary-content type-post" id="post-<?php the_ID(); ?>">
 			<div class="wrap">
             <header>

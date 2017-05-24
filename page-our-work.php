@@ -10,7 +10,16 @@
         <?php if ( has_post_thumbnail() ) { 
             $url = get_the_post_thumbnail_url($post->ID, 'full-banner');
         } ?>
-        <div class="featured-img"></div>        
+        <div class="featured-img"></div>       
+        
+        <div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
+            <div class="wrap">
+                <?php if(function_exists('bcn_display'))
+                {
+                    bcn_display();
+                }?>
+            </div>
+        </div>
 
         <article role="main" class="primary-content type-page" id="post-<?php the_ID(); ?>">
             <div class="wrap">
@@ -27,6 +36,7 @@
         
         <section class="highlights">
             <div class="wrap">
+                <h2 class="section-header">Leadership Development in Your Context</h2>
                 <?php
                 
                 $used = [];
@@ -45,18 +55,8 @@
 
                     <?php while ( $children->have_posts() ) : $children->the_post(); ?>
 
-                        <div class="highlight">
-                            <?php if ( has_post_thumbnail() ) { 
-                                $url = get_the_post_thumbnail_url($post->ID, 'highlight');
-                            } ?>
-                            <img src="<?= $url; ?>" alt="<?php the_title(); ?>" />
-                            <h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
-                            <div class="description">
-                                <?php echo types_render_field("short-description", array("raw" => true)); ?>
-                            </div>
-                        </div>
-                        
                         <?php 
+                            get_template_part('highlight'); 
                             array_push($used, $post->ID);
                         ?>
 
@@ -69,6 +69,37 @@
         <section class="highlights">
             <div class="wrap">
                 <h2 class="section-header">Relevant Topics</h2>
+                <?php
+                
+                $args = array(
+                    'post_type'      => 'page',
+                    'posts_per_page' => 5,
+                    'post__not_in'  => $used,
+                    'post_parent'    => $post->ID,
+                    'order'          => 'ASC',
+                    'orderby'        => 'menu_order'
+                 );
+
+                $children = new WP_Query( $args );
+
+                if ( $children->have_posts() ) : ?>
+
+                    <?php while ( $children->have_posts() ) : $children->the_post(); ?>
+
+                        <?php 
+                            get_template_part('highlight'); 
+                            array_push($used, $post->ID);
+                        ?>
+
+                    <?php endwhile; ?>
+
+                <?php endif; wp_reset_query(); ?>     
+            </div>
+        </section>
+        
+        <section class="highlights">
+            <div class="wrap">
+                <h2 class="section-header">Advisory Services</h2>
                 <?php
                 
                 $args = array(
@@ -86,16 +117,9 @@
 
                     <?php while ( $children->have_posts() ) : $children->the_post(); ?>
 
-                        <div class="highlight">
-                            <?php if ( has_post_thumbnail() ) { 
-                                $url = get_the_post_thumbnail_url($post->ID, 'highlight');
-                            } ?>
-                            <img src="<?= $url; ?>" alt="<?php the_title(); ?>" />
-                            <h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
-                            <div class="description">
-                                <?php echo types_render_field("short-description", array("raw" => true)); ?>
-                            </div>
-                        </div>
+                        <?php 
+                            get_template_part('highlight'); 
+                        ?>
 
                     <?php endwhile; ?>
 

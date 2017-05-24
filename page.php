@@ -6,6 +6,15 @@
         } ?>
         <div class="featured-img"></div>        
 
+        <div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
+            <div class="wrap">
+                <?php if(function_exists('bcn_display'))
+                {
+                    bcn_display();
+                }?>
+            </div>
+        </div>
+
         <article role="main" class="primary-content type-page" id="post-<?php the_ID(); ?>">
             <div class="wrap">
                 <?php if ( is_front_page() ) { ?>
