@@ -24,14 +24,9 @@ header[role="banner"] {
     .logo {
         display: block;
         float: left;
-        width: 120px;
-        height: 54px;
-        margin: 14px 0;
-        
-        @include bp-l {
-            width: 134px;
-            height: 60px;
-        }
+        width: 114px;
+        height: 51px;
+        margin: 12px 0;
     }
     
     .menu {
@@ -64,7 +59,7 @@ header[role="banner"] {
     .nav-toggle {
         display: block;
         position: absolute;
-        top: 18px;
+        top: 16px;
         right: 8px;
         width: 40px;
         height: 40px;
@@ -183,11 +178,11 @@ header[role="banner"] {
             transition: all .2s;
             
             @include bp-l {
-                padding: 2em 1em;
+                padding: 1.625em 1em;
             }
             
             @include bp-xl {
-                padding: 2em;
+                padding: 1.625em 2em;
                 border: none;
             }
         }
@@ -281,7 +276,7 @@ header[role="banner"] {
         
         @include bp-l {
             width: auto;
-            padding: 2em;
+            padding: 1.625em 2em;
         }
         
         button {
@@ -343,7 +338,7 @@ header[role="banner"] {
         margin: 1em 1em 0;
         
         @include bp-l {
-            margin: 1.25em 0 0;    
+            margin: .825em 0 0;    
             padding: .75em 1.5em;
         }
         

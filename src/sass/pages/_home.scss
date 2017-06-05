@@ -8,11 +8,11 @@
     .hero {
         position: relative;
         height: 400px;
-        padding: 7em 0;
+        padding: 6em 0;
         
         @include bp-l {
             height: 600px;
-            padding: 9em 0;
+            padding: 8em 0;
         }
         
         .value-prop {
