@@ -171,7 +171,8 @@ table {
 
 .section-header {
     padding-bottom: .5em;
-    margin-bottom: .75em;
+    margin: 1em 0 .75em;
     @include font-size(2,2);
     border-bottom: 1px solid #ccc;
+    text-transform: uppercase;
 }

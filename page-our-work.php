@@ -68,12 +68,12 @@
         
         <section class="highlights">
             <div class="wrap">
-                <h2 class="section-header">Relevant Topics</h2>
+                <h2 class="section-header">Focused Offerings</h2>
                 <?php
                 
                 $args = array(
                     'post_type'      => 'page',
-                    'posts_per_page' => 5,
+                    'posts_per_page' => 6,
                     'post__not_in'  => $used,
                     'post_parent'    => $post->ID,
                     'order'          => 'ASC',

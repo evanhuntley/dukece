@@ -11,7 +11,7 @@ Template Name: Home Page
         <div class="value-prop">
             <h1>Leadership for What's Next</h1>
             <p>Context matters more to leadership today than ever.  As the premier leadership development institution in the world, we work with you to create experiences that shift mindsets and behaviors so your leaders&mdash;and your business&mdash;can be ready.  </p>
-            <a href="/our-experience" class="btn btn-action">Learn More About What We Do</a>
+            <a href="/our-work" class="btn btn-action">Learn More About What We Do</a>
         </div>
     </div>
     <div class="flexslider" aria-role="presentation">
@@ -72,7 +72,7 @@ Template Name: Home Page
         
         <div class="insights">
             <div class="header">
-                <h2>Duke CE Leadership Insights</h2>
+                <h2>Leadership Insights</h2>
                 <a class="btn btn-alt" href="<?php echo get_site_url(); ?>/index.php/subscribe">Subscribe</a>
             </div>
             <div class="insights-content">

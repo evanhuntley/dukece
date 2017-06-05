@@ -24,7 +24,7 @@ CVS
 node_modules
 
 # Compiled items
-assets/scripts/
+assets/js/
 assets/css/
 src/components/
 

@@ -16,6 +16,9 @@ function getUrlVars()
 }
 
 jQuery(function($) {    
+    
+    // Polyfill SVG
+    svg4everybody();
 
     // Toggle Search Form
     $('.search-toggle').on('click', function() {

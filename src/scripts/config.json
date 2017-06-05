@@ -3,7 +3,8 @@
     "dependencies" : [
         "src/components/jquery/dist/jquery.js",
         "src/components/flexslider/jquery.flexslider.js",
-        "src/components/lity/dist/lity.js"
+        "src/components/lity/dist/lity.js",
+        "src/components/svg4everybody/dist/svg4everybody.js"
     ],
     "public" : [
         "src/components/css3-mediaqueries-js/css3-mediaqueries.js",
