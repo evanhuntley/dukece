@@ -1,38 +1,25 @@
 <?php get_header(); ?>
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-    <div class="wrap">
+        <div class="featured-img" style="background-image: url(/wp-content/uploads/2017/05/IMG_6882-1440x788.jpg);"></div>        
 
         <div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
-            <?php if(function_exists('bcn_display'))
-            {
-                bcn_display();
-            }?>
+            <div class="wrap">
+                <?php if(function_exists('bcn_display'))
+                {
+                    bcn_display();
+                }?>
+            </div>
         </div>
 
         <article role="main" class="primary-content type-page" id="post-<?php the_ID(); ?>">
-            <?php if ( is_front_page() ) { ?>
+            <div class="wrap">
                 <h1><?php the_title(); ?></h1>
-            <?php } else { ?>
-                <h1><?php the_title(); ?></h1>
-            <?php } ?>
-
-            <div class="feature-img">
-            <?php
-                if ( has_post_thumbnail() ) {
-                	the_post_thumbnail( 'content-feature' );
-                }
-            ?>
-            </div>
 
             <?php the_content(); ?>
 
-            <?php edit_post_link( __( 'Edit' ), '<span class="edit-link">', '</span>' ); ?>
-
             <?php endwhile; ?>
+            </div>
         </article>
 
-        <?php get_sidebar(); ?>
-    </div>
-
-<?php get_footer( 'no-sidebar' ); // will include footer-no-sidebar.php; ?>
+<?php get_footer(); ?>

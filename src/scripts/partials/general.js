@@ -15,11 +15,19 @@ function getUrlVars()
     return vars;
 }
 
-jQuery(function($) {
+jQuery(function($) {    
+    
+    // Polyfill SVG
+    svg4everybody();
+
+    // Toggle Search Form
+    $('.search-toggle').on('click', function() {
+        $(this).parent().toggleClass('active');
+    });
 
     // Toggle Nav Menu
     $('.nav-toggle').on('click', function() {
-        $('.header-wrap').toggleClass('open');
+        $('.menu').toggleClass('open');
         $(this).toggleClass('active');
     });
 
@@ -38,8 +46,6 @@ jQuery(function($) {
             $('.sub-menu').slideUp();
             submenu.slideToggle();
         }
-
-
         e.preventDefault();
     });
 
@@ -54,4 +60,19 @@ jQuery(function($) {
     if ( location ) {
         $('.region-select select').val(location);
     }
+    
+    // Expand/Collapse locations
+    $('.region').on('click', function() {
+        var $this = $(this);
+      
+        if ($this.hasClass('show')) {
+            $this.removeClass('show');
+            $this.next().slideUp(350);
+        } else {
+            $this.parent().find('.region').removeClass('show');
+            $this.parent().find('.office').slideUp(350);
+            $this.toggleClass('show');
+            $this.next().slideToggle(350);
+        }
+    });
 });

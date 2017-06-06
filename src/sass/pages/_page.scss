@@ -24,44 +24,59 @@
 
 /* Main Content ----------------------------------------------------- */
 
-.primary-content, .secondary-content {
-
-    a {
-        color: #003366;
-
-        &:hover {
-            color: #000;
-            text-decoration: none;
-        }
-    }
-
-    .btn {
-
-        &:hover {
-            color: #fff;
-        }
+.featured-img {
+    min-height: 175px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    
+    @include bp-l {
+        min-height: 368px;
     }
 }
 
 .primary-content {
-
-    li {
-        margin-bottom: 1em;
+    padding: 1em 0;
+    @include font-size(1.125, 1.625);
+    
+    @include bp-l {
+        padding: 1.5em 0;
+    }
+    
+    a {
+        color: $alt-blue;
+        
+        &:hover {
+            color: darken($alt-blue, 10%);
+        }
     }
 }
 
-table {
-
-    td {
-          border: 1px solid #ececec;
-          padding: .5em;
+.primary-content.type-page {
+    
+    .wrap {
+        max-width: 900px;
+        margin: 0 auto;
     }
 }
-
+ 
 /* Page Specific --------------------------------------------------- */
 
 .people-column {
     float: left;
     width: 23%;
     margin-right: 2%;
+}
+
+.employment-info {
+    float: left;
+    width: 100%;
+    margin: 2em 0;
+}
+
+.single-people {
+    
+    h2 a {
+        display: block;
+    }
 }

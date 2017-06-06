@@ -18,14 +18,15 @@ html {
 body {
     font-family: 'Source Sans Pro', Arial, sans-serif;
     @include font-size(1,1.5);
-    color: rgb(76, 76, 76);
+    color: $dark-gray;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	@include font-size(1.5, 1.75);
     margin: 0 0 .5em;
-    color: #036;
-    font-family: 'EB Garamond', serif;
+    color: $brand-blue;
 
     p + & {
         margin-top: 1em;
@@ -35,8 +36,8 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     @include font-size(2, 2.25);
     font-weight: 400;
-    color: #003366;
-    font-family: 'EB Garamond', serif;
+    color: $brand-blue;
+    text-transform: uppercase;
 }
 
 h2 {
@@ -45,7 +46,7 @@ h2 {
 }
 
 h3 {
-    @include font-size(1, 1.5);
+    @include font-size(1.25, 1.5);
     font-weight: 400;
 }
 
@@ -66,7 +67,7 @@ h6 {}
     }
 
     h3 {
-        @include font-size(1.25, 2);
+        @include font-size(1.5, 2);
     }
 
     h4 {
@@ -86,7 +87,9 @@ p {
 }
 
 a {
+    color: $brand-blue;
 	@include hover-fade;
+    text-decoration: none;
 
 	&:hover,
     &:active {
@@ -126,22 +129,52 @@ sup {
 .btn, input[type="submit"] {
     display: inline-block;
     margin: 0 0 .5em;
-    padding: .5em 1em;
+    padding: .75em 2.5em;
     text-decoration: none;
+    text-transform: uppercase;
     border: none;
-    background: #1e376c;
+    border-radius: 0;
+    background: $brand-blue;
+    font-family: 'Source Sans Pro', Arial, sans-serif;
     color: #fff;
 
-    &:hover {
+    &:hover, &:focus {
         color: #fff;
         background: #001C49;
     }
 
     &.btn-action {
-        background: #0075c9;
+        background: $alt-blue;
 
-        &:hover {
+        &:hover, &:focus {
             background: #055FA0;
         }
     }
+    
+    &.btn-alt {
+        background: $white;
+        border: 1px solid $brand-blue;
+        color: $brand-blue;
+        
+        &:hover, &:focus {
+            color: $white;
+            background: $brand-blue;
+        }
+    }
+}
+
+table {
+
+    td {
+          border: 1px solid #ececec;
+          padding: .5em;
+    }
+}
+
+.section-header {
+    padding-bottom: .5em;
+    margin: 1em 0 .75em;
+    @include font-size(2,2);
+    border-bottom: 1px solid #ccc;
+    text-transform: uppercase;
 }

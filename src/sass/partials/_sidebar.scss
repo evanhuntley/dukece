@@ -1,74 +1,34 @@
 /* ===================================================================
-    Sidebar
+    Sidebar (Shown as part of footer)
 ====================================================================== */
-
-.subnav {
-    margin: 0 0 2em;
-
-    ul {
-        margin: 0;
-        padding: 0;
-    }
-
-    li {
-        margin-bottom: 10px;
-    }
-
-    a {
-        text-decoration: none;
-        color: #696969;
-        font-size: 18px;
-
-        &:hover {
-            color: #000;
-        }
-    }
-
-    .active > a {
-        font-weight: 700;
-    }
-
-    .sub-menu {
-        margin: 10px 0 10px 16px;
-
-        a {
-            font-size: 16px;
-        }
-
-        .sub-menu {
-
-            a {
-                font-size: 14px;
-            }
-        }
-    }
-}
 
 /* Sidebar Widgets ------------------------------------------------- */
 
 .widget {
-
-    h3 {
-        font-size: 20px;
-        font-weight: 400;
-        color: #444444;
-    }
-
-    .btn {
-        width: 100%;
-        color: #fff;
-    }
-
+    width: 100%;
+    float: left;
+    
     &.dialogue {
-        margin: 2em 0 0;
-
-        a {
-            display: block;
-            margin: .5em 0 0;
+        padding: 2em 0;
+        border-top: 1px solid #ccc;
+        
+        p {
+            margin: 1em 0;
+            
+            @include bp-l {
+                max-width: 75%;
+            }
         }
 
         img {
-            border: 1px solid #ececec;
+            margin: 0 0 1em;
+            
+            @include bp-m {
+                float: left;
+                max-width: 150px;
+                height: auto;
+                margin-right: 2em;    
+            };
         }
     }
 }

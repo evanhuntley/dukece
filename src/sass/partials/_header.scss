@@ -2,16 +2,20 @@
     Header
 ====================================================================== */
 
-header {
+header[role="banner"] {
     @extend %clearfix;
-    padding: 1em 0;
-    border-bottom: 8px solid $brand-blue;
-
-    @include bp-l {
-        padding: 1em 0 0;
-        border: none;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    background: $white;
+    z-index: 100;
+    
+    .logged-in & {
+        top: 32px;
     }
-
+    
     .logo-wrap {
         position: relative;
         z-index: 999;
@@ -20,44 +24,45 @@ header {
     .logo {
         display: block;
         float: left;
-        width: 250px;
-        height: 73px;
+        width: 114px;
+        height: 51px;
+        margin: 12px 0;
     }
-
-    .header-wrap {
-        display: none;
+    
+    .menu {
         position: absolute;
-        top: 105px;
-        width: 100%;
-        padding: 1em 0 3.5em;
-        background: $brand-blue;
-        z-index: 1000;
-
-        @include bp-s {
-            max-width: 350px;
-            right: 0;
-        }
-
-        @include bp-l {
-            display: block;
-            position: static;
-            max-width: none;
-            padding: 0;
-            background: transparent;
-        }
-
+        opacity: 0;
+        visibility: hidden;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 0 0 1em;
+        background: #fff;
+        transition: all .2s;
+        z-index: 10;
+        
         &.open {
-            display: block;
+            opacity: 1;
+            visibility: visible;
+            z-index: 50;
+        }
+        
+        @include bp-l {
+            position: static;
+            float: right;
+            padding: 0;
+            opacity: 1;
+            visibility: visible;
         }
     }
 
     .nav-toggle {
         display: block;
         position: absolute;
-        top: 24px;
-        right: 10px;
-        width: 46px;
-        height: 46px;
+        top: 16px;
+        right: 16px;
+        width: 40px;
+        height: 40px;
         border: none;
         background: transparent;
         z-index: 999;
@@ -78,8 +83,8 @@ header {
         span, span:before, span:after {
           cursor: pointer;
           border-radius: 1px;
-          height: 5px;
-          width: 35px;
+          height: 4px;
+          width: 33px;
           background: $brand-blue;
           position: absolute;
           display: block;
@@ -96,7 +101,6 @@ header {
         }
 
         &.active {
-            background-color: $brand-blue;
 
             span {
                 background-color: transparent;
@@ -104,7 +108,7 @@ header {
 
             span:before, span:after {
                 top: 0;
-                background-color: #fff;
+                background-color: $brand-blue;
             }
 
             span:before {
@@ -122,18 +126,11 @@ header {
         width: 100%;
 
         @include bp-l {
-            display: block;
-            position: static;
-            margin: 1em 0 0;
-            background: #1e376c;
+            width: auto;
         }
 
         .main-menu {
             margin: 0;
-        }
-
-        .wrap {
-            padding: 0;
         }
 
         li {
@@ -149,7 +146,15 @@ header {
                     }
 
                     a {
-                        background: #001C49;
+                        color: $alt-blue;
+                    }
+                    
+                    .sub-menu a {
+                        color: $dark-gray;
+                        
+                        &:hover {
+                            color: $white;
+                        }
                     }
                 }
             }
@@ -157,7 +162,7 @@ header {
             &:focus {
 
                 a {
-                    background: #001C49;
+                    color: $alt-blue;
                 }
             }
         }
@@ -165,10 +170,21 @@ header {
         a {
             display: block;
             padding: 1em;
-            color: #fff;
+            color: $dark-gray;
+            border-top: 1px solid #ececec;
             text-decoration: none;
             text-transform: uppercase;
-            transition: none;
+            font-weight: 600;
+            transition: all .2s;
+            
+            @include bp-l {
+                padding: 1.625em 1em;
+            }
+            
+            @include bp-xl {
+                padding: 1.625em 2em;
+                border: none;
+            }
         }
 
         .toggle-sub {
@@ -178,23 +194,23 @@ header {
             right: 0;
             width: 56px;
             height: 56px;
-            background: darken($brand-blue, 5%);
 
             &:before {
                 content: "";
-                background: url('../img/chevrons.png');
-                background-position: -32px -16px;
-                height: 16px;
-                width: 16px;
                 position: absolute;
-                top: 20px;
-                right: 20px;
+                top: 22px;
+                right: 16px;
+                display: block;
+                @extend .svg-down;
+                @extend .svg-down-dims;
+                opacity: .35;
             }
 
             &.active {
 
                 &:before {
-                    background-position: 0 0;
+                    @extend .svg-up;
+                    @extend .svg-up-dims;
                 }
             }
 
@@ -206,86 +222,128 @@ header {
         .sub-menu {
             display: none;
             margin: 0;
-            padding: .5em 0 .5em 1em;
-            background: #001C49;
-            z-index: 5;
-            border-top: 1px solid rgba(0, 0, 0, .25);
-            border-bottom: 1px solid rgba(0, 0, 0, .25);
+            background: $white;
+            z-index: 50;
 
             @include bp-l {
                 position: absolute;
+                left: 50%;
+                margin-left: -100px;
                 width: 200px;
                 padding: 0;
                 border: 0;
+                box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
             }
 
             li {
                 width: 100%;
                 transition: all .2s;
-
-                @include bp-l {
-                    &:hover {
-                        width: 200px;
-                        margin-left: -7px;
-                    }
-                }
             }
 
             a {
                 padding: .5em 1em;
                 text-transform: none;
                 font-weight: 400;
+                
+                @include bp-l {
+                    text-align: center;
+                    width: 100%;
+                    transform: translateX(0);
+                    
+                    &:hover {
+                        width: 104%;
+                        color: #fff;
+                        background: $alt-blue;
+                        transform: translateX(-3.5%);
+                    }
+                }
 
                 &::before {
                     content: none;
                 }
-
-                &:hover {
-                    color: #2297c5;
-                }
             }
         }
     }
-
-    .utility-nav {
-        position: absolute;
-        bottom: 1em;
-        left: 1em;
-        width: 90%;
-        margin: 0;
-        padding: .5em 0;
-        border-top: 1px solid rgba(0, 0, 0, .25);
-
+    
+    /* Search Form --------------------------------------------- */
+    
+    .search {
+        float: left;
+        position: relative;
+        width: 100%;
+        padding: 0 1em;
+        line-height: 0;
+        
         @include bp-l {
-            float: right;
-            clear: right;
-            position: static;
             width: auto;
-            margin: .5em 0 0;
-            padding: 0;
-            border: none;
+            padding: 1.625em 2em;
         }
-
-        li {
-            display: inline-block;
-            padding: 0 5px;
-            line-height: 12px;
-            border-left: 1px solid #1e376c;
-
-            &:first-child {
-                border: none;
-            }
-        }
-
-        a {
-            font-size: 13px;
-            text-decoration: none;
-            text-transform: uppercase;
-            color: #fff;
-
+        
+        button {
+            display: none;
+            
             @include bp-l {
-                color: $brand-blue;
+                display: block;
+                padding: 0;
+                border: none;
+                line-height: 0;
+                background: none;
+                
+                &:hover {
+                    color: $alt-blue;
+                    fill: $alt-blue;
+                }
+                
+                &:focus {
+                    outline: none;
+                }
             }
+        }
+        
+        svg {
+            width: 24px;
+            height: 24px;
+            transition: all .2s;
+        }
+        
+        .search-form {
+            
+            @include bp-l {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                width: 260px;
+                margin-left: -130px;
+                padding: 0 1em;
+                background: $white;
+            }
+            
+            input[type="search"] {
+                width: calc(100% - 68px);
+            }
+        }
+        
+        &.active {
+            
+            .search-form {
+                display: block;
+            }
+        }
+    }
+    
+    /* Contact -------------------------------------------------- */
+    
+    .contact {
+        margin: 1em 1em 0;
+        
+        @include bp-l {
+            margin: .825em 0 0;    
+            padding: .75em 1.5em;
+        }
+        
+        @include bp-xl {
+            padding: .75em 2.5em;
         }
     }
 }

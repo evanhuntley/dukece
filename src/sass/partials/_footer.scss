@@ -3,53 +3,96 @@
 ====================================================================== */
 
 footer {
+    position: relative;
     width: 100%;
     float: left;
     padding: 1.5em 0;
-    background: #1e376c;
+    background: $dark-gray;
 
     .footer-logo {
-        width: 178px;
-        float: right;
-    }
-}
-
-
-.sub-footer {
-    width: 100%;
-    float: left;
-    margin: 3em 0 0;
-    font-size: 11px;
-    color: $brand-blue;
-
-    ul {
-        width: 225px;
+        width: 130px;
+        height: 35px;
         float: left;
-        margin: 0;
-        padding: 0;
-
+        clear: left;
+        
+        @include bp-m {
+            position: absolute;
+            top: 1em;
+            right: 1em;
+        }
+        
+        @include bp-xl {
+            position: static;
+            float: right;
+            clear: none;
+        }
+    }
+    
+    .social {
+        float: left;
+        margin: 0 0 1em;
+        
+        @include bp-xl {
+            margin: .5em 0 0;
+        }
+        
+        ul {
+            margin: 0;
+        }
+        
         li {
             display: inline-block;
-
-            &:first-child {
-
-                a {
-                    padding-left: 0;
-                    border-left: none;
-                }
-            }
-
-            a {
-                padding: 0 4px;
-                color: $brand-blue;
-                text-transform: uppercase;
-                border-left: 1px solid $brand-blue;
+            margin: 0 1em 0 0;
+        }
+        
+        .icon {
+            width: 20px;
+            height: 20px;
+            color: $white;
+            fill: $white;
+            transition: all .2s;
+            
+            &:hover {
+                color: $alt-blue;
+                fill: $alt-blue;
             }
         }
     }
-
-    p {
-        width: 749px;
-        float: right;
+    
+    nav {
+        float: left;
+        clear: left;
+        margin: 0 0 1em;
+        
+        @include bp-m {
+            margin: 0;
+        }
+        
+        @include bp-xl {
+            clear: none;
+            margin: 6px 0 0 3em;
+        }
+        
+        ul {
+            margin: 0;
+        }
+        
+        li {
+            display: inline-block;
+            margin: 0 1em .5em 0;
+            
+            @include bp-l {
+                margin: 0 2em 0 0;
+            }
+        }
+        
+        a {
+            color: $white;
+            text-transform: uppercase;
+            
+            &:hover {
+                color: $alt-blue;
+            }
+        }
     }
 }

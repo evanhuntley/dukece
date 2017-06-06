@@ -10,7 +10,7 @@
 */
 
 body {
-    padding: 0;
+    padding: 75px 0 0;
     margin: 0 auto;
     width: 100%;
     }
@@ -48,26 +48,17 @@ figure {
 .wrap {
     margin: 0 auto;
     padding: 0 1em;
-
+    
     @include bp-xl {
+        max-width: 1100px;
+    }
+
+    @include bp-xxl {
         padding: 0;
-        max-width: 1024px;
+        max-width: 1200px;
     }
 }
 
 .primary-content {
 
-    @include bp-l {
-        float: right;
-        width: 73%;
-    }
-}
-
-.secondary-content {
-
-    @include bp-l {
-        float: left;
-        width: 22%;
-        margin-right: 5%;
-    }
 }

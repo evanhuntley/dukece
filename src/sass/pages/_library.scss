@@ -7,11 +7,18 @@
     > h2 {
         float: left;
         width: 100%;
+        margin: 0 0 1em;
+        padding: 0 0 .25em;
+        border-bottom: 1px solid #ccc;
     }
 }
 
 .article-filters {
     float: right;
+    
+    @include bp-l {
+        margin: .7em 0 0 1em;
+    }
 
     a {
         float: left;
@@ -30,13 +37,20 @@
     @extend %clearfix;
     float: left;
     margin: 0 0 1.5em;
+    
+    @include bp-l {
+        @include rowMachine(2, 5%, 5%);
+    }
+    
+    @include bp-xl {
+        @include rowMachine(3, 2%, 5%);
+    }
 
     h2 {
-        margin: 0 0 .25em;
-        font-family: "Source Sans Pro", Arial, sans-serif;
-        @include font-size(1.375, 1.8);
+        margin: .25em 0;
 
         a {
+            color: $brand-blue;
             text-decoration: none;
         }
     }
@@ -44,17 +58,6 @@
     .date {
         color: #999;
         font-size: 15px;
-    }
-
-    img {
-        margin-bottom: 1em;
-
-        @include bp-m {
-            float: left;
-            margin-right: 1.5em;
-            margin-bottom: 2em;
-            max-width: 120px;
-        }
     }
 }
 
@@ -76,7 +79,7 @@
         @include font-size(1.2, 1);
 
         &.active {
-            font-weight: 700;
+            font-weight: 600;
         }
     }
 
@@ -95,7 +98,6 @@
         }
 
         .search-box {
-            width: 50%;
             float: right;
             margin-top: 10px;
         }
@@ -140,5 +142,33 @@
 
     span, a {
         margin-right: 10px;
+    }
+}
+
+.single-insights {
+    
+    h1 {
+        margin-bottom: .25em;
+    }
+    
+    .entry-meta {
+        margin-bottom: 1em;    
+    }
+    
+    .content {
+        
+        @include bp-xl {
+            width: 60%;
+        }
+    }
+    
+    .attachment-content-feature {
+        
+        @include bp-l {
+            float: right;
+            max-width: 40%;
+            margin-left: 1em;
+            margin-bottom: 1em;
+        }
     }
 }

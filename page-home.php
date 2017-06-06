@@ -1,96 +1,213 @@
 <?php
 /*
-    Template Name: Home Page
+Template Name: Home Page
 */
-
-    $block_1_title = types_render_field('block-1-title', array('raw' => true));
-    $block_1_url = types_render_field('block-1-url', array('raw' => true));
-    $block_1_image = types_render_field('block-1-image', array('raw' => true));
-
-    $block_2_title = types_render_field('block-2-title', array('raw' => true));
-    $block_2_url = types_render_field('block-2-url', array('raw' => true));
-    $block_2_image = types_render_field('block-2-image', array('raw' => true));
-
-    $block_3_title = types_render_field('block-3-title', array('raw' => true));
-    $block_3_url = types_render_field('block-3-url', array('raw' => true));
-    $block_3_image = types_render_field('block-3-image', array('raw' => true));
-
-    $dialogue_content = types_render_field('dialogue-content', array('raw' => false));
 ?>
 
 <?php get_header(); ?>
-<div class="features">
-    <ul class="stories">
-        <li>
-            <a class="title" href="<?php echo $block_1_url; ?>"><?php echo $block_1_title; ?></a>
-            <a class="title-image" href="<?php echo $block_1_url; ?>"><img src="<?php echo $block_1_image; ?>" /></a>
-        </li>
-        <li>
-            <a class="title" href="<?php echo $block_2_url; ?>"><?php echo $block_2_title; ?></a>
-            <a class="title-image" href="<?php echo $block_2_url; ?>"><img src="<?php echo $block_2_image; ?>" /></a>
-        </li>
-        <li>
-            <a class="title" href="<?php echo $block_3_url; ?>"><?php echo $block_3_title; ?></a>
-            <a class="title-image" href="<?php echo $block_3_url; ?>"><img src="<?php echo $block_3_image; ?>" /></a>
-        </li>
-    </ul>
-    <div class="dialogue">
-        <div class="header">
-            <h2>Duke CE Leadership Insights</h2>
-            <a class="btn" href="<?php echo get_site_url(); ?>/index.php/subscribe">Subscribe</a>
-        </div>
-        <div class="dialogue-content">
-            <?php echo $dialogue_content; ?>
-        </div>
-    </div>
-    <div class="ft-block">
-        <p><img src="<?php echo bloginfo('template_directory'); ?>/assets/img/l_financial-times.jpg" alt="Financial Times Logo" /> Ranked among the top 3 in custom executive education globally for 16 consecutive years</p>
-    </div>
-    <div class="social">
-        <h3>Connect with Duke CE</h3>
-        <ul>
-            <li><a href="https://www.linkedin.com/companies/20660"><img src="<?php echo bloginfo('template_directory'); ?>/assets/img/i_linkedin.jpg" alt="LinkedIn" /></a></li>
-            <li><a href="http://www.facebook.com/pages/Duke-Corporate-Education/135647923775"><img src="<?php echo bloginfo('template_directory'); ?>/assets/img/i_facebook.jpg" alt="Facebook" /></a></li>
-            <li><a href="https://twitter.com/DukeCE"><img src="<?php echo bloginfo('template_directory'); ?>/assets/img/i_twitter.jpg" alt="Twitter" /></a></li>
-            <li><a href="https://instagram.com/dukecorporateeducation/"><img src="<?php echo bloginfo('template_directory'); ?>/assets/img/i_instagram.jpg" alt="Instagram" /></a></li>
-            <li><a href="https://www.youtube.com/user/DukeCorpEd"><img src="<?php echo bloginfo('template_directory'); ?>/assets/img/i_youtube.jpg" alt="Youtube" /></a></li>
-            <li><a href="<?php echo get_site_url(); ?>/index.php/contact"><img src="<?php echo bloginfo('template_directory'); ?>/assets/img/i_email.jpg" alt="Email" /></a></li>
-        </ul>
-    </div>
-</div>
-<div class="locations">
-    <ul>
-        <li>
-            <div class="location-name">Ahmedabad, IN</div>
-            <div class="phone">+91 79 6621 3100</div>
-            <a href="<?php echo get_site_url(); ?>/index.php/contact?location=india">Contact</a>
-        </li>
-        <li>
-            <div class="location-name">Carlsbad, CA USA</div>
-            <div class="phone">+1 760 710 2444</div>
-            <a href="<?php echo get_site_url(); ?>/index.php/contact?location=north-america">Contact</a>
-        </li>
-        <li>
-            <div class="location-name">Durham, NC USA</div>
-            <div class="phone">+1 919 680 5000</div>
-            <a href="<?php echo get_site_url(); ?>/index.php/contact?location=north-america">Contact</a>
-        </li>
-        <li>
-            <div class="location-name">Johannesburg, ZA</div>
-            <div class="phone">+27 11 575 6241</div>
-            <a href="<?php echo get_site_url(); ?>/index.php/contact?location=africa">Contact</a>
-        </li>
-        <li>
-            <div class="location-name">London, UK</div>
-            <div class="phone">+44 20 7936 6100</div>
-            <a href="<?php echo get_site_url(); ?>/index.php/contact?location=europe">Contact</a>
-        </li>
-        <li>
-            <div class="location-name">Singapore, SG</div>
-            <div class="phone">+65 6701 5300</div>
-            <a href="<?php echo get_site_url(); ?>/index.php/contact?location=southeast-asia">Contact</a>
-        </li>
-    </ul>
-</div>
 
-<?php get_footer(); // will include footer-no-sidebar.php; ?>
+<section class="hero">
+    <div class="wrap">
+        <div class="value-prop">
+            <h1>Leadership for What's Next</h1>
+            <p>Context matters more to leadership today than ever.  As the premier leadership development institution in the world, we work with you to create experiences that shift mindsets and behaviors so your leaders&mdash;and your business&mdash;can be ready.  </p>
+            <a href="/our-work" class="btn btn-action">Learn More About What We Do</a>
+        </div>
+    </div>
+    <div class="flexslider" aria-role="presentation">
+        <?php 
+        $args = array(
+            'post_type'      => 'hero-slides',
+            'posts_per_page' => -1,
+            'order'          => 'DESC',
+            'orderby'        => 'menu_order'
+        );
+        
+        $slides = new WP_Query( $args );
+        
+        if ( $slides->have_posts() ) : 
+            ?>
+            <ul class="slides">
+                <?php while ( $slides->have_posts() ) : $slides->the_post(); ?>
+                    <li>
+                        <div style="background-image: url('<?php echo get_the_post_thumbnail_url($post->ID, 'hero'); ?>');" ></div>
+                    </li>
+                <?php endwhile; wp_reset_query(); ?>
+            </ul>
+        <?php endif; ?>
+    </div>
+    <div class="overlay"></div>
+</section>
+
+<section class="main-content">
+    <div class="wrap">
+        
+        <?php 
+            $video_title = types_render_field("home-video-title", array("raw" => true));
+            $video_desc = types_render_field("home-video-description", array("raw" => true));
+            $video_img = types_render_field("home-video-image", array("size" => 'highlight'));
+            $video_url = types_render_field("home-video-url", array("raw" => true));
+            
+            $more_videos = types_render_field("home-videos-url", array("raw" => true));
+        ?>
+        
+        <div class="offerings">
+            <h2>Leadership Offerings</h2>
+            <?php 
+            $args = array(
+                'post_type'      => 'home-features',
+                'posts_per_page' => 3,
+                'order'          => 'DESC',
+                'orderby'        => 'menu_order',
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'feature-type',
+                        'field'    => 'slug',
+                        'terms'    => 'home-offering',
+                    ),
+                )
+            );
+
+            $offerings = new WP_Query( $args );
+
+            while ( $offerings->have_posts() ) : $offerings->the_post(); 
+            ?>
+            <article class="offerings-item">
+                <a href="<?= types_render_field('insights-url', array('raw' => true)); ?>">
+                    <?php the_post_thumbnail('offering'); ?>
+                </a>
+                <h1><a href="<?= types_render_field('insights-url', array('raw' => true)); ?>"><?php the_title(); ?></a></h1>
+                <div class="abstract">
+                    <?= types_render_field("insights-short-text"); ?>
+                </div>
+            </article>
+            <?php endwhile; wp_reset_query(); ?>
+            <a class="offerings-more" href="/our-work">More Offerings</a><a class="offerings-more" href="/our-experience">Read More Client Stories</a>
+        </div>
+        
+        <div class="insights">
+            <div class="header">
+                <h2>Leadership Insights</h2>
+                <a class="btn btn-alt" href="<?php echo get_site_url(); ?>/index.php/subscribe">Subscribe</a>
+            </div>
+            <div class="insights-content">
+                <?php 
+                $args = array(
+                    'post_type'      => 'home-features',
+                    'posts_per_page' => 5,
+                    'order'          => 'DESC',
+                    'orderby'        => 'menu_order',
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'feature-type',
+                            'field'    => 'slug',
+                            'terms'    => 'home-insight',
+                        ),
+                    )
+                );
+                
+                $insights = new WP_Query( $args );
+                
+                while ( $insights->have_posts() ) : $insights->the_post(); 
+                ?>
+                <article class="insights-item">
+                    <a href="<?= types_render_field('insights-url', array('raw' => true)); ?>">
+                        <?php the_post_thumbnail('big-thumb'); ?>
+                    </a>
+                    <h1><a href="<?= types_render_field('insights-url', array('raw' => true)); ?>"><?php the_title(); ?></a></h1>
+                    <div class="abstract">
+                        <?= types_render_field("insights-short-text"); ?>
+                    </div>
+                </article>
+            <?php endwhile; wp_reset_query(); ?>
+        </div>
+    </div>
+    
+    <div class="video">
+        <div class="video-img">
+            <a data-lity href="<?php echo $video_url; ?>">
+                <?= $video_img; ?>  
+                <svg class="icon">
+                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/svg/sprite.svg#play"></use>
+                </svg>     
+            </a>
+        </div>
+        <h2><?= $video_title; ?></h2>
+        <p><?= $video_desc; ?></p>
+        <a class="btn btn-action" href="<?= $more_videos; ?>">Learn More About Who We Are</a>
+    </div>
+    
+</div>
+</section>
+
+<section class="global">
+    <div class="wrap">
+        <h1>Global Insight and Impact</h1>
+        <div class="figures">
+            <div class="number">75 +<span>Countries Delivered</span></div>
+            <div class="number">1500 +<span>Global Educators</span></div>
+            <div class="number">7500 +<span>Programs Completed</span></div>
+            <div class="number">225,000 +<span>Leaders Engaged</span></div>
+        </div>
+        <p>Ranked among the top 3 in custom executive education globally for 17 consecutive years by the <em>Financial Times</em></p>
+        <img src="<?php bloginfo( 'template_directory' ); ?>/assets/img/g_map.png" alt="Duke CE Global Impact Map" />
+        <div class="locations">
+            <div class="region">North America</div>
+            <div class="office">
+                <h3>Carlsbad (San Diego), CA</h3>
+                <address>Suite 250<br>
+                    5650 El Camino Real<br>
+                    Carlsbad, CA 92008 USA<br>
+                </address>
+                <a target="_blank" class="btn" href="https://www.google.com/maps/place/5650+El+Camino+Real+%23250,+Carlsbad,+CA+92008/">Directions</a>
+                <h3>Durham, NC</h3>
+                <address>310 Blackwell Street<br>
+                    Durham, NC 27701 USA<br>
+                </address>
+                <a target="_blank" class="btn" href="https://www.google.com/maps/place/310+Blackwell+St,+Durham,+NC+27701/">Directions</a>
+            </div>
+            <div class="region">Europe</div>
+            <div class="office">
+                <h3>London UK</h3>
+                <address>
+                    1st Floor<br>
+                    165 Fleet Street<br>
+                    London EC4A 2DY, UK<br>
+                </address>
+                <a target="_blank" class="btn" href="https://www.google.com/maps/place/165+Fleet+St,+London+EC4A+2AE,+UK/">Directions</a>
+            </div>
+            <div class="region">Asia</div>
+            <div class="office">
+                <h3>Ahmedabad, India</h3>
+                <address>
+                    607, Shivalik High Street<br />
+                    B/H Keshav Bagh, 132 Feet ring road<br />
+                    Vastrapur<br />
+                    Ahmedabad 380 015
+                </address>
+                <a target="_blank" class="btn" href="https://www.google.com/maps/place/132+Feet+Ring+Rd,+Ahmedabad,+Gujarat,+India/">Directions</a>
+                <h3>Singapore</h3>
+                <address>
+                    72 Anson Road<br />
+                    Unit #05-01 Anson House<br />
+                    Singapore 079911
+                </address>
+                <a target="_blank" class="btn" href="https://www.google.com/maps/place/72+Anson+Rd,+Singapore+079911/">Directions</a>
+            </div>
+            <div class="region">Africa</div>
+            <div class="office">
+                <h3>Johannesburg, South Africa</h3>
+                <address>
+                    The Campus<br />
+                    Ground Floor Eden Gardens Building<br />
+                    57 Sloane Street<br />
+                    Bryanston<br />
+                    Gauteng 2191
+                </address>
+                <a target="_blank" class="btn" href="https://www.google.com/maps/place/Gabba+Building,+The+Campus/@-26.0410491,28.0238458,21z/data=!4m13!1m7!3m6!1s0x1e9573f74ebcbfbd:0xc1f755b6ea59697d!2sThe+Gabba+Building,+57+Sloane+St,+Bryanston,+Sandton,+2191,+South+Africa!3b1!8m2!3d-26.041175!4d28.024047!3m4!1s0x0:0xc02d1061b54186a8!8m2!3d-26.0408755!4d28.0240437">Directions</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<?php get_footer(); ?>

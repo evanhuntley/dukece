@@ -1,0 +1,28 @@
+/* ===================================================================
+    Landing Page
+====================================================================== */
+
+.highlights {
+    @extend %clearfix;
+    
+    .highlight {
+        margin: 0 0 1em;
+        
+        @include bp-l {
+            @include rowMachine(2, 5%, 5%);
+        }
+        
+        @include bp-xl {
+            @include rowMachine(3, 2%, 5%);
+        }
+        
+        h2 {
+            margin: .5em 0 .25em;
+            @include font-size(1.5, 2);
+        }
+    }
+}
+
+.bottom-content {
+    padding: 2em 0;
+}
