@@ -29,7 +29,7 @@ $posts = query_posts($query_string . '&orderby=meta_value&meta_key=wpcf-article-
 			</div>
 			<h1><?= __('Our Insights') ?></h1>
 			<div class="search-box">
-				<form role="search" method="get" class="search-form" action="<?php echo get_permalink(2214); ?>">
+				<form role="search" method="get" class="search-form" action="<?php echo get_permalink(2993); ?>">
 					<label>
 						<span class="sr-only">Search for:</span>
 						<input type="search" class="search-field" placeholder="Search …" value="" name="swpquery" title="Search for:">

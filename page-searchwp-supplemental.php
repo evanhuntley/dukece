@@ -24,15 +24,19 @@ if ( class_exists( 'SWP_Query' ) ) {
 	) );
 }
 get_header(); ?>
-<div class="wrap">
+
+	<div class="featured-img" style="background-image: url('/wp-content/uploads/2017/05/jake-books-1300x616.jpg?1583b');"></div>       
 
     <div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
-        <?php if(function_exists('bcn_display'))
-        {
-            bcn_display();
-        }?>
+		<div class="wrap">
+			<?php if(function_exists('bcn_display'))
+			{
+				bcn_display();
+			}?>
+		</div>
     </div>
     <div role="main" class="primary-content type-archive searchwp-results">
+		<div class="wrap">
 		<header class="page-header">
 			<h1 class="page-title">
 				<?php if ( ! empty( $query ) ) : ?>
@@ -44,11 +48,11 @@ get_header(); ?>
 
 			<!-- begin search form -->
 			<div class="search-box">
-				<form role="search" method="get" class="search-form" action="<?php echo esc_html( get_permalink() ); ?>">
+				<form role="search" method="get" class="search-form" action="<?php echo get_permalink(2993); ?>">
 					<label>
 						<span class="sr-only">Search for:</span>
 						<input type="search" class="search-field" placeholder="Search …" value="" name="swpquery" title="Search for:">
-						<input type="submit" class="search-submit" value="Search">
+						<input type="submit" class="search-submit" value="Go">
 					</label>
 				</form>
 			</div>
@@ -86,6 +90,5 @@ get_header(); ?>
 			<p>Your search did not return any results.</p>
 		<?php endif; ?>
     </div>
-    <?php get_sidebar(); ?>
-</div>
+	</div>
 <?php get_footer();

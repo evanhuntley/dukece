@@ -78,10 +78,11 @@ Template Name: Home Page
                 </a>
                 <h1><a href="<?= types_render_field('insights-url', array('raw' => true)); ?>"><?php the_title(); ?></a></h1>
                 <div class="abstract">
-                    <?= types_render_field("insights-abstract", array("raw" => true)); ?>
+                    <?= types_render_field("insights-short-text"); ?>
                 </div>
             </article>
             <?php endwhile; wp_reset_query(); ?>
+            <a class="offerings-more" href="">More Offerings</a><a class="offerings-more" href="/our-experience">Read More Client Stories</a>
         </div>
         
         <div class="insights">
@@ -115,7 +116,7 @@ Template Name: Home Page
                     </a>
                     <h1><a href="<?= types_render_field('insights-url', array('raw' => true)); ?>"><?php the_title(); ?></a></h1>
                     <div class="abstract">
-                        <?= types_render_field("insights-abstract", array("raw" => true)); ?>
+                        <?= types_render_field("insights-short-text"); ?>
                     </div>
                 </article>
             <?php endwhile; wp_reset_query(); ?>
@@ -123,9 +124,17 @@ Template Name: Home Page
     </div>
     
     <div class="video">
-        <a data-lity href="<?php echo $video_url; ?>"><?= $video_img; ?></a>
+        <div class="video-img">
+            <a data-lity href="<?php echo $video_url; ?>">
+                <?= $video_img; ?>  
+                <svg class="icon">
+                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/svg/sprite.svg#play"></use>
+                </svg>     
+            </a>
+        </div>
         <h2><?= $video_title; ?></h2>
         <p><?= $video_desc; ?></p>
+        <a class="btn btn-action" href="<?= $more_videos; ?>">Learn More About Who We Are</a>
     </div>
     
 </div>

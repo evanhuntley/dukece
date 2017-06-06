@@ -13,7 +13,8 @@
         }
         
         h2 {
-            margin: .25em 0;
+            margin: .5em 0 .25em;
+            @include font-size(1.5, 2);
         }
     }
 }
