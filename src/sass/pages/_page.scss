@@ -25,15 +25,23 @@
 /* Main Content ----------------------------------------------------- */
 
 .featured-img {
-    min-height: 368px;
+    min-height: 175px;
     background-repeat: no-repeat;
     background-position: 50%;
     background-size: cover;
+    
+    @include bp-l {
+        min-height: 368px;
+    }
 }
 
 .primary-content {
-    padding: 1.5em 0;
+    padding: 1em 0;
     @include font-size(1.125, 1.625);
+    
+    @include bp-l {
+        padding: 1.5em 0;
+    }
     
     a {
         color: $alt-blue;

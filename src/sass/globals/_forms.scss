@@ -84,8 +84,9 @@ textarea {
     overflow: auto;
     vertical-align: top;
     resize: vertical;
-  border-color: #ddd;
-    }
+    border: 1px solid #ccc;
+    box-shadow: none;
+}
 
     .search-form {
         width: 100%;
@@ -134,4 +135,15 @@ textarea {
             border-radius: 0;
             background: $alt-blue;
         }
+    }
+    
+    .gform_wrapper {
+        
+        input[type="text"], input[type="email"] {
+            border: 1px solid #ccc;
+        }
+    }
+    
+    .primary-content .gf_browser_ie.gform_wrapper .gform_footer input.button {
+        padding: .75em 2.5em;
     }

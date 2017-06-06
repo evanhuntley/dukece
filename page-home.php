@@ -30,7 +30,7 @@ Template Name: Home Page
             <ul class="slides">
                 <?php while ( $slides->have_posts() ) : $slides->the_post(); ?>
                     <li>
-                        <div style="background-image: url('<?php echo get_the_post_thumbnail_url($post->ID, 'hero'); ?>" ></div>
+                        <div style="background-image: url('<?php echo get_the_post_thumbnail_url($post->ID, 'hero'); ?>');" ></div>
                     </li>
                 <?php endwhile; wp_reset_query(); ?>
             </ul>
@@ -82,7 +82,7 @@ Template Name: Home Page
                 </div>
             </article>
             <?php endwhile; wp_reset_query(); ?>
-            <a class="offerings-more" href="">More Offerings</a><a class="offerings-more" href="/our-experience">Read More Client Stories</a>
+            <a class="offerings-more" href="/our-work">More Offerings</a><a class="offerings-more" href="/our-experience">Read More Client Stories</a>
         </div>
         
         <div class="insights">
