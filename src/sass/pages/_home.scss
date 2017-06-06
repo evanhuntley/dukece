@@ -11,6 +11,10 @@
         padding: 4em 0;
         
         @include bp-l {
+            padding: 5em 0;
+        }
+        
+        @include bp-xl {
             height: 600px;
             padding: 8em 0;
         }
@@ -22,11 +26,12 @@
             text-shadow: 0 1px 1px rgba(0, 0, 0, .1);
             
             @include bp-l {
-                width: 60%;
+                width: 70%;
             };
             
             @include bp-xl {
-                width: 40%;
+                width: 50%;
+                max-width: 500px;
             }
         }
         
@@ -35,7 +40,7 @@
             color: $white;
             @include font-size(2.25, 2.75);
             
-            @include bp-l {
+            @include bp-xl {
                 @include font-size(4, 4);
             }
         }
@@ -67,7 +72,7 @@
         border: none;
         z-index: 10;
         
-        @include bp-l {
+        @include bp-xl {
             height: 600px;
         }
 
@@ -77,7 +82,7 @@
             background-size: cover;
             background-position: 25% 0;
 
-            @include bp-l {
+            @include bp-xl {
                 height: 600px;
                 background-position: 0 0;
             }
@@ -97,7 +102,7 @@
     .offerings {
         margin: 0 0 2em;
         
-        @include bp-l {
+        @include bp-xl {
             float: left;
             width: 50%;
             padding-right: 5%;
@@ -108,6 +113,7 @@
         }
         
         img {
+            width: 100%;
             margin: 0 0 1em;
         }
         
@@ -137,7 +143,7 @@
     
     .insights {
     
-        @include bp-l {
+        @include bp-xl {
             float: right;
             width: 50%;
             padding-left: 5%;
@@ -158,7 +164,7 @@
             clear: left;
             margin-bottom: 1em;
 
-            @include bp-xl {
+            @include bp-l {
                 float: right;
                 clear: none;
                 position: relative;
@@ -173,7 +179,19 @@
             min-height: 150px;
             
             @include bp-l {
+                @include rowMachine(2, 5%, 5%);
+            }
+            
+            @include bp-xl {
                 padding-left: 10em;
+                
+                &:nth-of-type(n) {
+                    float: none;
+                    width: 100%;
+                    margin-bottom: 1em;
+                    margin-right: 0;
+                    clear: none;
+                }
                 
                 img {
                     position: absolute;
@@ -185,8 +203,12 @@
             }
             
             h1 {
-                padding-top: .25em;
+                padding-top: 1em;
                 @include font-size(1.25, 1.6);
+                
+                @include bp-xl {
+                    padding-top: .25em;
+                }
             }
         }
     }
@@ -198,7 +220,7 @@
         float: left;
         margin: 2em 0;
         
-        @include bp-l {
+        @include bp-xl {
             margin: 4em 0 2em;
         }
         
@@ -210,7 +232,7 @@
             position: relative;
             margin: 0 0 1em;
             
-            @include bp-l {
+            @include bp-xl {
                 float: right;
                 width: 60%;
                 padding-left: 2.5%;

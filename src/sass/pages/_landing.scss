@@ -8,6 +8,10 @@
     .highlight {
         margin: 0 0 1em;
         
+        @include bp-l {
+            @include rowMachine(2, 5%, 5%);
+        }
+        
         @include bp-xl {
             @include rowMachine(3, 2%, 5%);
         }
