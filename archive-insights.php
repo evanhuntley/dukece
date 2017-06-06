@@ -40,7 +40,6 @@ $posts = query_posts($query_string . '&orderby=meta_value&meta_key=wpcf-article-
 			<p class="article-intro">Duke CE’s article library brings you the latest thinking from our thought leaders in <em>Dialogue</em>, the only truly global journal for managers and leaders.  Access the whole library below, or explore specific topics of <a href="/article-categories/leadership">Leadership</a>, <a href="/article-categories/innovation">Innovation</a>, <a href="/article-categories/strategy">Strategy</a>, <a href="/article-categories/finance">Finance</a> and <a href="/article-categories/leadership">Marketing</a>.</p>
 			<div class="article-list">
 				<?php
-
 					$sortby = get_query_var('sortby');
 					// Rewind Query and Get Items
 					rewind_posts();
@@ -50,8 +49,13 @@ $posts = query_posts($query_string . '&orderby=meta_value&meta_key=wpcf-article-
 					$year = types_render_field("article-display-date", array("raw"=>false, "format"=>"Y"));
 					$date = $month . ' ' . $year;
 				?>
-				<?php if ( $past_date != $date && $sortby != 'title') : ?>
+				<?php if ( !isset($past_date)) : ?>
 					<h2><?php echo $date; ?></h2>
+					<div class="article-group">
+				<?php elseif ( $past_date != $date && $sortby != 'title') : ?>
+					</div>
+					<h2><?php echo $date; ?></h2>
+					<div class="article-group">
 				<?php endif; ?>
 
 					<article class="library-item">
@@ -67,6 +71,7 @@ $posts = query_posts($query_string . '&orderby=meta_value&meta_key=wpcf-article-
 
 					<?php $past_date = $date; ?>
 				<?php endwhile; ?>
+				</div> <?php //end the article group div, no matter what ?>
 			</div>
 			<div class="pagination">
 				<?php echo paginate_links(); ?>

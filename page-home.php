@@ -43,31 +43,45 @@ Template Name: Home Page
     <div class="wrap">
         
         <?php 
-        $story_title = types_render_field("home-story-title", array("raw" => true));
-        $story_img = types_render_field("home-story-image", array('size' => 'highlight'));
-        $story_abstract = types_render_field("home-story-abstract", array("raw" => true));
-        $story_url = types_render_field("home-story-url", array("raw" => true));
-        
-        $more_stories = types_render_field("home-stories-url", array("raw" => true));
-        
-        $video_title = types_render_field("home-video-title", array("raw" => true));
-        $video_desc = types_render_field("home-video-description", array("raw" => true));
-        $video_img = types_render_field("home-video-image", array("size" => 'highlight'));
-        $video_url = types_render_field("home-video-url", array("raw" => true));
-        
-        $more_videos = types_render_field("home-videos-url", array("raw" => true));
+            $video_title = types_render_field("home-video-title", array("raw" => true));
+            $video_desc = types_render_field("home-video-description", array("raw" => true));
+            $video_img = types_render_field("home-video-image", array("size" => 'highlight'));
+            $video_url = types_render_field("home-video-url", array("raw" => true));
+            
+            $more_videos = types_render_field("home-videos-url", array("raw" => true));
         ?>
         
-        <div class="stories">
-            <h2>Experiences Around the World</h2>
-            <article>
-                <a href="<?= $story_url; ?>">
-                    <?= $story_img; ?>
+        <div class="offerings">
+            <h2>Leadership Offerings</h2>
+            <?php 
+            $args = array(
+                'post_type'      => 'home-features',
+                'posts_per_page' => 3,
+                'order'          => 'DESC',
+                'orderby'        => 'menu_order',
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'feature-type',
+                        'field'    => 'slug',
+                        'terms'    => 'home-offering',
+                    ),
+                )
+            );
+
+            $offerings = new WP_Query( $args );
+
+            while ( $offerings->have_posts() ) : $offerings->the_post(); 
+            ?>
+            <article class="offerings-item">
+                <a href="<?= types_render_field('insights-url', array('raw' => true)); ?>">
+                    <?php the_post_thumbnail('offering'); ?>
                 </a>
-                <h1><a href="<?= $story_url; ?>"><?= $story_title; ?></a></h1>
-                <p><?= $story_abstract; ?></p>
+                <h1><a href="<?= types_render_field('insights-url', array('raw' => true)); ?>"><?php the_title(); ?></a></h1>
+                <div class="abstract">
+                    <?= types_render_field("insights-abstract", array("raw" => true)); ?>
+                </div>
             </article>
-            <a class="more" href="<?= $more_stories; ?>">More Leadership Solutions</a>
+            <?php endwhile; wp_reset_query(); ?>
         </div>
         
         <div class="insights">
@@ -81,7 +95,14 @@ Template Name: Home Page
                     'post_type'      => 'home-features',
                     'posts_per_page' => 5,
                     'order'          => 'DESC',
-                    'orderby'        => 'menu_order'
+                    'orderby'        => 'menu_order',
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'feature-type',
+                            'field'    => 'slug',
+                            'terms'    => 'home-insight',
+                        ),
+                    )
                 );
                 
                 $insights = new WP_Query( $args );
@@ -102,8 +123,8 @@ Template Name: Home Page
     </div>
     
     <div class="video">
-        <h2><?= $video_title; ?></h2>
         <a data-lity href="<?php echo $video_url; ?>"><?= $video_img; ?></a>
+        <h2><?= $video_title; ?></h2>
         <p><?= $video_desc; ?></p>
     </div>
     

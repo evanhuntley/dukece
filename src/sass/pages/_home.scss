@@ -93,13 +93,17 @@
         }
     }
     
-    .stories {
+    .offerings {
         margin: 0 0 2em;
         
         @include bp-l {
             float: left;
             width: 50%;
-            padding-right: 2.5%;
+            padding-right: 5%;
+        }
+        
+        article {
+            margin: 0 0 2em;
         }
         
         img {
@@ -119,31 +123,12 @@
 
     }
     
-    .video {
-        margin: 0 0 1em;
-        
-        h2 {
-            text-transform: uppercase;
-        }
-        
-        img {
-            margin: 0 0 1em;
-        }
-        
-        @include bp-l {
-            float: left;
-            clear: left;
-            width: 50%;
-            padding-right: 2.5%;
-        }
-    }
-    
     .insights {
     
         @include bp-l {
             float: right;
             width: 50%;
-            padding-left: 2.5%;
+            padding-left: 5%;
             border-left: 1px solid #ececec;
         }
 
@@ -193,6 +178,32 @@
         }
     }
     
+    /* Video ---------------------------------------------------------- */
+    
+    .video {
+        width: 100%;
+        float: left;
+        margin: 2em 0;
+        
+        @include bp-l {
+            margin: 4em 0 2em;
+        }
+        
+        h2 {
+            text-transform: uppercase;
+        }
+        
+        img {
+            margin: 0 0 1em;
+            
+            @include bp-l {
+                float: right;
+                width: 60%;
+                padding-left: 2.5%;
+            }
+        }
+    }
+    
     /* Global --------------------------------------------------------- */
     
     .global {
@@ -205,7 +216,7 @@
             width: 100%;
             margin: 2em 0;
             color: $brand-blue;
-            @include font-size(1.25, 1.6);
+            @include font-size(1.25, 1.6875);
         }
         
         .number {

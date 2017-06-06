@@ -119,7 +119,7 @@ function duke_theme_setup() {
   add_image_size( 'big-thumb', 400, 400, true ); // (cropped)    
   add_image_size( 'highlight', 650, 357, true ); // (cropped)    
   add_image_size( 'article', 400, 250, true ); // (cropped)
-  add_image_size( 'offering', 490, 134, true ); // (cropped)
+  add_image_size( 'offering', 570, 156, true ); // (cropped)
 }
 
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
