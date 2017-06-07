@@ -37,7 +37,7 @@ $posts = query_posts($query_string . '&orderby=meta_value&meta_key=wpcf-article-
 					<input type="submit" class="search-submit" value="Go">
 				</form>
 			</div>
-			<p class="article-intro">Duke CE’s article library brings you the latest thinking from our thought leaders in <em>Dialogue</em>, the only truly global journal for managers and leaders.  Access the whole library below, or explore specific topics of <a href="/article-categories/leadership">Leadership</a>, <a href="/article-categories/innovation">Innovation</a>, <a href="/article-categories/strategy">Strategy</a>, <a href="/article-categories/finance">Finance</a> and <a href="/article-categories/leadership">Marketing</a>.</p>
+			<p class="article-intro">Duke CE’s article library brings you the latest thinking from our thought leaders in <em>Dialogue</em>, the only truly global journal for managers and leaders.  Access the whole library below, or explore specific topics of <a href="/article-categories/leadership">Leadership</a>, <a href="/article-categories/innovation">Innovation</a>, <a href="/article-categories/strategy">Strategy</a>, <a href="/article-categories/finance">Finance</a> and <a href="/article-categories/marketing">Marketing</a>.</p>
 			<div class="article-list">
 				<?php
 					$sortby = get_query_var('sortby');
