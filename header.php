@@ -28,13 +28,14 @@
 	<link rel="dns-prefetch" href="//www.dukece.com">
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-    <link rel="shortcut icon" href="<?php echo bloginfo('template_directory'); ?>/favicon.ico?v=2">
+	<link rel="icon" href="<?php echo bloginfo('template_directory'); ?>/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="<?php echo bloginfo('template_directory'); ?>/favicon.png">
 	<link rel="apple-touch-icon" href="<?php echo bloginfo('template_directory'); ?>/apple-touch-icon-precomposed.png"/>
 <!-- The little things -->
 
 <!-- Stylesheets -->
 	<link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,400italic' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="<?php bloginfo( 'template_directory' ); ?>/assets/css/style.css" />
+	<link rel="stylesheet" href="<?php bloginfo( 'template_directory' ); ?>/assets/css/styles.css" />
 <!-- Stylesheets -->
 
 <!--[if lt IE 9]>
@@ -57,6 +58,9 @@ fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1788791708098992&ev=PageView&noscript=1"
 /></noscript>
+
+
+<script type="text/javascript"> _linkedin_data_partner_id = "96207"; </script><script type="text/javascript"> (function(){var s = document.getElementsByTagName("script")[0]; var b = document.createElement("script"); b.type = "text/javascript";b.async = true; b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js"; s.parentNode.insertBefore(b, s);})(); </script> <noscript> <img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=96207&fmt=gif" /> </noscript>
 
 <!-- Google Analytics -->
 <script>

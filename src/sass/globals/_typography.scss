@@ -129,7 +129,7 @@ sup {
 .btn, input[type="submit"] {
     display: inline-block;
     margin: 0 0 .5em;
-    padding: .75em 2.5em;
+    padding: .75em 1.5em;
     text-decoration: none;
     text-transform: uppercase;
     border: none;
@@ -137,6 +137,10 @@ sup {
     background: $brand-blue;
     font-family: 'Source Sans Pro', Arial, sans-serif;
     color: #fff;
+    
+    @include bp-s {
+        padding: .75em 2.5em;
+    }
 
     &:hover, &:focus {
         color: #fff;
