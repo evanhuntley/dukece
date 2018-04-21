@@ -1,5 +1,9 @@
 
-<?php get_sidebar(); ?>
+<?php 
+	if ( !is_page('subscribe') ) {
+		get_sidebar();
+	}
+?>
 
 <footer role="contentinfo">
 	<div class="wrap">
