@@ -9,9 +9,9 @@ Template Name: Home Page
 <section class="hero">
     <div class="wrap">
         <div class="value-prop">
-            <h1>Leadership for What's Next</h1>
-            <p>Context matters more to leadership today than ever.  As the premier leadership development institution in the world, we work with you to create experiences that shift mindsets and behaviors so your leaders&mdash;and your business&mdash;can be ready.  </p>
-            <a href="/our-work" class="btn btn-action">Learn More About What We Do</a>
+            <h1><?= types_render_field("hero-title", array("raw" => true)); ?></h1>
+            <p><?= types_render_field("hero-text", array("raw" => true)); ?></p>
+            <a href="<?= types_render_field("hero-button-url", array("raw" => true)); ?>" class="btn btn-action"><?= types_render_field("hero-button-label", array("raw" => true)); ?></a>
         </div>
     </div>
     <div class="flexslider" aria-role="presentation">
