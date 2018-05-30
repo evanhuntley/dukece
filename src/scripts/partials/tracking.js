@@ -57,4 +57,9 @@ jQuery(function($) {
     $('.register-episode-1a').on('click', function() {
         track_event('register', 'leadership-series', 'bottom');
     });
+    
+    $('.sa-track').on('click', function() {
+        var data = $(this).attr('data-track');
+        track_event(data, 'sa', 'click');
+    })
 });
