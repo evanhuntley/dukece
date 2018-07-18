@@ -188,6 +188,40 @@ function eh_alter_query($query){
       }
 }
 
+// Button Shortcode
+// [button text="Words" url="URL" type="blue" event-category="cat" event-name="name" event-value="val" new-window="true" ]
+function button_func( $atts ) {
+
+	$a = shortcode_atts( array(
+	    'text' => 'Button',
+	    'url' => '/',
+		'type' => 'dark-blue',
+        'event-category' => '#',
+        'event-name' => '#',
+        'event-value' => '#',
+        'new-window' => 'true',
+	), $atts );
+
+	$new = ($a['new-window'] == 'true') ? ' target="_blank" ' : '';
+    
+    if ( $a['type'] == 'light-blue' ) {
+        $class = "btn btn-action";
+    } else if ( $a['type'] == 'dark-blue' ) {
+        $class = "btn";
+    } else if ( $a['type'] == 'white' ) { 
+        $class = "btn btn-alt";
+    } else {
+        $class = "";
+    }
+    
+    $tracking = 'data-event-category="' . $a['event-category'] . '" data-event-name="' . $a['event-name'] . '" data-event-value="' . $a['event-value'] . '"';
+
+	$button = '<a' . $new . ' ' . $tracking . ' href="' . $a['url'] . '" class="tracking-button ' . $class . '">' . $a['text'] . '</a>';
+    
+	return $button;
+}
+add_shortcode( 'button', 'button_func' );
+
 /**  
  *
  * Background Image from Post Image
@@ -227,27 +261,5 @@ function dukece_responsive_mobile_first_background_images() {
 
 }
 add_action( 'wp_head', 'dukece_responsive_mobile_first_background_images', 99 );
-
-// Button Shortcode
-// [button text="Words" url="URL" type="blue" event-category="" event-name="" event-value=""]
-function button_func( $atts ) {
-
-	$a = shortcode_atts( array(
-	    'text' => 'Button',
-	    'url' => '/',
-		'color' => 'blue',
-        'event-category' => '#',
-        'event-name' => '#',
-        'event-value' => '#'
-	), $atts );
-
-	$new = ($a['new-window'] == true) ? ' target="_blank" ' : '';
-    
-    $tracking = 'data-event-category="' . $a['event-category'] . '" data-event-name="' . $a['event-name'] . '" data-event-value="' . $a['event-value'] '"';
-
-	$button = '<a' . $new . ' ' . $tracking . ' href="' . $a['url'] . '" class="button shortcode ' . $class . '">' . $a['text'] . '</a>';
-	return $button;
-}
-add_shortcode( 'button', 'button_func' );
 
 ?>

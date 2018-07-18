@@ -43,7 +43,7 @@
         padding: 1.5em 0;
     }
     
-    a {
+    a:not(.btn) {
         color: $alt-blue;
         
         &:hover {
