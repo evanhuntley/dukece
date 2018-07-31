@@ -149,7 +149,7 @@ Template Name: Home Page
             <div class="number">7500 +<span>Programs Completed</span></div>
             <div class="number">225,000 +<span>Leaders Engaged</span></div>
         </div>
-        <p>Ranked among the top 3 in custom executive education globally for 17 consecutive years by the <em>Financial Times</em></p>
+        <p>Ranked among the top 3 in custom executive education globally for 18 consecutive years by the <em>Financial Times</em></p>
         <img src="<?php bloginfo( 'template_directory' ); ?>/assets/img/g_map.png" alt="Duke CE Global Impact Map" />
         <div class="locations">
             <div class="region">North America</div>

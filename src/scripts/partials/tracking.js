@@ -2,6 +2,14 @@
     Facebook/Google Tracking
 ====================================================================== */
 
+$.fn.isInViewport = function() {
+    var elementTop = $(this).offset().top;
+    var elementBottom = elementTop + $(this).outerHeight();
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+};
+
 function track_event(name, category, value) {
     
     // Track Facebook
@@ -70,5 +78,67 @@ jQuery(function($) {
             value = $(this).attr('data-event-value');
             
         track_event(name, category, value);
-    })
+    });
+    
+    // Track submitted forms
+    $(document).bind('gform_confirmation_loaded', function(event, formId){
+        track_event('submit', 'form', formId);
+    });
+    
+    // Vimeo Tracking Code
+    var iframes = document.querySelectorAll('iframe');
+    
+    iframes.forEach(function(iframe, i) {
+        if (iframe.getAttribute('src').includes('vimeo')) {
+            var player = new Vimeo.Player(iframe);
+            var quarter = half = threeQuarter = ninety = false;
+            var videoTitle = '';
+            var inView = false;
+            
+            $(window).on('load scroll', function() {
+                if ($(iframe).isInViewport() && inView == false) {
+                    track_event('in_view', 'video', videoTitle);
+                    inView = true;
+                }
+            });
+            
+            player.getVideoTitle().then(function(title) {
+                videoTitle = title;
+            });
+            
+            player.on('play', function() {
+                track_event('play', 'video', videoTitle);
+            });
+            
+            player.on('pause', function() {
+                track_event('pause', 'video', videoTitle);
+            });
+            
+            player.on('timeupdate', function(e) {
+                if (e.percent >= 0.25 && quarter == false) {
+                    track_event('progress - 25%', 'video', videoTitle);
+                    quarter = true;
+                } else if (e.percent >= 0.50 && half == false) {
+                    track_event('progress - 50%', 'video', videoTitle);
+                    half = true;
+                } else if (e.percent >= 0.75 && threeQuarter == false) {
+                    track_event('progress - 75%', 'video', videoTitle);
+                    threeQuarter = true;
+                } else if (e.percent >= 0.90 && ninety == false) {
+                    track_event('progress - 90%', 'video', videoTitle);
+                    ninety = true;
+                }
+                
+            });
+            
+            player.on('seeked', function(e) {
+                var percent = e.percent * 100;
+                track_event('seeked to' + Math.round(percent) + '%', 'video', videoTitle);
+            });
+            
+            player.on('ended', function(e) {
+                track_event('finished', 'video', videoTitle);
+            });
+        }
+    });
 });

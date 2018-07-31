@@ -5,7 +5,7 @@
 <title><?php
 	global $page, $paged;
 	wp_title( '|', true, 'right' );
-		bloginfo( 'name' );
+		//bloginfo( 'name' );
 		$site_description = get_bloginfo( 'description', 'display' );
 		if ( $site_description && ( is_home() || is_front_page() ) )
 			echo " | $site_description";
@@ -73,6 +73,9 @@ src="https://www.facebook.com/tr?id=1788791708098992&ev=PageView&noscript=1"
   ga('send', 'pageview');
 
 </script>
+<!-- Vimeo for GA -->
+<!-- <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/11112294.js"></script> -->
+<script src="https://player.vimeo.com/api/player.js"></script>
 </head>
 
 <body <?php body_class(); ?>>

@@ -3,19 +3,11 @@
 function load_jquery() {
 
     // only use this method is we're not in wp-admin
-    if ( ! is_admin() ) {
-
-        // deregister the original version of jQuery
-        wp_deregister_script('jquery');
-
-        // register it again, this time with no file path
-        wp_register_script('jquery', '', FALSE, '1.11.3');
-
-        // add it back into the queue
-        wp_enqueue_script('jquery');
-
+    if ( !is_admin() ) {
+        wp_deregister_script( 'jquery' );
+        wp_register_script( 'jquery', ( 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js' ), false, null, true );
+        wp_enqueue_script( 'jquery' );
     }
-
 }
 
 add_action('template_redirect', 'load_jquery');
@@ -127,10 +119,7 @@ remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
-add_filter("gform_init_scripts_footer", "init_scripts");
-function init_scripts() {
-    return true;
-}
+add_filter( 'gform_init_scripts_footer', '__return_true' );
 
 // Replaces the excerpt "more" text by a link
 function new_excerpt_more($more) {
