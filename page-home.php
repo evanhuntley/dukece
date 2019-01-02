@@ -144,20 +144,21 @@ Template Name: Home Page
     <div class="wrap">
         <h1>Global Insight and Impact</h1>
         <div class="figures">
-            <div class="number">75 +<span>Countries Delivered</span></div>
+            <div class="number">80 +<span>Countries Delivered</span></div>
             <div class="number">1500 +<span>Global Educators</span></div>
-            <div class="number">7500 +<span>Programs Completed</span></div>
-            <div class="number">225,000 +<span>Leaders Engaged</span></div>
+            <div class="number">8000 +<span>Programs Completed</span></div>
+            <div class="number">250,000 +<span>Leaders Engaged</span></div>
         </div>
         <p>Ranked among the top 3 in custom executive education globally for 18 consecutive years by the <em>Financial Times</em></p>
         <img src="<?php bloginfo( 'template_directory' ); ?>/assets/img/g_map.png" alt="Duke CE Global Impact Map" />
         <div class="locations">
             <div class="region">North America</div>
             <div class="office">
-                <h3>Carlsbad (San Diego), CA</h3>
-                <address>Suite 250<br>
-                    5650 El Camino Real<br>
-                    Carlsbad, CA 92008 USA<br>
+                <h3>San Diego, CA</h3>
+                <address>
+                    8910 University Center Lane<br>
+                    Suite 1100<br>
+                    San Diego CA 92122 USA<br>
                 </address>
                 <a target="_blank" class="btn" href="https://www.google.com/maps/place/5650+El+Camino+Real+%23250,+Carlsbad,+CA+92008/">Directions</a>
                 <h3>Durham, NC</h3>
@@ -170,9 +171,9 @@ Template Name: Home Page
             <div class="office">
                 <h3>London UK</h3>
                 <address>
-                    1st Floor<br>
-                    165 Fleet Street<br>
-                    London EC4A 2DY, UK<br>
+                    2nd Floor<br>
+                    10 Fetter Lane<br>
+                    London EC4A 1BR , UK<br>
                 </address>
                 <a target="_blank" class="btn" href="https://www.google.com/maps/place/165+Fleet+St,+London+EC4A+2AE,+UK/">Directions</a>
             </div>

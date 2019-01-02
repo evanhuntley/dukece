@@ -97,7 +97,21 @@ jQuery(function($) {
             
             $(window).on('load scroll', function() {
                 if ($(iframe).isInViewport() && inView == false) {
-                    track_event('in_view', 'video', videoTitle);
+                    
+                    // Track Facebook
+                    fbq('trackCustom', 'video', {
+                        event_detail: 'in_view',
+                        video_title: videoTitle
+                    });
+                    
+                    // Track Google
+                    ga('send', {
+                        hitType: 'event',
+                        eventCategory: 'video',
+                        eventAction: 'in_view',
+                        eventLabel: videoTitle
+                    });                    
+                    
                     inView = true;
                 }
             });
@@ -107,25 +121,106 @@ jQuery(function($) {
             });
             
             player.on('play', function() {
-                track_event('play', 'video', videoTitle);
+                
+                // Track Facebook
+                fbq('trackCustom', 'video', {
+                    event_detail: 'play',
+                    video_title: videoTitle
+                });
+                
+                // Track Google
+                ga('send', {
+                    hitType: 'event',
+                    eventCategory: 'video',
+                    eventAction: 'play',
+                    eventLabel: videoTitle
+                });   
+                                
             });
             
             player.on('pause', function() {
-                track_event('pause', 'video', videoTitle);
+                
+                // Track Facebook
+                fbq('trackCustom', 'video', {
+                    event_detail: 'pause',
+                    video_title: videoTitle
+                });
+                
+                // Track Google
+                ga('send', {
+                    hitType: 'event',
+                    eventCategory: 'video',
+                    eventAction: 'pause',
+                    eventLabel: videoTitle
+                });   
             });
             
             player.on('timeupdate', function(e) {
                 if (e.percent >= 0.25 && quarter == false) {
-                    track_event('progress - 25%', 'video', videoTitle);
+                    
+                    // Track Facebook
+                    fbq('trackCustom', 'video', {
+                        event_detail: 'progress',
+                        percentage: '25%',
+                        video_title: videoTitle
+                    });
+                    
+                    // Track Google
+                    ga('send', {
+                        hitType: 'event',
+                        eventCategory: 'video',
+                        eventAction: 'progress - 25%',
+                        eventLabel: videoTitle
+                    });   
+                    
                     quarter = true;
                 } else if (e.percent >= 0.50 && half == false) {
-                    track_event('progress - 50%', 'video', videoTitle);
+                    // Track Facebook
+                    fbq('trackCustom', 'video', {
+                        event_detail: 'progress',
+                        percentage: '50%',
+                        video_title: videoTitle
+                    });
+                    
+                    // Track Google
+                    ga('send', {
+                        hitType: 'event',
+                        eventCategory: 'video',
+                        eventAction: 'progress - 50%',
+                        eventLabel: videoTitle
+                    });   
                     half = true;
                 } else if (e.percent >= 0.75 && threeQuarter == false) {
-                    track_event('progress - 75%', 'video', videoTitle);
+                    // Track Facebook
+                    fbq('trackCustom', 'video', {
+                        event_detail: 'progress',
+                        percentage: '75%',
+                        video_title: videoTitle
+                    });
+                    
+                    // Track Google
+                    ga('send', {
+                        hitType: 'event',
+                        eventCategory: 'video',
+                        eventAction: 'progress - 75%',
+                        eventLabel: videoTitle
+                    });   
                     threeQuarter = true;
                 } else if (e.percent >= 0.90 && ninety == false) {
-                    track_event('progress - 90%', 'video', videoTitle);
+                    // Track Facebook
+                    fbq('trackCustom', 'video', {
+                        event_detail: 'progress',
+                        percentage: '90%',
+                        video_title: videoTitle
+                    });
+                    
+                    // Track Google
+                    ga('send', {
+                        hitType: 'event',
+                        eventCategory: 'video',
+                        eventAction: 'progress - 90%',
+                        eventLabel: videoTitle
+                    });   
                     ninety = true;
                 }
                 
@@ -133,12 +228,54 @@ jQuery(function($) {
             
             player.on('seeked', function(e) {
                 var percent = e.percent * 100;
-                track_event('seeked to' + Math.round(percent) + '%', 'video', videoTitle);
+                
+                // Track Facebook
+                fbq('trackCustom', 'video', {
+                    event_detail: 'seek',
+                    percentage: Math.round(percent),
+                    video_title: videoTitle
+                });
+                
+                // Track Google
+                ga('send', {
+                    hitType: 'event',
+                    eventCategory: 'video',
+                    eventAction: 'seeked to' + Math.round(percent) + '%',
+                    eventLabel: videoTitle
+                });                   
+                
             });
             
             player.on('ended', function(e) {
-                track_event('finished', 'video', videoTitle);
+                
+                // Track Facebook
+                fbq('trackCustom', 'video', {
+                    event_detail: 'ended',
+                    video_title: videoTitle
+                });
+                
+                // Track Google
+                ga('send', {
+                    hitType: 'event',
+                    eventCategory: 'video',
+                    eventAction: 'ended',
+                    eventLabel: videoTitle
+                });       
             });
         }
     });
+    
+    // India Tracking Code
+    $('#gform_submit_button_24').on('click', function() {
+        fbq('trackSingle', '174436890132477', 'Purchase');
+    });
+    
+    $('.tracking-button[data-event-name="design thinking india"]:contains("Register")').on('click', function() {
+        fbq('trackSingle', '174436890132477', 'Lead');
+    });
+    
+    if ($('body').hasClass('page-id-6183')) {
+        fbq('trackSingle', '174436890132477', 'CompleteRegistration');
+    }
+    
 });
