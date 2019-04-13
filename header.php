@@ -79,6 +79,24 @@ src="https://www.facebook.com/tr?id=1788791708098992&ev=PageView&noscript=1"
 <!-- End Facebook Pixel Code -->
 <?php endif; ?>
 
+<script data-obct type="text/javascript">
+
+  /** DO NOT MODIFY THIS CODE**/
+
+  !function(_window, _document) {
+
+    var OB_ADV_ID='007701a288b3053007a036b2956092d590';
+
+    if (_window.obApi) {var toArray = function(object) {return Object.prototype.toString.call(object) === '[object Array]' ? object : [object];};_window.obApi.marketerId = toArray(_window.obApi.marketerId).concat(toArray(OB_ADV_ID));return;}
+
+    var api = _window.obApi = function() {api.dispatch ? api.dispatch.apply(api, arguments) : api.queue.push(arguments);};api.version = '1.1';api.loaded = true;api.marketerId = OB_ADV_ID;api.queue = [];var tag = _document.createElement('script');tag.async = true;tag.src = '//amplify.outbrain.com/cp/obtp.js';tag.type = 'text/javascript';var script = _document.getElementsByTagName('script')[0];script.parentNode.insertBefore(tag, script);}(window, document);
+
+obApi('track', 'PAGE_VIEW');
+
+</script>
+
+
+
 <script type="text/javascript"> _linkedin_data_partner_id = "96207"; </script><script type="text/javascript"> (function(){var s = document.getElementsByTagName("script")[0]; var b = document.createElement("script"); b.type = "text/javascript";b.async = true; b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js"; s.parentNode.insertBefore(b, s);})(); </script> <noscript> <img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=96207&fmt=gif" /> </noscript>
 
 <!-- Google Analytics -->
