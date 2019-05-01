@@ -33,99 +33,55 @@
                 
             </div>
         </article>
-        
-        <section class="highlights">
-            <div class="wrap">
-                <h2 class="section-header">Leadership Development in Your Context</h2>
+                
                 <?php
-                
-                $used = [];
-                
-                $args = array(
-                    'post_type'      => 'page',
-                    'posts_per_page' => 3,
-                    'post_parent'    => $post->ID,
-                    'order'          => 'ASC',
-                    'orderby'        => 'menu_order'
-                 );
+                    $duke_terms = get_terms('work-type');
+                    
+                    $sort_items = array();
+                    
+                    // Loop through terms and build our array
+                    foreach ( $duke_terms as $term ) {
+                     // Custom field
+                     $term_display_position = get_term_meta($term->term_id, 'wpcf-term-display-order');
+                     $sort_val = $term_display_position[0];
+                     // Set the array indices based on that custom value
+                     $sort_items[$sort_val] = $term;
+                    }
+                    
+                    // Sort the items based on the display order value
+                    ksort( $sort_items, SORT_NUMERIC );
+                    
+                    // Loop through the items and output the blocks
+                    foreach($sort_items as $sort_val => $duke_term) :
+                        wp_reset_query();
+                        $args = array(
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'work-type',
+                                    'field' => 'slug',
+                                    'terms' => $duke_term->slug,
+                                ),
+                            ),
+                         );
 
-                $children = new WP_Query( $args );
-
-                if ( $children->have_posts() ) : ?>
-
-                    <?php while ( $children->have_posts() ) : $children->the_post(); ?>
-
-                        <?php 
-                            get_template_part('highlight'); 
-                            array_push($used, $post->ID);
-                        ?>
-
-                    <?php endwhile; ?>
-
-                <?php endif; wp_reset_query(); ?>     
-            </div>
-        </section>
-        
-        <section class="highlights">
-            <div class="wrap">
-                <h2 class="section-header">Focused Offerings</h2>
-                <?php
-                
-                $args = array(
-                    'post_type'      => 'page',
-                    'posts_per_page' => 6,
-                    'post__not_in'  => $used,
-                    'post_parent'    => $post->ID,
-                    'order'          => 'ASC',
-                    'orderby'        => 'menu_order'
-                 );
-
-                $children = new WP_Query( $args );
-
-                if ( $children->have_posts() ) : ?>
-
-                    <?php while ( $children->have_posts() ) : $children->the_post(); ?>
-
-                        <?php 
-                            get_template_part('highlight'); 
-                            array_push($used, $post->ID);
-                        ?>
-
-                    <?php endwhile; ?>
-
-                <?php endif; wp_reset_query(); ?>     
-            </div>
-        </section>
-        
-        <section class="highlights">
-            <div class="wrap">
-                <h2 class="section-header">Advisory Services</h2>
-                <?php
-                
-                $args = array(
-                    'post_type'      => 'page',
-                    'posts_per_page' => -1,
-                    'post__not_in'  => $used,
-                    'post_parent'    => $post->ID,
-                    'order'          => 'ASC',
-                    'orderby'        => 'menu_order'
-                 );
-
-                $children = new WP_Query( $args );
-
-                if ( $children->have_posts() ) : ?>
-
-                    <?php while ( $children->have_posts() ) : $children->the_post(); ?>
-
-                        <?php 
-                            get_template_part('highlight'); 
-                        ?>
-
-                    <?php endwhile; ?>
-
-                <?php endif; wp_reset_query(); ?>     
-            </div>
-        </section>
+                         $items = new WP_Query($args);
+                         if ($items->have_posts()) :              
+                ?>
+                         
+                         <section class="highlights">
+                             <div class="wrap">
+                                 <h2 class="section-header"><?= $duke_term->name ?></h2>
+                                 
+                                 <?php 
+                                    while($items->have_posts()) : $items->the_post();
+                                        get_template_part('highlight'); 
+                                    endwhile;
+                                ?>
+                                
+                            </div>
+                        </section>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
 
         <section class="bottom-content">
             <div class="wrap">
