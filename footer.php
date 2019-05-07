@@ -1,6 +1,6 @@
 
 <?php 
-	if ( !is_page('subscribe') ) {
+	if ( !is_page('subscribe') && !is_page('digital') ) {
 		get_sidebar();
 	}
 ?>

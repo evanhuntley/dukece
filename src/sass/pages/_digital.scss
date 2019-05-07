@@ -1,0 +1,27 @@
+/* ===================================================================
+    Home page
+====================================================================== */
+
+.digital {
+    
+    .digital-courses, .digital-webinars {
+        padding: 2.5em 0;
+        background-color: $dark-gray;
+        
+        h1 {
+            color: $white;
+        }
+    }
+    
+    /* Webinars --------------------------------------- */
+    .webinar-slider {
+        min-height: 50px;
+    }
+    
+    .webinar-slider-nav {
+        
+        h2 {
+            color: $white;    
+        }
+    }
+}

@@ -54,6 +54,25 @@ jQuery(function($) {
         controlNav: false,
         directionNav: false
     });
+    
+    // Init Webinar Slider
+    $('#webinar-slider-nav').flexslider({
+        animation: "slide",
+        animationLoop: false,
+        controlNav: false,
+        directionNav: false,
+        itemWidth: 210,
+        itemMargin: 5,
+        asNavFor: "#webinar-slider"
+    });
+    
+    $('#webinar-slider').flexslider({
+        animation: "fade",
+        controlNav: false,
+        animationLoop: false,
+        directionNav: false,
+        sync: "#webinar-slider-nav"
+    });
 
     // Set Form Region based on URL Hash
     var location = getUrlVars().location;
