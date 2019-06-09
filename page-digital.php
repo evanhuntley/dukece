@@ -9,26 +9,36 @@
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
     <div class="digital">
         <section class="hero">
-            <div class="wrap">
-                <?php 
-                    $args = array(
-                        'post_type'      => array('courses', 'webinars'),
-                        'posts_per_page' => -1
-                    );
-                    $items = new WP_Query( $args );
-                
-                    if ( $items->have_posts() ) : ?>
+            <?php 
+                $args = array(
+                    'post_type'      => array('courses', 'webinars'),
+                    'posts_per_page' => -1
+                );
+                $items = new WP_Query( $args );
+            
+                if ( $items->have_posts() ) : ?>
+                <div class="digital-slider" id="digital-slider" aria-role="presentation">
+                    <ul class="slides">
                         <?php while ( $items->have_posts() ) : $items->the_post(); ?>
-                            <article class="course">
-                                <a href="<?php echo get_the_permalink(); ?>"><?php the_post_thumbnail('article'); ?></a>
-                                <h2><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                                <div class="content">
-                                    <?php the_excerpt(); ?>
+                            <li class="course" style="background-image: url('<?= get_the_post_thumbnail_url(); ?>');">
+                                <div class="details">
+                                    <div class="wrap">
+                                        <div class="excerpt">
+                                            <?php the_excerpt(); ?>
+                                        </div>
+                                        <?php if ( get_post_type() == 'courses' ) : ?>
+                                            <a class="btn" href="">Begin Course</a>
+                                            <a class="btn btn-action" href="<?= get_the_permalink(); ?>">Learn More About Course</a>
+                                        <?php else : ?>
+                                            <a class="btn" href="">Watch Now</a>
+                                        <?php endif; ?>
+                                    </div>
                                 </div>
-                            </article>
+                            </li>
                         <?php endwhile; wp_reset_query(); ?>
-                <?php endif; ?>          
-            </div>
+                    </ul>
+                </div>
+            <?php endif; ?>          
         </section>
 
         <section class="digital-courses">
@@ -42,6 +52,7 @@
                     $courses = new WP_Query( $args );
                 
                     if ( $courses->have_posts() ) : ?>
+                        <a href="/courses/" title="Course Library">View All Courses</a>
                         <?php while ( $courses->have_posts() ) : $courses->the_post(); ?>
                             <article class="course">
         						<a href="<?php echo get_the_permalink(); ?>"><?php the_post_thumbnail('article'); ?></a>
@@ -51,12 +62,11 @@
         						</div>
         					</article>
                         <?php endwhile; wp_reset_query(); ?>
-                        <a href="/courses/" title="Course Library">View All Courses</a>
                 <?php endif; ?>          
             </div>
         </section>
         
-        <section>
+        <section class="why">
             <div class="wrap">
                 <h1>Why Duke Corporate Education</h1>
                 <ul>
@@ -118,7 +128,7 @@
             </div>
         </section>
         
-        <section>
+        <section class="insights">
             <div class="wrap">
                 <h1>Insights</h1>
                 <?php 
@@ -142,9 +152,9 @@
             </div>
         </section>
         
-        <section>
+        <section class="custom">
             <div class="wrap">
-                <a class="btn" href="/our-work">Customized Programs</a>
+                <a class="btn btn-action" href="/our-work">Customized Programs</a>
                 <p>Whether the need is building fundamentals or preparing for the unknown, at Duke Corporate Education, we build solutions grounded in your business context for the challenges you are facing and for the cohorts you are developing. We work with you to craft the right solution so that your leaders—managers, directors, high potentials or executives—acquire not just new knowledge, but also behaviors and mindsets to move the organization in the right direction fast. We’re here to help leaders get ready for what’s next.</p>
             </div>
         </section>

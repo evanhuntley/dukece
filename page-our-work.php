@@ -59,9 +59,11 @@
                                 array(
                                     'taxonomy' => 'work-type',
                                     'field' => 'slug',
-                                    'terms' => $duke_term->slug,
+                                    'terms' => $duke_term->slug
                                 ),
                             ),
+                            'orderby' => 'menu_order',
+                            'order' => 'ASC'
                          );
 
                          $items = new WP_Query($args);

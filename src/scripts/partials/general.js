@@ -55,6 +55,14 @@ jQuery(function($) {
         directionNav: false
     });
     
+    // Init Digital Slider
+    $('#digital-slider').flexslider({
+        animation: "fade",
+        animationLoop: true,
+        controlNav: true,
+        directionNav: true
+    });    
+    
     // Init Webinar Slider
     $('#webinar-slider-nav').flexslider({
         animation: "slide",

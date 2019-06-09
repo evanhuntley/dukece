@@ -4,24 +4,102 @@
 
 .digital {
     
+    .hero {
+        @extend %clearfix;
+    }
+    
+    .digital-slider {
+        
+        .slides li {
+            min-height: 400px;
+            background-size: cover;
+            
+            @include bp-l {
+                min-height: 600px;
+            }
+        }
+        
+        .details {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2em 0;
+            background: rgba(0, 0, 0, .3);
+            
+            p {
+                color: $white;
+            }
+        }
+        
+        .flex-direction-nav .flex-prev {
+          opacity: 1;
+          left: 10px;
+        }
+        .flex-direction-nav .flex-next {
+          opacity: 1;
+          right: 10px;
+        }        
+    }
+    
     .digital-courses, .digital-webinars {
         padding: 2.5em 0;
         background-color: $dark-gray;
         
-        h1 {
+        h1, p {
             color: $white;
+        }
+    }
+    
+    .why, .custom, .insights {
+        padding: 2.5em 0;
+    }
+    
+    .why {
+        
+        ul {
+            margin: 0;
+            list-style-type: none;
+        }
+        
+        li {
+            display: inline-block;
         }
     }
     
     /* Webinars --------------------------------------- */
     .webinar-slider {
-        min-height: 50px;
+        @extend %clearfix;
     }
     
     .webinar-slider-nav {
         
         h2 {
             color: $white;    
+        }
+    }
+    
+    .insights {
+        @extend %clearfix;
+        
+        .library-item {
+            
+            @include bp-l {
+                @include rowMachine(2, 5%, 5%);
+            }
+            
+            @include bp-xl {
+                @include rowMachine(5, 2%, 5%);
+            }
+        }
+    }
+    
+    .custom {
+        text-align: center;
+        background: $brand-blue;
+        
+        p {
+            color: $white;
         }
     }
 }
