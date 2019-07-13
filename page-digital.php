@@ -27,10 +27,10 @@
                                             <?php the_excerpt(); ?>
                                         </div>
                                         <?php if ( get_post_type() == 'courses' ) : ?>
-                                            <a class="btn" href="">Begin Course</a>
+                                            <a class="btn" href="<?= types_render_field("digital-course-url", array("raw" => true)); ?>">Begin Course</a>
                                             <a class="btn btn-action" href="<?= get_the_permalink(); ?>">Learn More About Course</a>
                                         <?php else : ?>
-                                            <a class="btn" href="">Watch Now</a>
+                                            <a class="btn" href="<?= types_render_field("digital-webinar-url", array("raw" => true)); ?>">Watch Now</a>
                                         <?php endif; ?>
                                     </div>
                                 </div>
@@ -52,7 +52,6 @@
                     $courses = new WP_Query( $args );
                 
                     if ( $courses->have_posts() ) : ?>
-                        <a href="/courses/" title="Course Library">View All Courses</a>
                         <?php while ( $courses->have_posts() ) : $courses->the_post(); ?>
                             <article class="course">
         						<a href="<?php echo get_the_permalink(); ?>"><?php the_post_thumbnail('article'); ?></a>
@@ -60,6 +59,7 @@
         						<div class="content">
         							<?php the_excerpt(); ?>
         						</div>
+                                <a class="btn btn-action" href="<?= get_the_permalink(); ?>">Learn More and Register</a>
         					</article>
                         <?php endwhile; wp_reset_query(); ?>
                 <?php endif; ?>          
@@ -71,15 +71,15 @@
                 <h1>Why Duke Corporate Education</h1>
                 <ul>
                     <li>
-                        <img src="" alt="" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/i_brain-power.png" />
                         <p>Create projects you’re proud to share.<br />Classes include prompts and resources.</p>
                     </li>
                     <li>
-                        <img src="" alt="" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/i_certificate.png" />
                         <p>Share and collaborate with a growing community of over 7 million creators.</p>
                     </li>
                     <li>
-                        <img src="" alt="" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/i_computer.png" />
                         <p>Unlock styles and strategies today’s creators need to know.</p>
                     </li>
                 </ul>
@@ -101,10 +101,13 @@
                         <ul class="slides">
                         <?php while ( $webinars->have_posts() ) : $webinars->the_post(); ?>
                             <li class="webinar">
-        						<a href="<?php echo get_the_permalink(); ?>"><?php the_post_thumbnail('article'); ?></a>
-        						<h2><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                                <div class="webinar-image">
+        						   <a href="<?= types_render_field("digital-webinar-url", array("raw" => true)); ?>"><?php the_post_thumbnail('highlight'); ?></a>
+        						   <h2><?php the_title(); ?></h2>
+                                </div>
         						<div class="content">
         							<?php the_excerpt(); ?>
+                                    <a class="btn btn-watch" href="<?= types_render_field("digital-webinar-url", array("raw" => true)); ?>">Watch Now</a>
         						</div>
         					</li>
                         <?php endwhile; wp_reset_query(); ?>

@@ -159,7 +159,10 @@ s.parentNode.insertBefore(b, s);})();
 </head>
 
 <body <?php body_class(); ?>>
-    <header role="banner">
+	<?php
+		$menu = is_page('digital') || is_singular('courses') ? 'digital' : 'main';
+	?>
+    <header role="banner" class="header-<?= $menu; ?>">
 		<div class="wrap">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="logo">
 				<img src="<?php bloginfo( 'template_directory' ); ?>/assets/img/l_duke-ce.svg" alt="<?php bloginfo( 'name' ); ?>" />
@@ -169,22 +172,25 @@ s.parentNode.insertBefore(b, s);})();
 				<nav role="navigation">
 					<?php
 						$args = array(
-							'menu' => 'Main',
+							'menu' => $menu,
 							'container' => false,
 							'items_wrap' => '<ul class="main-menu">%3$s</ul>',
 						);
 						wp_nav_menu($args);
 					?>
 				</nav>
-				<div class="search">
-					<button class="search-toggle">
-						<svg class="icon">
-							<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/svg/sprite.svg#search"></use>
-						</svg>           
-					</button>
-					<?php get_search_form(); ?>
-				</div>
-				<a href="/contact-duke-corporate-education/" class="btn btn-action contact">Contact</a>
+				
+				<?php if ($menu == 'Main') : ?>
+					<div class="search">
+						<button class="search-toggle">
+							<svg class="icon">
+								<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/svg/sprite.svg#search"></use>
+							</svg>           
+						</button>
+						<?php get_search_form(); ?>
+					</div>
+					<a href="/contact-duke-corporate-education/" class="btn btn-action contact">Contact</a>
+				<?php endif; ?>
 			</div>
 		</div>
 	</header>

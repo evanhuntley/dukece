@@ -2,6 +2,28 @@
     Home page
 ====================================================================== */
 
+/* Body Tweaks for Digital Nav ------------------------------------- */
+body.page-template-page-digital, body.single-courses {
+    padding-top: 0;
+}
+
+header[role="banner"].header-digital {
+    background: transparent;
+    box-shadow: none;
+    transition: all .3s;
+    
+    .menu {
+        background: transparent;
+        transition: all .3s;
+    }
+    
+    &.scrolled {
+        position: fixed;
+        background: $white;
+        box-shadow: 0 0 10px rgba(0,0,0,.2);
+    }
+}
+
 .digital {
     
     .hero {
@@ -29,16 +51,41 @@
             
             p {
                 color: $white;
+                @include font-size(1.4, 1.8);
+                
+                @include bp-l {
+                    width: 50%;
+                    float: left;
+                    margin-right: 2em;
+                }
+            }
+            
+            .btn {
+                
+                @include bp-l {
+                    margin-top: 1em;
+                    margin-right: .5em;
+                    padding: 1em 2em;
+                    font-size: 1.2em;
+                }
             }
         }
         
         .flex-direction-nav .flex-prev {
           opacity: 1;
           left: 10px;
+          
+          &::before {
+              content: url("../img/i_arrow-blue-left.png");
+          }
         }
         .flex-direction-nav .flex-next {
           opacity: 1;
           right: 10px;
+          
+          &::before {
+              content: url("../img/i_arrow-blue-right.png");
+          }
         }        
     }
     
@@ -46,12 +93,13 @@
         padding: 2.5em 0;
         background-color: $dark-gray;
         
-        h1, p {
+        h1, p, a {
             color: $white;
         }
     }
     
     .why, .custom, .insights {
+        @extend %clearfix;
         padding: 2.5em 0;
     }
     
@@ -64,15 +112,114 @@
         
         li {
             display: inline-block;
+            width: 100%;
+            text-align: center;
+            
+            @include bp-l {
+                @include rowMachine(3, 5%, 5%);
+                text-align: center;
+            }
+            
+            img {
+                height: 100px;
+                margin: 0 0 1em;
+            }
+        }
+        
+        p {
+            @include font-size(1.2, 1.4);
+            color: $brand-blue;
+            text-align: center;
+            
+            &::before {
+                content: "";
+                display: block;
+                height: 16px;
+                width: 16px;
+                background-color: rgb(13, 118, 190);
+                border-radius: 50%;
+                margin: 1em auto;
+            }
+        }
+    }
+    
+    /* Courses ---------------------------------------- */
+    .digital-courses {
+        @extend %clearfix;
+        position: relative;
+        
+        h1 {
+            
+            @include bp-l {
+                float: left;
+            }
+        }
+        
+        .browse {
+            margin: 1em 0;
+            text-transform: uppercase;
+            
+            @include bp-l {
+                float: right;
+            }
+        }
+        
+        .course {
+            @include bp-l {
+                @include rowMachine(3, 5%, 5%);
+            }
+            
+            img {
+                margin-bottom: 1em;
+            }
+            
+            p {
+                margin-bottom: 3em;
+            }
         }
     }
     
     /* Webinars --------------------------------------- */
     .webinar-slider {
         @extend %clearfix;
+        margin: 0 0 4em;
+        
+        .webinar {
+            @extend %clearfix;
+        }
+        
+        .webinar-image {
+            position: relative;
+            
+            h2 {
+                position: absolute;
+                left: 1em;
+                bottom: 0;
+                color: $white;
+            }
+            
+            @include bp-l {
+                float: left;
+                width: 60%;
+            }
+        }
+        
+        .content {
+            @include bp-l {
+                float: right;
+                width: 40%;
+            }
+        }
+        
+        .btn-watch {
+            background: #febd0b;
+            color: $brand-blue;
+        }
     }
     
     .webinar-slider-nav {
+        border-top: 1px solid $white;
+        padding: 4em 0 0;
         
         h2 {
             color: $white;    
@@ -91,15 +238,211 @@
             @include bp-xl {
                 @include rowMachine(5, 2%, 5%);
             }
+            
+            h2 {
+                @include font-size(1.2, 1.4);    
+                
+                a {
+                    color: rgb(0, 173, 239);
+                }
+            }
+            
+            p {
+                @include font-size(.8, 1);
+                
+                a {
+                    color: rgb(0, 173, 239);
+                }
+            }
         }
     }
     
     .custom {
         text-align: center;
-        background: $brand-blue;
+        background-image: url('../img/bg_business-blue.jpg');
+        background-size: cover;
+        
+        .btn {
+            @include font-size(1.2, 1.4);
+            background: rgb(0, 173, 239);
+            font-weight: 800;
+            
+            @include bp-l {
+                @include font-size(1.4, 1.6);
+            }
+        }
         
         p {
+            margin: 2em 0;
+            color: $white;
+            @include font-size(1.2, 1.4);
+        }
+    }
+}
+
+/* Digital Courses ---------------------------------------------------- */
+
+.digital-course {
+    position: relative;
+    padding-top: 0;
+    
+    header {
+        @extend %clearfix;
+        background: rgba(255, 255, 255, .7);
+        
+        @include bp-l {
+            padding: 9em 0 0;
+        }
+        
+        img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+        }
+        
+        h1 {
+            text-transform: none;
+            
+            @include bp-l {
+                float: left;
+                width: 60%;
+                @include font-size(3, 3);
+            }
+        }
+        
+        .call-to-action {
+            
+            @include bp-l {
+                float: right;    
+                width: 40%;
+                text-align: center;
+                
+                .btn {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+    
+    section {
+        padding: 1em 0;
+    }
+    
+    .btn-code {
+        color: #fff;
+        background-color: #40af49;
+    }
+    
+    .course-description {
+        @extend %clearfix;
+        background-color: $dark-gray;
+        
+        h2, p {
             color: $white;
         }
+        
+        p {
+            margin-bottom: 2em;
+        }
+        
+        .video {
+            margin: 0 0 1em;
+            
+            @include bp-l {
+                width: 60%;
+                float: left;
+                margin: 0;
+            }
+        }
+
+        .description {
+            @include font-size(1, 1.4);
+            
+            @include bp-l {
+                width: 40%;
+                float: right;
+            }
+        }        
+
+    }
+    
+    .reviews {
+        @extend %clearfix;
+        background: $brand-blue;
+        
+        h2, h3, p {
+            color: $white;
+        }
+        
+        .review {
+            
+            @include bp-l {
+                @include rowMachine(3, 5%, 0);
+            }
+        }
+        
+        .rating {
+            color: #febd0b;
+            
+            &-1 {
+                
+                span:nth-child(n+2) {
+                    display: none;
+                }
+            }
+            
+            &-2 {
+                span:nth-child(n+3) {
+                    display: none;
+                }
+            }
+            
+            &-3 {
+                span:nth-child(n+4) {
+                    display: none;
+                }
+            }
+            
+            &-4 {
+                span:nth-child(n+5) {
+                    display: none;
+                }
+            }
+        }
+    }
+    
+    .what-youll-learn {
+        @extend %clearfix;
+        background: #ececec;
+        
+        .learning-content {
+            
+            @include bp-l {
+                width: 65%;
+                float: left;
+            }
+        }
+        
+        .course-meta {
+            padding: .5em 1em;
+            background: $white;
+            
+            a {
+                display: block;
+                text-align: center;
+            }
+            
+            @include bp-l {
+                width: 35%;
+                float: right;
+            }
+        }
+    }
+    
+    .course-content {
+        background: $white;
     }
 }

@@ -19,6 +19,17 @@ jQuery(function($) {
     
     // Polyfill SVG
     svg4everybody();
+    
+    // Digital Scrolled Nav
+    $(window).scroll(function() {    
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= 200) {
+            $(".header-digital").addClass("scrolled");
+        } else {
+            $(".header-digital").removeClass("scrolled");
+        }
+    });
 
     // Toggle Search Form
     $('.search-toggle').on('click', function() {
