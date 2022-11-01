@@ -4,7 +4,7 @@
   "license": "ISC",
   "main": "gulpfile.js",
   "dependencies": {
-    "gulp": "^3.8.11"
+    "gulp": "^4.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.1",
@@ -12,7 +12,7 @@
     "browser-sync": "^2.11.1",
     "cssnano": "^3.5.2",
     "gulp-concat": "^2.5.2",
-    "gulp-expect-file": "0.0.7",
+    "gulp-expect-file": "2.0.0",
     "gulp-if": "^2.0.0",
     "gulp-imagemin": "^0.6.2",
     "gulp-jshint": "^2.0.0",
