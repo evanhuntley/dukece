@@ -9,7 +9,7 @@
   "devDependencies": {
     "autoprefixer": "^6.3.1",
     "bower": "^1.7.9",
-    "browser-sync": "^2.11.1",
+    "browser-sync": "^2.27.10",
     "cssnano": "^3.5.2",
     "gulp-concat": "^2.5.2",
     "gulp-expect-file": "0.0.7",
